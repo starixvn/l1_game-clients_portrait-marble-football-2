@@ -1602,7 +1602,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 105,
+      "x": 101,
       "y": 0,
       "z": 0
     },
@@ -4025,7 +4025,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 105,
+      "x": 101,
       "y": 0,
       "z": 0
     },
@@ -6453,7 +6453,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 105,
+      "x": 101,
       "y": -2,
       "z": 0
     },
@@ -8876,7 +8876,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 105,
+      "x": 101,
       "y": -2,
       "z": 0
     },
@@ -9750,7 +9750,7 @@
     },
     "choice": null,
     "lblBetPercentage": null,
-    "enableBoostedOdds": true,
+    "enableBoostedOdds": false,
     "highlightOdds": null,
     "boostedOddsColor": {
       "__type__": "cc.Color",
@@ -11299,7 +11299,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 105,
+      "x": 101,
       "y": -2,
       "z": 0
     },
@@ -13193,7 +13193,7 @@
     "instance": {
       "__id__": 565
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -31575,7 +31575,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 167,
+      "x": 163,
       "y": 0,
       "z": 0
     },
@@ -32719,7 +32719,7 @@
     "instance": {
       "__id__": 1434
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -33634,7 +33634,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 167,
+      "x": 163,
       "y": 0,
       "z": 0
     },

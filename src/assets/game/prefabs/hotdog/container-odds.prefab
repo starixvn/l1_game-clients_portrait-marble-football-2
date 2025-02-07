@@ -28,11 +28,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 23
+        "__id__": 24
       }
     ],
     "_prefab": {
-      "__id__": 25
+      "__id__": 26
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -118,6 +118,9 @@
       },
       {
         "__id__": 22
+      },
+      {
+        "__id__": 23
       }
     ],
     "removedComponents": []
@@ -148,7 +151,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 177,
+      "x": 176,
       "y": 0,
       "z": 0
     }
@@ -228,7 +231,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 167,
+      "x": 163,
       "y": 0,
       "z": 0
     },
@@ -414,6 +417,16 @@
     "value": false
   },
   {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 11
+    },
+    "propertyPath": [
+      "widthPadding"
+    ],
+    "value": 13
+  },
+  {
     "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
@@ -423,7 +436,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 24
+      "__id__": 25
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -450,7 +463,7 @@
       "__id__": 0
     },
     "fileId": "14goTnMkZOMbD8S5hrQRNZ",
-    "targetOverrides": null,
+    "targetOverrides": [],
     "nestedPrefabInstanceRoots": [
       {
         "__id__": 2
