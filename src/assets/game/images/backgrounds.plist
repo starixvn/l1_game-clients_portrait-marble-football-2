@@ -9,7 +9,7 @@
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{0,0}</string>
+                <string>{-1,0}</string>
                 <key>spriteSize</key>
                 <string>{820,448}</string>
                 <key>spriteSourceSize</key>
@@ -153,7 +153,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:232cda4be0ada6932ab1830b6f9740cd:0d87e6f391809f8f8b1aa104f5c64e9f:50d396e5ee50d30c72c827b4c94d9057$</string>
+            <string>$TexturePacker:SmartUpdate:44a6d73ca52ab89facd626c6910b8e92:3e1bfe3b3122759ca7897d4bccf7a94f:50d396e5ee50d30c72c827b4c94d9057$</string>
             <key>textureFileName</key>
             <string>backgrounds.webp</string>
         </dict>
