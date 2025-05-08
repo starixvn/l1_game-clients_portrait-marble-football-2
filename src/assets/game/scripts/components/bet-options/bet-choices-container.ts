@@ -247,9 +247,9 @@ export class BetChoicesContainer extends ObserverComponent {
             return;
         }
 
-        if (phase.id === PhaseId.AutoHidePreviewBetChoicesLive || phase.id === PhaseId.AutoHidePreviewBetChoicesPrev) {
-            this.handleAutoHidePreviewPhase();
-        }
+        // if (phase.id === PhaseId.AutoHidePreviewBetChoicesLive || phase.id === PhaseId.AutoHidePreviewBetChoicesPrev) {
+        //     this.handleAutoHidePreviewPhase();
+        // }
     }
 
     private setDisabledBetChoices(type: "prev" | "live", isDisabled: boolean) {

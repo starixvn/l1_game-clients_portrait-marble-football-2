@@ -39,16 +39,16 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     chipsFlyDown: {
-        in: { positionY: -306, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: -535, opacity: 1, time: DURATION_ANIM_OUT },
+        in: { positionY: -386, opacity: 255, time: DURATION_ANIM_IN },
+        out: { positionY: -835, opacity: 1, time: DURATION_ANIM_OUT },
     },
     teamScoreFlyUp: {
         in: { positionY: 303, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: 630, opacity: 1, time: DURATION_ANIM_OUT },
+        out: { positionY: 271, opacity: 1, time: DURATION_ANIM_OUT },
     },
     scoreboardFlyUp: {
-        in: { positionY: 290, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: 600, opacity: 1, time: DURATION_ANIM_OUT },
+        in: { positionY: -400, opacity: 255, time: DURATION_ANIM_IN },
+        out: { positionY: -750, opacity: 1, time: DURATION_ANIM_OUT },
     },
     teamScoreLiveFlyUp: {
         in: { positionY: 140, opacity: 255, time: DURATION_ANIM_IN },

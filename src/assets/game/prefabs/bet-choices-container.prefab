@@ -25,26 +25,26 @@
         "__id__": 13
       },
       {
-        "__id__": 1793
+        "__id__": 1795
       },
       {
-        "__id__": 1810
+        "__id__": 1812
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 1818
-      },
-      {
         "__id__": 1820
       },
       {
         "__id__": 1822
+      },
+      {
+        "__id__": 1824
       }
     ],
     "_prefab": {
-      "__id__": 1824
+      "__id__": 1826
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -328,17 +328,17 @@
         "__id__": 1599
       },
       {
-        "__id__": 1775
+        "__id__": 1777
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 1790
+        "__id__": 1792
       }
     ],
     "_prefab": {
-      "__id__": 1792
+      "__id__": 1794
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -35225,169 +35225,169 @@
     },
     "targetOverrides": [
       {
-        "__id__": 1608
-      },
-      {
         "__id__": 1610
       },
       {
         "__id__": 1612
       },
       {
-        "__id__": 1615
+        "__id__": 1614
       },
       {
-        "__id__": 1618
+        "__id__": 1617
       },
       {
-        "__id__": 1621
+        "__id__": 1620
       },
       {
-        "__id__": 1624
+        "__id__": 1623
       },
       {
-        "__id__": 1627
+        "__id__": 1626
       },
       {
-        "__id__": 1630
+        "__id__": 1629
       },
       {
-        "__id__": 1633
+        "__id__": 1632
       },
       {
-        "__id__": 1636
+        "__id__": 1635
       },
       {
-        "__id__": 1639
+        "__id__": 1638
       },
       {
-        "__id__": 1642
+        "__id__": 1641
       },
       {
-        "__id__": 1646
+        "__id__": 1644
       },
       {
-        "__id__": 1649
+        "__id__": 1648
       },
       {
-        "__id__": 1652
+        "__id__": 1651
       },
       {
-        "__id__": 1655
+        "__id__": 1654
       },
       {
-        "__id__": 1658
+        "__id__": 1657
       },
       {
-        "__id__": 1661
+        "__id__": 1660
       },
       {
-        "__id__": 1664
+        "__id__": 1663
       },
       {
-        "__id__": 1667
+        "__id__": 1666
       },
       {
-        "__id__": 1670
+        "__id__": 1669
       },
       {
-        "__id__": 1673
+        "__id__": 1672
       },
       {
-        "__id__": 1676
+        "__id__": 1675
       },
       {
-        "__id__": 1679
+        "__id__": 1678
       },
       {
-        "__id__": 1682
+        "__id__": 1681
       },
       {
-        "__id__": 1685
+        "__id__": 1684
       },
       {
-        "__id__": 1688
+        "__id__": 1687
       },
       {
-        "__id__": 1691
+        "__id__": 1690
       },
       {
-        "__id__": 1694
+        "__id__": 1693
       },
       {
-        "__id__": 1697
+        "__id__": 1696
       },
       {
-        "__id__": 1701
+        "__id__": 1699
       },
       {
-        "__id__": 1704
+        "__id__": 1703
       },
       {
-        "__id__": 1707
+        "__id__": 1706
       },
       {
-        "__id__": 1710
+        "__id__": 1709
       },
       {
-        "__id__": 1713
+        "__id__": 1712
       },
       {
-        "__id__": 1716
+        "__id__": 1715
       },
       {
-        "__id__": 1719
+        "__id__": 1718
       },
       {
-        "__id__": 1722
+        "__id__": 1721
       },
       {
-        "__id__": 1726
+        "__id__": 1724
       },
       {
-        "__id__": 1729
+        "__id__": 1728
       },
       {
-        "__id__": 1732
+        "__id__": 1731
       },
       {
-        "__id__": 1735
+        "__id__": 1734
       },
       {
-        "__id__": 1738
+        "__id__": 1737
       },
       {
-        "__id__": 1741
+        "__id__": 1740
       },
       {
-        "__id__": 1744
+        "__id__": 1743
       },
       {
-        "__id__": 1747
+        "__id__": 1746
       },
       {
-        "__id__": 1751
+        "__id__": 1749
       },
       {
-        "__id__": 1754
+        "__id__": 1753
       },
       {
-        "__id__": 1757
+        "__id__": 1756
       },
       {
-        "__id__": 1760
+        "__id__": 1759
       },
       {
-        "__id__": 1763
+        "__id__": 1762
       },
       {
-        "__id__": 1766
+        "__id__": 1765
       },
       {
-        "__id__": 1769
+        "__id__": 1768
       },
       {
-        "__id__": 1772
+        "__id__": 1771
+      },
+      {
+        "__id__": 1774
       }
     ]
   },
@@ -35414,6 +35414,9 @@
       },
       {
         "__id__": 1607
+      },
+      {
+        "__id__": 1608
       }
     ],
     "removedComponents": []
@@ -35491,21 +35494,20 @@
     "value": true
   },
   {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "home"
-    ],
-    "target": null,
+    "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
       "__id__": 1609
-    }
+    },
+    "propertyPath": [
+      "_premultipliedAlpha"
+    ],
+    "value": false
   },
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "8fcr3d+utE97KG83wYMofl"
+      "24tvTBjvxC47EsZLUKzy0K",
+      "cdnNdJD8tI5qmJozxsBDE5"
     ]
   },
   {
@@ -35513,7 +35515,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "away"
+      "home"
     ],
     "target": null,
     "targetInfo": {
@@ -35531,13 +35533,31 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
+      "away"
+    ],
+    "target": null,
+    "targetInfo": {
+      "__id__": 1613
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "8fcr3d+utE97KG83wYMofl"
+    ]
+  },
+  {
+    "__type__": "cc.TargetOverrideInfo",
+    "source": null,
+    "sourceInfo": null,
+    "propertyPath": [
       "home"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1614
+      "__id__": 1616
     }
   },
   {
@@ -35559,10 +35579,10 @@
       "away"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1617
+      "__id__": 1619
     }
   },
   {
@@ -35579,19 +35599,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1619
+      "__id__": 1621
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1620
+      "__id__": 1622
     }
   },
   {
@@ -35609,19 +35629,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1622
+      "__id__": 1624
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1623
+      "__id__": 1625
     }
   },
   {
@@ -35639,19 +35659,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1625
+      "__id__": 1627
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1626
+      "__id__": 1628
     }
   },
   {
@@ -35669,19 +35689,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1628
+      "__id__": 1630
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1629
+      "__id__": 1631
     }
   },
   {
@@ -35699,19 +35719,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1631
+      "__id__": 1633
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1632
+      "__id__": 1634
     }
   },
   {
@@ -35729,19 +35749,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1634
+      "__id__": 1636
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1635
+      "__id__": 1637
     }
   },
   {
@@ -35759,19 +35779,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1637
+      "__id__": 1639
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1638
+      "__id__": 1640
     }
   },
   {
@@ -35789,19 +35809,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "sourceInfo": {
-      "__id__": 1640
+      "__id__": 1642
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1613
+      "__id__": 1615
     },
     "targetInfo": {
-      "__id__": 1641
+      "__id__": 1643
     }
   },
   {
@@ -35819,19 +35839,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1644
+      "__id__": 1646
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1645
+      "__id__": 1647
     }
   },
   {
@@ -35853,19 +35873,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1647
+      "__id__": 1649
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1648
+      "__id__": 1650
     }
   },
   {
@@ -35883,19 +35903,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1650
+      "__id__": 1652
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1651
+      "__id__": 1653
     }
   },
   {
@@ -35913,19 +35933,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1653
+      "__id__": 1655
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1654
+      "__id__": 1656
     }
   },
   {
@@ -35943,19 +35963,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1656
+      "__id__": 1658
     },
     "propertyPath": [
       "highlightStatic"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1657
+      "__id__": 1659
     }
   },
   {
@@ -35973,19 +35993,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1659
+      "__id__": 1661
     },
     "propertyPath": [
       "highlightAnim"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1660
+      "__id__": 1662
     }
   },
   {
@@ -36003,19 +36023,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1662
+      "__id__": 1664
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1663
+      "__id__": 1665
     }
   },
   {
@@ -36033,19 +36053,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1665
+      "__id__": 1667
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1666
+      "__id__": 1668
     }
   },
   {
@@ -36063,19 +36083,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1668
+      "__id__": 1670
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1669
+      "__id__": 1671
     }
   },
   {
@@ -36093,19 +36113,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "sourceInfo": {
-      "__id__": 1671
+      "__id__": 1673
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1643
+      "__id__": 1645
     },
     "targetInfo": {
-      "__id__": 1672
+      "__id__": 1674
     }
   },
   {
@@ -36123,19 +36143,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1674
+      "__id__": 1676
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1675
+      "__id__": 1677
     }
   },
   {
@@ -36153,19 +36173,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1677
+      "__id__": 1679
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1678
+      "__id__": 1680
     }
   },
   {
@@ -36183,19 +36203,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1680
+      "__id__": 1682
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1681
+      "__id__": 1683
     }
   },
   {
@@ -36213,19 +36233,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1683
+      "__id__": 1685
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1684
+      "__id__": 1686
     }
   },
   {
@@ -36243,19 +36263,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1686
+      "__id__": 1688
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1687
+      "__id__": 1689
     }
   },
   {
@@ -36273,19 +36293,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1689
+      "__id__": 1691
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1690
+      "__id__": 1692
     }
   },
   {
@@ -36303,19 +36323,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1692
+      "__id__": 1694
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1693
+      "__id__": 1695
     }
   },
   {
@@ -36333,19 +36353,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "sourceInfo": {
-      "__id__": 1695
+      "__id__": 1697
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1616
+      "__id__": 1618
     },
     "targetInfo": {
-      "__id__": 1696
+      "__id__": 1698
     }
   },
   {
@@ -36363,19 +36383,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1699
+      "__id__": 1701
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1700
+      "__id__": 1702
     }
   },
   {
@@ -36397,19 +36417,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1702
+      "__id__": 1704
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1703
+      "__id__": 1705
     }
   },
   {
@@ -36427,19 +36447,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1705
+      "__id__": 1707
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1706
+      "__id__": 1708
     }
   },
   {
@@ -36457,19 +36477,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1708
+      "__id__": 1710
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1709
+      "__id__": 1711
     }
   },
   {
@@ -36487,19 +36507,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1711
+      "__id__": 1713
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1712
+      "__id__": 1714
     }
   },
   {
@@ -36517,19 +36537,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1714
+      "__id__": 1716
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1715
+      "__id__": 1717
     }
   },
   {
@@ -36547,19 +36567,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1717
+      "__id__": 1719
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1718
+      "__id__": 1720
     }
   },
   {
@@ -36577,19 +36597,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "sourceInfo": {
-      "__id__": 1720
+      "__id__": 1722
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1698
+      "__id__": 1700
     },
     "targetInfo": {
-      "__id__": 1721
+      "__id__": 1723
     }
   },
   {
@@ -36607,19 +36627,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1724
+      "__id__": 1726
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1725
+      "__id__": 1727
     }
   },
   {
@@ -36641,19 +36661,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1727
+      "__id__": 1729
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1728
+      "__id__": 1730
     }
   },
   {
@@ -36671,19 +36691,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1730
+      "__id__": 1732
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1731
+      "__id__": 1733
     }
   },
   {
@@ -36701,19 +36721,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1733
+      "__id__": 1735
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1734
+      "__id__": 1736
     }
   },
   {
@@ -36731,19 +36751,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1736
+      "__id__": 1738
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1737
+      "__id__": 1739
     }
   },
   {
@@ -36761,19 +36781,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1739
+      "__id__": 1741
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1740
+      "__id__": 1742
     }
   },
   {
@@ -36791,19 +36811,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1742
+      "__id__": 1744
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1743
+      "__id__": 1745
     }
   },
   {
@@ -36821,19 +36841,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "sourceInfo": {
-      "__id__": 1745
+      "__id__": 1747
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1723
+      "__id__": 1725
     },
     "targetInfo": {
-      "__id__": 1746
+      "__id__": 1748
     }
   },
   {
@@ -36851,19 +36871,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1749
+      "__id__": 1751
     },
     "propertyPath": [
       "lblOwnBet"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1750
+      "__id__": 1752
     }
   },
   {
@@ -36885,19 +36905,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1752
+      "__id__": 1754
     },
     "propertyPath": [
       "lblTotalBet"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1753
+      "__id__": 1755
     }
   },
   {
@@ -36915,19 +36935,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1755
+      "__id__": 1757
     },
     "propertyPath": [
       "lblOdds"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1756
+      "__id__": 1758
     }
   },
   {
@@ -36945,19 +36965,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1758
+      "__id__": 1760
     },
     "propertyPath": [
       "chipBox"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1759
+      "__id__": 1761
     }
   },
   {
@@ -36975,19 +36995,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1761
+      "__id__": 1763
     },
     "propertyPath": [
       "choice"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1762
+      "__id__": 1764
     }
   },
   {
@@ -37005,19 +37025,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1764
+      "__id__": 1766
     },
     "propertyPath": [
       "lblBetPercentage"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1765
+      "__id__": 1767
     }
   },
   {
@@ -37035,19 +37055,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1767
+      "__id__": 1769
     },
     "propertyPath": [
       "increaseOdd"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1768
+      "__id__": 1770
     }
   },
   {
@@ -37065,19 +37085,19 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "sourceInfo": {
-      "__id__": 1770
+      "__id__": 1772
     },
     "propertyPath": [
       "decreaseOdd"
     ],
     "target": {
-      "__id__": 1748
+      "__id__": 1750
     },
     "targetInfo": {
-      "__id__": 1771
+      "__id__": 1773
     }
   },
   {
@@ -37100,10 +37120,10 @@
       "sample"
     ],
     "target": {
-      "__id__": 1773
+      "__id__": 1775
     },
     "targetInfo": {
-      "__id__": 1774
+      "__id__": 1776
     }
   },
   {
@@ -37123,14 +37143,14 @@
       "__id__": 13
     },
     "_prefab": {
-      "__id__": 1776
+      "__id__": 1778
     },
     "__editorExtras__": {}
   },
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1775
+      "__id__": 1777
     },
     "asset": {
       "__uuid__": "e091e4af-1236-425f-a58f-c92fcd1a0c5a",
@@ -37138,7 +37158,7 @@
     },
     "fileId": "8edfnNi+NLE67KQn1B9Ypj",
     "instance": {
-      "__id__": 1777
+      "__id__": 1779
     },
     "targetOverrides": null
   },
@@ -37151,18 +37171,12 @@
     "mountedChildren": [],
     "mountedComponents": [
       {
-        "__id__": 1778
+        "__id__": 1780
       }
     ],
     "propertyOverrides": [
       {
-        "__id__": 1782
-      },
-      {
         "__id__": 1784
-      },
-      {
-        "__id__": 1785
       },
       {
         "__id__": 1786
@@ -37172,6 +37186,12 @@
       },
       {
         "__id__": 1788
+      },
+      {
+        "__id__": 1789
+      },
+      {
+        "__id__": 1790
       }
     ],
     "removedComponents": []
@@ -37179,11 +37199,11 @@
   {
     "__type__": "cc.MountedComponentsInfo",
     "targetInfo": {
-      "__id__": 1779
+      "__id__": 1781
     },
     "components": [
       {
-        "__id__": 1780
+        "__id__": 1782
       }
     ]
   },
@@ -37199,15 +37219,15 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1775
+        "__id__": 1777
       }
     },
     "node": {
-      "__id__": 1775
+      "__id__": 1777
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1781
+      "__id__": 1783
     },
     "clickEvents": [],
     "_interactable": true,
@@ -37256,7 +37276,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1783
+      "__id__": 1785
     },
     "propertyPath": [
       "_name"
@@ -37272,7 +37292,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1783
+      "__id__": 1785
     },
     "propertyPath": [
       "_lpos"
@@ -37287,7 +37307,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1783
+      "__id__": 1785
     },
     "propertyPath": [
       "_lrot"
@@ -37303,7 +37323,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1783
+      "__id__": 1785
     },
     "propertyPath": [
       "_euler"
@@ -37318,7 +37338,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1783
+      "__id__": 1785
     },
     "propertyPath": [
       "_lscale"
@@ -37333,7 +37353,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1789
+      "__id__": 1791
     },
     "propertyPath": [
       "_contentSize"
@@ -37360,7 +37380,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1791
+      "__id__": 1793
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -37401,20 +37421,20 @@
     },
     "_children": [
       {
-        "__id__": 1794
+        "__id__": 1796
       }
     ],
     "_active": false,
     "_components": [
       {
-        "__id__": 1805
+        "__id__": 1807
       },
       {
-        "__id__": 1807
+        "__id__": 1809
       }
     ],
     "_prefab": {
-      "__id__": 1809
+      "__id__": 1811
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -37449,17 +37469,17 @@
     "__type__": "cc.Node",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 1793
+      "__id__": 1795
     },
     "_prefab": {
-      "__id__": 1795
+      "__id__": 1797
     },
     "__editorExtras__": {}
   },
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1794
+      "__id__": 1796
     },
     "asset": {
       "__uuid__": "934212c0-4e1b-4063-be5b-4fc183e28ee5",
@@ -37467,7 +37487,7 @@
     },
     "fileId": "d2lZ8jd4xIiL+8Daq1FRBz",
     "instance": {
-      "__id__": 1796
+      "__id__": 1798
     },
     "targetOverrides": []
   },
@@ -37481,9 +37501,6 @@
     "mountedComponents": [],
     "propertyOverrides": [
       {
-        "__id__": 1797
-      },
-      {
         "__id__": 1799
       },
       {
@@ -37491,6 +37508,9 @@
       },
       {
         "__id__": 1803
+      },
+      {
+        "__id__": 1805
       }
     ],
     "removedComponents": []
@@ -37498,7 +37518,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1798
+      "__id__": 1800
     },
     "propertyPath": [
       "_name"
@@ -37514,7 +37534,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1800
+      "__id__": 1802
     },
     "propertyPath": [
       "_lpos"
@@ -37535,7 +37555,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1802
+      "__id__": 1804
     },
     "propertyPath": [
       "_lrot"
@@ -37557,7 +37577,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 1804
+      "__id__": 1806
     },
     "propertyPath": [
       "_euler"
@@ -37581,11 +37601,11 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 1793
+      "__id__": 1795
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1806
+      "__id__": 1808
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -37609,11 +37629,11 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 1793
+      "__id__": 1795
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1808
+      "__id__": 1810
     },
     "_alignFlags": 32,
     "_target": null,
@@ -37664,17 +37684,17 @@
     "_active": false,
     "_components": [
       {
-        "__id__": 1811
-      },
-      {
         "__id__": 1813
       },
       {
         "__id__": 1815
+      },
+      {
+        "__id__": 1817
       }
     ],
     "_prefab": {
-      "__id__": 1817
+      "__id__": 1819
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -37711,11 +37731,11 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 1810
+      "__id__": 1812
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1812
+      "__id__": 1814
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -37739,11 +37759,11 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 1810
+      "__id__": 1812
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1814
+      "__id__": 1816
     },
     "_customMaterial": null,
     "_srcBlendFactor": 2,
@@ -37784,11 +37804,11 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 1810
+      "__id__": 1812
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1816
+      "__id__": 1818
     },
     "_opacity": 120,
     "_id": ""
@@ -37820,7 +37840,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1819
+      "__id__": 1821
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -37848,7 +37868,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1821
+      "__id__": 1823
     },
     "_alignFlags": 45,
     "_target": null,
@@ -37884,7 +37904,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 1823
+      "__id__": 1825
     },
     "betChoicesPrev": {
       "__id__": 14
@@ -37899,10 +37919,10 @@
     "chipContainerLive": null,
     "chipContainerFinal": null,
     "previewBetsButton": {
-      "__id__": 1794
+      "__id__": 1796
     },
     "swapBetsButton": {
-      "__id__": 1775
+      "__id__": 1777
     },
     "_id": ""
   },
@@ -37923,10 +37943,10 @@
     "targetOverrides": [],
     "nestedPrefabInstanceRoots": [
       {
-        "__id__": 1794
+        "__id__": 1796
       },
       {
-        "__id__": 1775
+        "__id__": 1777
       },
       {
         "__id__": 1599

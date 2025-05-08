@@ -20,6 +20,7 @@ export class DOMBackgroundVideo {
         if (!video) {
             const video = document.createElement("video");
             const size = container.getBoundingClientRect();
+            console.log("createOrLoadVideoElement size-----", size);
 
             video.id = DOMBackgroundVideo.VIDEO_ID;
             video.muted = true;
@@ -52,11 +53,12 @@ export class DOMBackgroundVideo {
         video.style.position = "absolute";
         video.style.bottom = "0px";
         video.style.left = "0px";
-        video.style.width = `${isPortrait ? size.height : size.width}px`;
-        video.style.height = `${isPortrait ? size.width : size.height}px`;
+        video.style.top = "0px";
+        video.style.width = `${size.width}px`; //`${isPortrait ? size.height : size.width}px`;
+        video.style.height = `466px`; //`${isPortrait ? size.width : size.height}px`;
         video.style.zIndex = "10";
         video.width = size.width;
-        video.height = size.height;
+        video.height = 466; //size.height;
         video.playsInline = true;
         video.autoplay = true;
         video.preload = "auto";
@@ -70,6 +72,7 @@ export class DOMBackgroundVideo {
     private static onResize() {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const size = container.getBoundingClientRect();
+        console.log("onResize size-----", size);
         const video = DOMBackgroundVideo.createOrLoadVideoElement();
 
         DOMBackgroundVideo.applyVideoStyles(video, size);

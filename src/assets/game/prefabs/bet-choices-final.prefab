@@ -49,9 +49,6 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 114
-      },
-      {
         "__id__": 116
       },
       {
@@ -59,10 +56,13 @@
       },
       {
         "__id__": 120
+      },
+      {
+        "__id__": 122
       }
     ],
     "_prefab": {
-      "__id__": 122
+      "__id__": 124
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -1316,19 +1316,19 @@
     "mountedComponents": [],
     "propertyOverrides": [
       {
-        "__id__": 107
-      },
-      {
         "__id__": 109
-      },
-      {
-        "__id__": 110
       },
       {
         "__id__": 111
       },
       {
         "__id__": 112
+      },
+      {
+        "__id__": 113
+      },
+      {
+        "__id__": 114
       }
     ],
     "removedComponents": []
@@ -1421,13 +1421,13 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 11,
-      "height": 100.72000122070312
+      "width": 826,
+      "height": 454
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.36363636363636365,
-      "y": 0.029785543721611334
+      "x": 0.5,
+      "y": 0.486784140969163
     },
     "_id": ""
   },
@@ -1458,12 +1458,12 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "25b9da94-d307-4924-a09f-abf134474419",
+      "__uuid__": "73784970-3a2f-4a35-b9bf-5e2b27318637",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "<None>",
-    "_premultipliedAlpha": true,
+    "defaultAnimation": "",
+    "_premultipliedAlpha": false,
     "_timeScale": 1,
     "_preCacheMode": 0,
     "_cacheMode": 0,
@@ -1543,6 +1543,9 @@
       },
       {
         "__id__": 106
+      },
+      {
+        "__id__": 107
       }
     ],
     "removedComponents": []
@@ -1615,6 +1618,22 @@
       "__id__": 108
     },
     "propertyPath": [
+      "_active"
+    ],
+    "value": false
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "991IdAS9JKYYRfVR6Qe1m2"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 110
+    },
+    "propertyPath": [
       "_name"
     ],
     "value": "container-highlight"
@@ -1628,7 +1647,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 108
+      "__id__": 110
     },
     "propertyPath": [
       "_lpos"
@@ -1643,7 +1662,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 108
+      "__id__": 110
     },
     "propertyPath": [
       "_lrot"
@@ -1659,7 +1678,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 108
+      "__id__": 110
     },
     "propertyPath": [
       "_euler"
@@ -1674,7 +1693,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 113
+      "__id__": 115
     },
     "propertyPath": [
       "_active"
@@ -1698,7 +1717,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 115
+      "__id__": 117
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -1726,7 +1745,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 117
+      "__id__": 119
     },
     "container": {
       "__id__": 88
@@ -1751,7 +1770,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 119
+      "__id__": 121
     },
     "enableFixSingleCamera3D": false,
     "debugSample": null,
@@ -1771,7 +1790,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 121
+      "__id__": 123
     },
     "home": null,
     "away": null,
@@ -1797,9 +1816,6 @@
     "instance": null,
     "targetOverrides": [
       {
-        "__id__": 123
-      },
-      {
         "__id__": 125
       },
       {
@@ -1812,154 +1828,157 @@
         "__id__": 131
       },
       {
-        "__id__": 134
+        "__id__": 133
       },
       {
-        "__id__": 137
+        "__id__": 136
       },
       {
-        "__id__": 140
+        "__id__": 139
       },
       {
-        "__id__": 143
+        "__id__": 142
       },
       {
-        "__id__": 146
+        "__id__": 145
       },
       {
-        "__id__": 149
+        "__id__": 148
       },
       {
-        "__id__": 152
+        "__id__": 151
       },
       {
-        "__id__": 155
+        "__id__": 154
       },
       {
-        "__id__": 158
+        "__id__": 157
       },
       {
-        "__id__": 161
+        "__id__": 160
       },
       {
-        "__id__": 164
+        "__id__": 163
       },
       {
-        "__id__": 167
+        "__id__": 166
       },
       {
-        "__id__": 170
+        "__id__": 169
       },
       {
-        "__id__": 173
+        "__id__": 172
       },
       {
-        "__id__": 176
+        "__id__": 175
       },
       {
-        "__id__": 179
+        "__id__": 178
       },
       {
-        "__id__": 182
+        "__id__": 181
       },
       {
-        "__id__": 185
+        "__id__": 184
       },
       {
-        "__id__": 188
+        "__id__": 187
       },
       {
-        "__id__": 191
+        "__id__": 190
       },
       {
-        "__id__": 194
+        "__id__": 193
       },
       {
-        "__id__": 197
+        "__id__": 196
       },
       {
-        "__id__": 200
+        "__id__": 199
       },
       {
-        "__id__": 203
+        "__id__": 202
       },
       {
-        "__id__": 206
+        "__id__": 205
       },
       {
-        "__id__": 209
+        "__id__": 208
       },
       {
-        "__id__": 212
+        "__id__": 211
       },
       {
-        "__id__": 215
+        "__id__": 214
       },
       {
-        "__id__": 218
+        "__id__": 217
       },
       {
-        "__id__": 221
+        "__id__": 220
       },
       {
-        "__id__": 224
+        "__id__": 223
       },
       {
-        "__id__": 227
+        "__id__": 226
       },
       {
-        "__id__": 230
+        "__id__": 229
       },
       {
-        "__id__": 233
+        "__id__": 232
       },
       {
-        "__id__": 236
+        "__id__": 235
       },
       {
-        "__id__": 239
+        "__id__": 238
       },
       {
-        "__id__": 242
+        "__id__": 241
       },
       {
-        "__id__": 245
+        "__id__": 244
       },
       {
-        "__id__": 248
+        "__id__": 247
       },
       {
-        "__id__": 251
+        "__id__": 250
       },
       {
-        "__id__": 254
+        "__id__": 253
       },
       {
-        "__id__": 257
+        "__id__": 256
       },
       {
-        "__id__": 260
+        "__id__": 259
       },
       {
-        "__id__": 263
+        "__id__": 262
       },
       {
-        "__id__": 266
+        "__id__": 265
       },
       {
-        "__id__": 269
+        "__id__": 268
       },
       {
-        "__id__": 272
+        "__id__": 271
       },
       {
-        "__id__": 275
+        "__id__": 274
       },
       {
-        "__id__": 278
+        "__id__": 277
       },
       {
-        "__id__": 281
+        "__id__": 280
+      },
+      {
+        "__id__": 283
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -2001,7 +2020,7 @@
     ],
     "target": null,
     "targetInfo": {
-      "__id__": 124
+      "__id__": 126
     }
   },
   {
@@ -2019,7 +2038,7 @@
     ],
     "target": null,
     "targetInfo": {
-      "__id__": 126
+      "__id__": 128
     }
   },
   {
@@ -2031,7 +2050,7 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 120
+      "__id__": 122
     },
     "sourceInfo": null,
     "propertyPath": [
@@ -2041,7 +2060,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 128
+      "__id__": 130
     }
   },
   {
@@ -2054,7 +2073,7 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 120
+      "__id__": 122
     },
     "sourceInfo": null,
     "propertyPath": [
@@ -2064,7 +2083,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 130
+      "__id__": 132
     }
   },
   {
@@ -2080,7 +2099,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 132
+      "__id__": 134
     },
     "propertyPath": [
       "lblOwnBet"
@@ -2089,7 +2108,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 133
+      "__id__": 135
     }
   },
   {
@@ -2110,7 +2129,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 135
+      "__id__": 137
     },
     "propertyPath": [
       "lblTotalBet"
@@ -2119,7 +2138,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 136
+      "__id__": 138
     }
   },
   {
@@ -2140,7 +2159,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 138
+      "__id__": 140
     },
     "propertyPath": [
       "lblOdds"
@@ -2149,7 +2168,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 139
+      "__id__": 141
     }
   },
   {
@@ -2170,7 +2189,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 141
+      "__id__": 143
     },
     "propertyPath": [
       "chipBox"
@@ -2179,7 +2198,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 142
+      "__id__": 144
     }
   },
   {
@@ -2200,7 +2219,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 144
+      "__id__": 146
     },
     "propertyPath": [
       "choice"
@@ -2209,7 +2228,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 145
+      "__id__": 147
     }
   },
   {
@@ -2230,7 +2249,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 147
+      "__id__": 149
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -2239,7 +2258,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 148
+      "__id__": 150
     }
   },
   {
@@ -2260,7 +2279,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 150
+      "__id__": 152
     },
     "propertyPath": [
       "increaseOdd"
@@ -2269,7 +2288,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 151
+      "__id__": 153
     }
   },
   {
@@ -2290,7 +2309,7 @@
       "__id__": 8
     },
     "sourceInfo": {
-      "__id__": 153
+      "__id__": 155
     },
     "propertyPath": [
       "decreaseOdd"
@@ -2299,7 +2318,7 @@
       "__id__": 8
     },
     "targetInfo": {
-      "__id__": 154
+      "__id__": 156
     }
   },
   {
@@ -2320,7 +2339,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 156
+      "__id__": 158
     },
     "propertyPath": [
       "lblOwnBet"
@@ -2329,7 +2348,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 157
+      "__id__": 159
     }
   },
   {
@@ -2350,7 +2369,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 159
+      "__id__": 161
     },
     "propertyPath": [
       "lblTotalBet"
@@ -2359,7 +2378,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 160
+      "__id__": 162
     }
   },
   {
@@ -2380,7 +2399,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 162
+      "__id__": 164
     },
     "propertyPath": [
       "lblOdds"
@@ -2389,7 +2408,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 163
+      "__id__": 165
     }
   },
   {
@@ -2410,7 +2429,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 165
+      "__id__": 167
     },
     "propertyPath": [
       "chipBox"
@@ -2419,7 +2438,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 166
+      "__id__": 168
     }
   },
   {
@@ -2440,7 +2459,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 168
+      "__id__": 170
     },
     "propertyPath": [
       "highlightStatic"
@@ -2449,7 +2468,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 169
+      "__id__": 171
     }
   },
   {
@@ -2470,7 +2489,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 171
+      "__id__": 173
     },
     "propertyPath": [
       "highlightAnim"
@@ -2479,7 +2498,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 172
+      "__id__": 174
     }
   },
   {
@@ -2500,7 +2519,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 174
+      "__id__": 176
     },
     "propertyPath": [
       "choice"
@@ -2509,7 +2528,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 175
+      "__id__": 177
     }
   },
   {
@@ -2530,7 +2549,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 177
+      "__id__": 179
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -2539,7 +2558,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 178
+      "__id__": 180
     }
   },
   {
@@ -2560,7 +2579,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 180
+      "__id__": 182
     },
     "propertyPath": [
       "increaseOdd"
@@ -2569,7 +2588,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 181
+      "__id__": 183
     }
   },
   {
@@ -2590,7 +2609,7 @@
       "__id__": 18
     },
     "sourceInfo": {
-      "__id__": 183
+      "__id__": 185
     },
     "propertyPath": [
       "decreaseOdd"
@@ -2599,7 +2618,7 @@
       "__id__": 18
     },
     "targetInfo": {
-      "__id__": 184
+      "__id__": 186
     }
   },
   {
@@ -2620,7 +2639,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 186
+      "__id__": 188
     },
     "propertyPath": [
       "lblOwnBet"
@@ -2629,7 +2648,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 187
+      "__id__": 189
     }
   },
   {
@@ -2650,7 +2669,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 189
+      "__id__": 191
     },
     "propertyPath": [
       "lblTotalBet"
@@ -2659,7 +2678,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 190
+      "__id__": 192
     }
   },
   {
@@ -2680,7 +2699,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 192
+      "__id__": 194
     },
     "propertyPath": [
       "lblOdds"
@@ -2689,7 +2708,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 193
+      "__id__": 195
     }
   },
   {
@@ -2710,7 +2729,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 195
+      "__id__": 197
     },
     "propertyPath": [
       "chipBox"
@@ -2719,7 +2738,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 196
+      "__id__": 198
     }
   },
   {
@@ -2740,7 +2759,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 198
+      "__id__": 200
     },
     "propertyPath": [
       "choice"
@@ -2749,7 +2768,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 199
+      "__id__": 201
     }
   },
   {
@@ -2770,7 +2789,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 201
+      "__id__": 203
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -2779,7 +2798,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 202
+      "__id__": 204
     }
   },
   {
@@ -2800,7 +2819,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 204
+      "__id__": 206
     },
     "propertyPath": [
       "increaseOdd"
@@ -2809,7 +2828,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 205
+      "__id__": 207
     }
   },
   {
@@ -2830,7 +2849,7 @@
       "__id__": 40
     },
     "sourceInfo": {
-      "__id__": 207
+      "__id__": 209
     },
     "propertyPath": [
       "decreaseOdd"
@@ -2839,7 +2858,7 @@
       "__id__": 40
     },
     "targetInfo": {
-      "__id__": 208
+      "__id__": 210
     }
   },
   {
@@ -2860,7 +2879,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 210
+      "__id__": 212
     },
     "propertyPath": [
       "lblOwnBet"
@@ -2869,7 +2888,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 211
+      "__id__": 213
     }
   },
   {
@@ -2890,7 +2909,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 213
+      "__id__": 215
     },
     "propertyPath": [
       "lblTotalBet"
@@ -2899,7 +2918,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 214
+      "__id__": 216
     }
   },
   {
@@ -2920,7 +2939,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 216
+      "__id__": 218
     },
     "propertyPath": [
       "lblOdds"
@@ -2929,7 +2948,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 217
+      "__id__": 219
     }
   },
   {
@@ -2950,7 +2969,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 219
+      "__id__": 221
     },
     "propertyPath": [
       "chipBox"
@@ -2959,7 +2978,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 220
+      "__id__": 222
     }
   },
   {
@@ -2980,7 +2999,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 222
+      "__id__": 224
     },
     "propertyPath": [
       "choice"
@@ -2989,7 +3008,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 223
+      "__id__": 225
     }
   },
   {
@@ -3010,7 +3029,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 225
+      "__id__": 227
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -3019,7 +3038,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 226
+      "__id__": 228
     }
   },
   {
@@ -3040,7 +3059,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 228
+      "__id__": 230
     },
     "propertyPath": [
       "increaseOdd"
@@ -3049,7 +3068,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 229
+      "__id__": 231
     }
   },
   {
@@ -3070,7 +3089,7 @@
       "__id__": 50
     },
     "sourceInfo": {
-      "__id__": 231
+      "__id__": 233
     },
     "propertyPath": [
       "decreaseOdd"
@@ -3079,7 +3098,7 @@
       "__id__": 50
     },
     "targetInfo": {
-      "__id__": 232
+      "__id__": 234
     }
   },
   {
@@ -3100,7 +3119,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 234
+      "__id__": 236
     },
     "propertyPath": [
       "lblOwnBet"
@@ -3109,7 +3128,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 235
+      "__id__": 237
     }
   },
   {
@@ -3130,7 +3149,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 237
+      "__id__": 239
     },
     "propertyPath": [
       "lblOdds"
@@ -3139,7 +3158,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 238
+      "__id__": 240
     }
   },
   {
@@ -3160,7 +3179,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 240
+      "__id__": 242
     },
     "propertyPath": [
       "chipBox"
@@ -3169,7 +3188,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 241
+      "__id__": 243
     }
   },
   {
@@ -3190,7 +3209,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 243
+      "__id__": 245
     },
     "propertyPath": [
       "choice"
@@ -3199,7 +3218,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 244
+      "__id__": 246
     }
   },
   {
@@ -3220,7 +3239,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 246
+      "__id__": 248
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -3229,7 +3248,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 247
+      "__id__": 249
     }
   },
   {
@@ -3250,7 +3269,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 249
+      "__id__": 251
     },
     "propertyPath": [
       "increaseOdd"
@@ -3259,7 +3278,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 250
+      "__id__": 252
     }
   },
   {
@@ -3280,7 +3299,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 252
+      "__id__": 254
     },
     "propertyPath": [
       "decreaseOdd"
@@ -3289,7 +3308,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 253
+      "__id__": 255
     }
   },
   {
@@ -3310,7 +3329,7 @@
       "__id__": 60
     },
     "sourceInfo": {
-      "__id__": 255
+      "__id__": 257
     },
     "propertyPath": [
       "lblTotalBet"
@@ -3319,7 +3338,7 @@
       "__id__": 60
     },
     "targetInfo": {
-      "__id__": 256
+      "__id__": 258
     }
   },
   {
@@ -3340,7 +3359,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 258
+      "__id__": 260
     },
     "propertyPath": [
       "lblOwnBet"
@@ -3349,7 +3368,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 259
+      "__id__": 261
     }
   },
   {
@@ -3370,7 +3389,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 261
+      "__id__": 263
     },
     "propertyPath": [
       "lblTotalBet"
@@ -3379,7 +3398,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 262
+      "__id__": 264
     }
   },
   {
@@ -3400,7 +3419,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 264
+      "__id__": 266
     },
     "propertyPath": [
       "lblOdds"
@@ -3409,7 +3428,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 265
+      "__id__": 267
     }
   },
   {
@@ -3430,7 +3449,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 267
+      "__id__": 269
     },
     "propertyPath": [
       "chipBox"
@@ -3439,7 +3458,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 268
+      "__id__": 270
     }
   },
   {
@@ -3460,7 +3479,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 270
+      "__id__": 272
     },
     "propertyPath": [
       "choice"
@@ -3469,7 +3488,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 271
+      "__id__": 273
     }
   },
   {
@@ -3490,7 +3509,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 273
+      "__id__": 275
     },
     "propertyPath": [
       "lblBetPercentage"
@@ -3499,7 +3518,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 274
+      "__id__": 276
     }
   },
   {
@@ -3520,7 +3539,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 276
+      "__id__": 278
     },
     "propertyPath": [
       "increaseOdd"
@@ -3529,7 +3548,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 277
+      "__id__": 279
     }
   },
   {
@@ -3550,7 +3569,7 @@
       "__id__": 70
     },
     "sourceInfo": {
-      "__id__": 279
+      "__id__": 281
     },
     "propertyPath": [
       "decreaseOdd"
@@ -3559,7 +3578,7 @@
       "__id__": 70
     },
     "targetInfo": {
-      "__id__": 280
+      "__id__": 282
     }
   },
   {
@@ -3577,7 +3596,7 @@
   {
     "__type__": "cc.TargetOverrideInfo",
     "source": {
-      "__id__": 116
+      "__id__": 118
     },
     "sourceInfo": null,
     "propertyPath": [
@@ -3587,7 +3606,7 @@
       "__id__": 88
     },
     "targetInfo": {
-      "__id__": 282
+      "__id__": 284
     }
   },
   {
