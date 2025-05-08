@@ -27,8 +27,8 @@ export const DURATION_ANIM_OUT = 0.7;
 
 export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { position: v3(0, 60, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -150, 0), time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -88, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -297, 0), time: DURATION_ANIM_OUT },
     },
     chipContainerFlyDown: {
         in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
@@ -55,3 +55,5 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         out: { positionY: 540, opacity: 1, time: DURATION_ANIM_OUT },
     },
 };
+// other players: in: -393 ; out: -592
+// change bets: in

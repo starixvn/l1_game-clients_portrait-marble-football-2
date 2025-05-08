@@ -1,6 +1,6 @@
 import { _decorator, Component, sp } from "cc";
-import { Flag } from "db://assets/marble/scripts/components/flag";
-import { TeamName } from "db://assets/marble/scripts/components/team-name";
+import { Flag } from "../flag";
+import { TeamName } from "../team-name";
 const { ccclass, property } = _decorator;
 
 @ccclass("TournamentTeam")

@@ -1,67 +1,96 @@
 {
-    "shake": {
+    "click": {
         "bundle": "resources",
-        "path": "shake",
+        "path": "effects/click_V02",
+        "type": "sfx",
         "isLazyLoad": true
     },
-    "odd_wins_zh_cn": {
+    "single-chip": {
         "bundle": "resources",
-        "path": "winning/odd_wins_zh_cn",
+        "path": "effects/single_chip_V02",
+        "type": "sfx",
         "isLazyLoad": true
     },
-    "odd_wins_en": {
+    "countdown-timer": {
         "bundle": "resources",
-        "path": "winning/odd_wins_en",
+        "type": "sfx",
+        "isLazyLoad": true,
+        "path": "effects/countdown_V02"
+    },
+    "show-result": {
+        "bundle": "resources",
+        "type": "sfx",
+        "isLazyLoad": true,
+        "path": "effects/bettingboard_show"
+    },
+    "receive-finish": {},
+    "starting-round": {},
+    "bgm_marble_V02": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
         "isLazyLoad": true
     },
-    "odd_wins_id": {
+    "intro_video": {
         "bundle": "resources",
-        "path": "winning/odd_wins_id",
+        "type": "sfx",
+        "path": "effects/logoteam_intro",
         "isLazyLoad": true
     },
-    "odd_wins_th": {
+    "draw-single-card": {},
+    "draw-single-domino-card": {},
+    "start-betting": {
         "bundle": "resources",
-        "path": "winning/odd_wins_th",
+        "type": "sfx",
+        "path": "effects/start_bet_V02",
         "isLazyLoad": true
     },
-    "odd_wins_zh_tw": {
+    "stop-betting": {
         "bundle": "resources",
-        "path": "winning/odd_wins_zh_tw",
+        "type": "sfx",
+        "path": "effects/stop_bet",
         "isLazyLoad": true
     },
-    "odd_wins_vi": {
+    "winner": {
         "bundle": "resources",
-        "path": "winning/odd_wins_vi",
+        "type": "sfx",
+        "path": "effects/winner",
         "isLazyLoad": true
     },
-    "even_wins_zh_cn": {
+    "bracket-show": {
         "bundle": "resources",
-        "path": "winning/even_wins_zh_cn",
+        "type": "sfx",
+        "path": "effects/bracket_show",
         "isLazyLoad": true
     },
-    "even_wins_en": {
+    "bracket-hide": {
         "bundle": "resources",
-        "path": "winning/even_wins_en",
+        "type": "sfx",
+        "path": "effects/bracket_hide",
         "isLazyLoad": true
     },
-    "even_wins_id": {
+    "next-match": {
         "bundle": "resources",
-        "path": "winning/even_wins_id",
+        "type": "sfx",
+        "path": "effects/nextmatch",
         "isLazyLoad": true
     },
-    "even_wins_th": {
+    "gather-chips": {
         "bundle": "resources",
-        "path": "winning/even_wins_th",
+        "type": "sfx",
+        "path": "effects/chips_paymoney1",
         "isLazyLoad": true
     },
-    "even_wins_zh_tw": {
+    "divide-chips": {
         "bundle": "resources",
-        "path": "winning/even_wins_zh_tw",
+        "type": "sfx",
+        "path": "effects/chips_paymoney2",
         "isLazyLoad": true
     },
-    "even_wins_vi": {
+    "pay-chips": {
         "bundle": "resources",
-        "path": "winning/even_wins_vi",
+        "type": "sfx",
+        "path": "effects/chips_paymoney3",
         "isLazyLoad": true
     }
 }

@@ -1,28 +1,38 @@
-import gc from "@sg/game-client-base";
-import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
-
-import { sharedContainer } from "../../scripts/shared-container";
-
 export const settings = {
-    id: 2,
-    name: "SeDie",
-    namespaces: ["SeDie"],
+    id: 114,
+    name: "MarbleFootball2",
+    namespaces: ["MarbleFootball2", "MarbleFootball"],
     durations: {
-        wholeRound: 39,
-        lockingBet: 5,
-        placingBet: 30,
-        generatingResult: 1,
-        showingResult: 6,
-        startRound: 2,
+        wholeRound: 126,
+        placingBet: 20,
+        lockingBet: 3,
+        breakTime: 23,
+        videoDuration: 32,
+        halfDuration: 30,
+        generatingResult: 2,
+        showingResult: 5,
+        startRound: 8,
+        tournament: 5,
+        matchWinner: 3,
+        outro: 0.67,
+        showHaftTime: 3,
+        introVideo: 3,
+        hidePreviewBetChoices: 2,
     },
+    points: {
+        placingBetPreMatch: 110,
+        placingBetLiveMatch: 52,
+        lockingBetPreMatch: 93,
+        lockingBetLiveMatch: 35,
+        introVideo: 90,
+        streamingFirstHalfVideo: 87,
+        streamingSecondHalfVideo: 32,
+        timeUp: 2,
+    },
+    hedgeBetGroups: [
+        ["home", "away"],
+        ["awayLive", "homeLive"],
+    ],
     numberOfRoundHistory: 100,
-};
-
-export const containerOptions: gc.IContainerOptions = {
-    globalContainer: sharedContainer,
-    onContainerCreated: (container) => {
-        container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings);
-        container.bind(LogStore).to(LogStore);
-    },
-    features: [...gc.defaultFeatures, gc.BetDetailsNew],
+    durationShowPromptMessage: 1,
 };
