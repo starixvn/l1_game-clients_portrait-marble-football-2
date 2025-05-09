@@ -3896,10 +3896,10 @@
     "dealerChipBox": {
       "__id__": 203
     },
-    "chipContainer": {
+    "chipContainer": null,
+    "nodeSlidingChip": {
       "__id__": 191
     },
-    "nodeSlidingChip": null,
     "nodeAroundTablePlayers": {
       "__id__": 207
     },
