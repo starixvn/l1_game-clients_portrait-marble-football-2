@@ -34,7 +34,7 @@ export class PlayArea extends ObserverComponent {
     private teamScore: Node = null;
 
     @property(Node)
-    private firstHalfScore: Node = null;
+    private teamScorePlaceBet: Node = null;
 
     @property(Node)
     private mainPlayerNode: Node = null;
@@ -85,7 +85,7 @@ export class PlayArea extends ObserverComponent {
             { node: this.teamScore, config: this.tweenConfigs.teamScoreFlyUp.out },
             { node: this.scoreBoard, config: this.tweenConfigs.scoreboardFlyUp.out },
             { node: this.chips, config: this.tweenConfigs.chipsFlyDown.out },
-            { node: this.firstHalfScore, config: this.tweenConfigs.teamScoreLiveFlyUp.out },
+            { node: this.teamScorePlaceBet, config: this.tweenConfigs.teamScorePlaceBetFlyUp.out },
             { node: this.mainPlayerNode, config: this.tweenConfigs.fadeInOut.out },
         ];
 
@@ -141,19 +141,13 @@ export class PlayArea extends ObserverComponent {
 
                 // disappearingAnim
                 animations.push(AnimationHelper.playAnimByPhaseProgress(this.disappearingNodes, this.tweenConfigs.fadeInOut.in, 0));
-
-                // live bet
-                if (phase.id === PhaseId.ShowBetChoicesLive) {
-                    animations.push(
-                        AnimationHelper.playAnimByPhaseProgress(this.firstHalfScore, this.tweenConfigs.teamScoreLiveFlyUp.in, 0)
-                    );
-                }
+                animations.push(
+                    AnimationHelper.playAnimByPhaseProgress(this.teamScorePlaceBet, this.tweenConfigs.teamScorePlaceBetFlyUp.in, 0)
+                );
 
                 await Promise.all(animations);
             } else {
-                if (phase.id === PhaseId.ShowBetChoicesLive) {
-                    AnimationHelper.setStaticTarget(this.firstHalfScore, this.tweenConfigs.teamScoreLiveFlyUp.in);
-                }
+                AnimationHelper.setStaticTarget(this.teamScorePlaceBet, this.tweenConfigs.teamScorePlaceBetFlyUp.in);
                 AnimationHelper.setStaticTarget(this.mainPlayerNode, this.tweenConfigs.fadeInOut.in);
                 AnimationHelper.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreboardFlyUp.in);
                 this.setStaticPlayArea("in");
@@ -176,8 +170,8 @@ export class PlayArea extends ObserverComponent {
                     ? (() => {
                           this.phasePreviewBets = "live";
                           AnimationHelper.playAnimByPhaseProgress(
-                              this.firstHalfScore,
-                              this.tweenConfigs.teamScoreLiveFlyUp.out,
+                              this.teamScorePlaceBet,
+                              this.tweenConfigs.teamScorePlaceBetFlyUp.out,
                               phase.progress
                           );
                       })()

@@ -65,42 +65,25 @@ export class BetChoicesContainer extends ObserverComponent {
     private readonly phaseConfigs = {
         [PhaseId.ShowPrevVideo]: {
             prevDisabled: true,
-            previewBetsEnabled: true,
         },
         [PhaseId.ShowLiveVideo]: {
             prevDisabled: true,
             liveDisabled: true,
-            previewBetsEnabled: true,
         },
         [PhaseId.Halftime]: {
-            previewBetsEnabled: false,
             liveDisabled: false,
         },
         [PhaseId.ShowBetChoicesLive]: {
             liveDisabled: false,
-            previewBetsEnabled: false,
             prevDisabled: true,
         },
         [PhaseId.ShowBetChoicesPrev]: {
-            previewBetsEnabled: false,
             prevDisabled: false,
         },
-        [PhaseId.Settlement]: {
-            previewBetsEnabled: false,
-        },
-        [PhaseId.MatchWinner]: {
-            previewBetsEnabled: false,
-        },
-        [PhaseId.Tournament]: {
-            previewBetsEnabled: false,
-        },
+
         [PhaseId.AutoHidePreviewBetChoicesLive]: {
-            previewBetsEnabled: false,
             liveDisabled: false,
             prevDisabled: false,
-        },
-        [PhaseId.AutoHidePreviewBetChoicesPrev]: {
-            previewBetsEnabled: false,
         },
     };
 
@@ -187,14 +170,6 @@ export class BetChoicesContainer extends ObserverComponent {
         this.setEnabledPreviewBets(config.previewBetsEnabled);
     }
 
-    private handleWinnerPhase(phase: GamePhase): void {
-        if (phase.progress === 0) {
-            this.fadeOutBetChoiceNode(this.betChoicesParentContainer, true, DURATION_ANIM_IN);
-        } else {
-            this.fadeOutBetChoiceNode(this.betChoicesParentContainer, true, 0);
-        }
-    }
-
     private handleSettlementPhase(): void {
         this.handleBetState("final", DURATION_ANIM_IN);
     }
@@ -210,18 +185,6 @@ export class BetChoicesContainer extends ObserverComponent {
         this.handleBetState(action, duration);
     }
 
-    private handleAutoHidePreviewPhase(): void {
-        this.setPreviewBets(false);
-        this.setDisableBetChoices();
-        this.resetSwapBets();
-        this.fadeOutBetChoiceNode(this.betChoicesParentContainer, true, DURATION_ANIM_IN);
-    }
-
-    private resetSwapBets(): void {
-        this.swapBetsButton.active = false;
-        this.isSwapBets = false;
-    }
-
     @render(GamePhaseStore, (store) => store.enterPhase)
     renderEnterPhase(phase: GamePhase) {
         if (!phase) {
@@ -230,12 +193,6 @@ export class BetChoicesContainer extends ObserverComponent {
 
         // Apply phase-specific UI configurations
         this.applyPhaseConfig(phase.id as PhaseId);
-
-        // Handle specific phase behaviors
-        if (phase.id === PhaseId.MatchWinner) {
-            this.handleWinnerPhase(phase);
-            return;
-        }
 
         if (phase.id === PhaseId.Settlement) {
             this.handleSettlementPhase();
@@ -246,10 +203,6 @@ export class BetChoicesContainer extends ObserverComponent {
             this.handleBetChoicesPhase(phase);
             return;
         }
-
-        // if (phase.id === PhaseId.AutoHidePreviewBetChoicesLive || phase.id === PhaseId.AutoHidePreviewBetChoicesPrev) {
-        //     this.handleAutoHidePreviewPhase();
-        // }
     }
 
     private setDisabledBetChoices(type: "prev" | "live", isDisabled: boolean) {
@@ -262,7 +215,6 @@ export class BetChoicesContainer extends ObserverComponent {
 
     private setEnabledPreviewBets(isEnabled: boolean) {
         isEnabled && this.statusBetsButton.setVisibilityState(false);
-        this.previewBetsButton && (this.previewBetsButton.active = isEnabled);
     }
 
     setEnableBetChoices(state: "prev" | "live" | "final") {

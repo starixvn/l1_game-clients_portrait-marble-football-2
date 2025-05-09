@@ -20,15 +20,16 @@ export type TweenKey =
     | "teamScoreFlyUp"
     | "betChoiceZoomInOut"
     | "scoreboardFlyUp"
-    | "teamScoreLiveFlyUp";
+    | "teamScorePlaceBetFlyUp"
+    | "hiddenPlayersFlyUp";
 
 export const DURATION_ANIM_IN = 0.5;
 export const DURATION_ANIM_OUT = 0.7;
 
 export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { position: v3(0, -88, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -297, 0), time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -68, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -278, 0), time: DURATION_ANIM_OUT },
     },
     chipContainerFlyDown: {
         in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
@@ -39,21 +40,25 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     chipsFlyDown: {
-        in: { positionY: -386, opacity: 255, time: DURATION_ANIM_IN },
+        in: { positionY: -369, opacity: 255, time: DURATION_ANIM_IN },
         out: { positionY: -835, opacity: 1, time: DURATION_ANIM_OUT },
     },
-    teamScoreFlyUp: {
-        in: { positionY: 303, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: 271, opacity: 1, time: DURATION_ANIM_OUT },
+    teamScorePlaceBetFlyUp: {
+        in: { positionY: 289, opacity: 255, time: DURATION_ANIM_IN },
+        out: { positionY: 555, opacity: 1, time: DURATION_ANIM_OUT },
     },
     scoreboardFlyUp: {
         in: { positionY: -400, opacity: 255, time: DURATION_ANIM_IN },
         out: { positionY: -750, opacity: 1, time: DURATION_ANIM_OUT },
     },
-    teamScoreLiveFlyUp: {
-        in: { positionY: 140, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: 540, opacity: 1, time: DURATION_ANIM_OUT },
+    teamScoreFlyUp: {
+        in: { positionY: 353, opacity: 255, time: DURATION_ANIM_IN },
+        out: { positionY: 560, opacity: 1, time: DURATION_ANIM_OUT },
+    },
+    hiddenPlayersFlyUp: {
+        in: { positionY: -379, opacity: 255, time: DURATION_ANIM_IN },
+        out: { positionY: -571, opacity: 1, time: DURATION_ANIM_OUT },
     },
 };
-// other players: in: -393 ; out: -592
+
 // change bets: in
