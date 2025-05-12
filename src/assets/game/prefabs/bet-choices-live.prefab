@@ -7317,10 +7317,7 @@
       "b": 255,
       "a": 255
     },
-    "_skeletonData": {
-      "__uuid__": "25b9da94-d307-4924-a09f-abf134474419",
-      "__expectedType__": "sp.SkeletonData"
-    },
+    "_skeletonData":null,
     "defaultSkin": "default",
     "defaultAnimation": "draw highlight",
     "_premultipliedAlpha": true,
@@ -7454,10 +7451,7 @@
       "b": 255,
       "a": 255
     },
-    "_skeletonData": {
-      "__uuid__": "25b9da94-d307-4924-a09f-abf134474419",
-      "__expectedType__": "sp.SkeletonData"
-    },
+    "_skeletonData":null,
     "defaultSkin": "default",
     "defaultAnimation": "draw win",
     "_premultipliedAlpha": true,
@@ -17165,10 +17159,7 @@
       "b": 255,
       "a": 255
     },
-    "_spriteFrame": {
-      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@cb158",
-      "__expectedType__": "cc.SpriteFrame"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_fillType": 0,
     "_sizeMode": 0,
@@ -17585,10 +17576,7 @@
       "b": 255,
       "a": 255
     },
-    "_spriteFrame": {
-      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@cb158",
-      "__expectedType__": "cc.SpriteFrame"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_fillType": 0,
     "_sizeMode": 0,
@@ -17767,10 +17755,7 @@
       "b": 255,
       "a": 255
     },
-    "_skeletonData": {
-      "__uuid__": "25b9da94-d307-4924-a09f-abf134474419",
-      "__expectedType__": "sp.SkeletonData"
-    },
+    "_skeletonData":null,
     "defaultSkin": "default",
     "defaultAnimation": "away highlight",
     "_premultipliedAlpha": true,
@@ -18822,10 +18807,7 @@
       "b": 255,
       "a": 255
     },
-    "_spriteFrame": {
-      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@cb158",
-      "__expectedType__": "cc.SpriteFrame"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_fillType": 0,
     "_sizeMode": 1,
@@ -19617,10 +19599,7 @@
       "b": 255,
       "a": 255
     },
-    "_spriteFrame": {
-      "__uuid__": "c91f76e7-44d1-4061-9094-1b1703d681d0@cb158",
-      "__expectedType__": "cc.SpriteFrame"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_fillType": 0,
     "_sizeMode": 1,
