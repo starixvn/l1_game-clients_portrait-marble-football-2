@@ -11,8 +11,8 @@
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "12-30-2024 13:24:50 build success in 1 min 59 s!",
-        "detailMessage": "Asset DB is resume!\r",
+        "message": "5-12-2025 15:12:11 build success in 3 min 53 s!",
+        "detailMessage": "The SpriteFrame used by component \"cc.Sprite\" in prefab \"bet-choices-container\" is missing. Detailed information:\rNode path: \"should_hide_in_hierarchy/first-half-bet-choices/container/highlight/firstH...",
         "options": {
           "name": "cocos-3x",
           "platform": "web-mobile",
@@ -86,9 +86,12 @@
             "handleTemplateMd5Link": true
           },
           "wasmCompressionMode": false,
-          "buildMode": "normal"
+          "buildMode": "normal",
+          "engineModulesConfigKey": "migrationsConfig",
+          "mangleProperties": false,
+          "inlineEnum": true
         },
-        "time": "12-30-2024 13:22:50",
+        "time": "5-12-2025 15:08:17",
         "dirty": false
       }
     }
