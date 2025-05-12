@@ -1,7 +1,10 @@
+const GAME_NAME = "MarbleFootball2";
+
 export const settings = {
     id: 114,
-    name: "MarbleFootball2",
-    namespaces: ["MarbleFootball2", "MarbleFootball"],
+    name: GAME_NAME,
+    observerNamespace: GAME_NAME,
+    namespaces: [GAME_NAME, "MarbleFootball"],
     durations: {
         wholeRound: 126,
         placingBet: 20,
