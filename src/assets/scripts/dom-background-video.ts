@@ -47,18 +47,28 @@ export class DOMBackgroundVideo {
     }
 
     private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect) {
-        const isPortrait = size.width < size.height;
+        const MAX_HEIGHT = 466;
+        const ASPECT_RATIO = 828 / 1107;
+
+        let width = size.width;
+        let height = width / ASPECT_RATIO;
+
+        // If calculated height exceeds MAX_HEIGHT, scale down proportionally
+        if (height > MAX_HEIGHT) {
+            height = MAX_HEIGHT;
+            // width = height * ASPECT_RATIO;
+        }
 
         video.style.visibility = "visible";
         video.style.position = "absolute";
         video.style.bottom = "0px";
         video.style.left = "0px";
         video.style.top = "0px";
-        video.style.width = `${size.width}px`; //`${isPortrait ? size.height : size.width}px`;
-        video.style.height = `466px`; //`${isPortrait ? size.width : size.height}px`;
+        video.style.width = `${width}px`;
+        video.style.height = `${height}px`;
         video.style.zIndex = "10";
-        video.width = size.width;
-        video.height = 466; //size.height;
+        video.width = width;
+        video.height = height;
         video.playsInline = true;
         video.autoplay = true;
         video.preload = "auto";
