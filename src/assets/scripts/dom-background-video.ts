@@ -1,3 +1,4 @@
+import { _decorator, Component, EditBox, sys, view } from "cc";
 export class DOMBackgroundVideo {
     static readonly GAME_CONTAINER_ID = "Cocos3dGameContainer";
     static readonly GAME_CANVAS_ID = "GameCanvas";
@@ -7,6 +8,9 @@ export class DOMBackgroundVideo {
     static resizeObserver: ResizeObserver = new ResizeObserver(() => {
         DOMBackgroundVideo.onResize();
     });
+
+    static readonly ASPECT_RATIO = 828 / 466;
+    static readonly MAX_HEIGHT = 466;
 
     static createOrLoadVideoElement(): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
@@ -47,17 +51,7 @@ export class DOMBackgroundVideo {
     }
 
     private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect) {
-        const MAX_HEIGHT = 466;
-        const ASPECT_RATIO = 828 / 1107;
-
-        let width = size.width;
-        let height = width / ASPECT_RATIO;
-
-        // If calculated height exceeds MAX_HEIGHT, scale down proportionally
-        if (height > MAX_HEIGHT) {
-            height = MAX_HEIGHT;
-            // width = height * ASPECT_RATIO;
-        }
+        const { width, height } = this.getVideoDimensions(size.width);
 
         video.style.visibility = "visible";
         video.style.position = "absolute";
@@ -72,6 +66,20 @@ export class DOMBackgroundVideo {
         video.playsInline = true;
         video.autoplay = true;
         video.preload = "auto";
+    }
+
+    static getVideoDimensions(currentWidth: number) {
+        const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
+        console.log("ratio-----", ratio, view.getVisibleSize()?.width);
+        let width = Math.min(currentWidth, view.getVisibleSize()?.width);
+        let height = width / ratio;
+
+        console.log("width--- height video----", width, height);
+
+        return {
+            width: Math.round(width),
+            height: Math.round(height),
+        };
     }
 
     private static applyGameStyles(game: HTMLElement) {
