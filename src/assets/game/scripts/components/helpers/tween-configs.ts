@@ -25,17 +25,14 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     },
     chipContainerFlyDown: {
         in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -560, 0), time: DURATION_ANIM_OUT },
+        out: { position: v3(0, -200, 0), time: DURATION_ANIM_OUT },
     },
     fadeInOut: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
-
     hiddenPlayersFlyUp: {
-        in: { positionY: -379, opacity: 255, time: DURATION_ANIM_IN },
-        out: { positionY: -571, opacity: 1, time: DURATION_ANIM_OUT },
+        in: { positionY: -379, time: DURATION_ANIM_IN },
+        out: { positionY: -571, time: DURATION_ANIM_OUT },
     },
 };
-
-// change bets: in

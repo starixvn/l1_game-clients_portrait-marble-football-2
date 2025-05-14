@@ -1,4 +1,4 @@
-import { _decorator, assetManager, ImageAsset, log, Node } from "cc";
+import { _decorator, log, Node, Sprite } from "cc";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 
@@ -45,6 +45,9 @@ export default class Game extends GameComponent {
 
     @property(Node)
     private nodeSystemIndicator: Node = null;
+
+    @property(Sprite)
+    backgroundImage: Sprite = null;
 
     private currentFinish: gc.GameServiceMessage.Finish = null;
     enableFixHandleFinish = true;
@@ -123,19 +126,7 @@ export default class Game extends GameComponent {
     }
 
     initBackgroundImage() {
-        const { origin, pathname } = window.location;
-        const imagePath = `${origin}${pathname}splash-resources/background.webp?v=1`;
-
-        assetManager.loadRemote<ImageAsset>(imagePath, (err, imageAsset) => {
-            if (err) {
-                sentryLogger?.logError(`Failed to load image asset ${imagePath} with error ${err}`);
-                return;
-            }
-
-            const nativeUrl = imageAsset.nativeUrl;
-
-            DOMBackgroundImage.createBackgroundImageElement(nativeUrl);
-        });
+        DOMBackgroundImage.createBackgroundImageElement(this.backgroundImage?.spriteFrame?.texture?.nativeUrl);
     }
 
     async showResult(
