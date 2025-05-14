@@ -55,7 +55,6 @@ export class PlayArea extends ObserverComponent {
     onLoad() {
         this.initBetChoicesContainer();
         this.setupMainPlayAreaTargets();
-        this.setupDisappearingNodes();
         this.setupStaticTargets();
         super.onLoad();
 
@@ -69,7 +68,6 @@ export class PlayArea extends ObserverComponent {
     private setupMainPlayAreaTargets() {
         this.mainPlayAreaTargets = [
             { target: this.betChoicesParentContainer, key: "betChoiceZoomInOut" as TweenKey },
-            { target: this.chips, key: "chipsFlyDown" as TweenKey },
             { target: this.chipContainersParent, key: "chipContainerFlyDown" as TweenKey },
         ];
     }
@@ -82,19 +80,14 @@ export class PlayArea extends ObserverComponent {
 
     private setupStaticTargets() {
         const staticTargets = [
-            { node: this.teamScore, config: this.tweenConfigs.teamScoreFlyUp.out },
-            { node: this.scoreBoard, config: this.tweenConfigs.scoreboardFlyUp.out },
-            { node: this.chips, config: this.tweenConfigs.chipsFlyDown.out },
-            { node: this.teamScorePlaceBet, config: this.tweenConfigs.teamScorePlaceBetFlyUp.out },
-            { node: this.mainPlayerNode, config: this.tweenConfigs.fadeInOut.out },
+            { node: this.teamScore, config: this.tweenConfigs.fadeInOut.out },
+            { node: this.scoreBoard, config: this.tweenConfigs.fadeInOut.out },
+            { node: this.chips, config: this.tweenConfigs.fadeInOut.out },
+            { node: this.teamScorePlaceBet, config: this.tweenConfigs.fadeInOut.out },
         ];
 
         staticTargets.forEach(({ node, config }) => {
             AnimationHelper.setStaticTarget(node, config);
-        });
-
-        this.disappearingNodes.forEach((node) => {
-            AnimationHelper.setStaticTarget(node, this.tweenConfigs.fadeInOut.out);
         });
     }
 
@@ -106,19 +99,13 @@ export class PlayArea extends ObserverComponent {
 
         if (phase.id === PhaseId.MatchWinner) {
             !this.isZoomOut && this.zoomPlayArea("out");
-            await Promise.all([
-                AnimationHelper.playAnimByPhaseProgress(this.disappearingNodes, this.tweenConfigs.fadeInOut.out, phase.progress),
-                AnimationHelper.playAnimByPhaseProgress(this.chips, this.tweenConfigs.chipsFlyDown.out, phase.progress),
-            ]);
+            await Promise.all([AnimationHelper.playAnimByPhaseProgress(this.chips, this.tweenConfigs.fadeInOut.out, phase.progress)]);
 
             return;
         }
 
         if (phase.id === PhaseId.Settlement) {
-            await Promise.all([
-                AnimationHelper.playAnimByPhaseProgress(this.disappearingNodes, this.tweenConfigs.fadeInOut.in, phase.progress),
-                AnimationHelper.playAnimByPhaseProgress(this.mainPlayerNode, this.tweenConfigs.fadeInOut.in, phase.progress),
-            ]);
+            // await AnimationHelper.playAnimByPhaseProgress(this.scoreBoard, this.tweenConfigs.fadeInOut.in, phase.progress);
 
             return;
         }
@@ -133,23 +120,19 @@ export class PlayArea extends ObserverComponent {
                 // playAreaAnim
                 animations.push(
                     AnimationHelper.playAnimByPhaseProgress(
-                        [this.scoreBoard, this.mainPlayerNode, this.chips],
-                        [this.tweenConfigs.scoreboardFlyUp.in, this.tweenConfigs.fadeInOut.in, this.tweenConfigs.chipsFlyDown.in],
+                        [this.scoreBoard, this.chips],
+                        [this.tweenConfigs.fadeInOut.in, this.tweenConfigs.fadeInOut.in],
                         0
                     )
                 );
 
                 // disappearingAnim
-                animations.push(AnimationHelper.playAnimByPhaseProgress(this.disappearingNodes, this.tweenConfigs.fadeInOut.in, 0));
-                animations.push(
-                    AnimationHelper.playAnimByPhaseProgress(this.teamScorePlaceBet, this.tweenConfigs.teamScorePlaceBetFlyUp.in, 0)
-                );
+                animations.push(AnimationHelper.playAnimByPhaseProgress(this.teamScorePlaceBet, this.tweenConfigs.fadeInOut.in, 0));
 
                 await Promise.all(animations);
             } else {
-                AnimationHelper.setStaticTarget(this.teamScorePlaceBet, this.tweenConfigs.teamScorePlaceBetFlyUp.in);
-                AnimationHelper.setStaticTarget(this.mainPlayerNode, this.tweenConfigs.fadeInOut.in);
-                AnimationHelper.setStaticTarget(this.scoreBoard, this.tweenConfigs.scoreboardFlyUp.in);
+                AnimationHelper.setStaticTarget(this.teamScorePlaceBet, this.tweenConfigs.fadeInOut.in);
+                AnimationHelper.setStaticTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.in);
                 this.setStaticPlayArea("in");
             }
 
@@ -161,19 +144,15 @@ export class PlayArea extends ObserverComponent {
 
             await Promise.all([
                 AnimationHelper.playAnimByPhaseProgress(
-                    [this.teamScore, this.scoreBoard, this.mainPlayerNode],
-                    [this.tweenConfigs.teamScoreFlyUp.in, this.tweenConfigs.scoreboardFlyUp.out, this.tweenConfigs.fadeInOut.out],
+                    [this.teamScore, this.scoreBoard],
+                    [this.tweenConfigs.fadeInOut.in, this.tweenConfigs.fadeInOut.out],
                     phase.progress
                 ),
                 !this.isZoomOut && this.zoomPlayArea("out"),
                 phase.id === PhaseId.ShowLiveVideo
                     ? (() => {
                           this.phasePreviewBets = "live";
-                          AnimationHelper.playAnimByPhaseProgress(
-                              this.teamScorePlaceBet,
-                              this.tweenConfigs.teamScorePlaceBetFlyUp.out,
-                              phase.progress
-                          );
+                          AnimationHelper.playAnimByPhaseProgress(this.teamScorePlaceBet, this.tweenConfigs.fadeInOut.out, phase.progress);
                       })()
                     : Promise.resolve(),
             ]);
@@ -189,7 +168,7 @@ export class PlayArea extends ObserverComponent {
         }
 
         if (phase.id === PhaseId.Halftime) {
-            AnimationHelper.playAnimByPhaseProgress(this.teamScore, this.tweenConfigs.teamScoreFlyUp.out, phase.progress);
+            AnimationHelper.playAnimByPhaseProgress(this.teamScore, this.tweenConfigs.fadeInOut.out, phase.progress);
         }
     }
 
@@ -205,7 +184,7 @@ export class PlayArea extends ObserverComponent {
             if (this.isZoomOut) {
                 this.zoomPlayArea("in");
             }
-            AnimationHelper.playAnimForTarget(this.teamScore, this.tweenConfigs.teamScoreFlyUp.out);
+            AnimationHelper.playAnimForTarget(this.teamScore, this.tweenConfigs.fadeInOut.out);
         } catch (e) {}
     }
 
@@ -233,8 +212,7 @@ export class PlayArea extends ObserverComponent {
         this.phasePreviewBets === "prev" && this.betChoicesContainer.setEnableBetChoices("prev");
         this.phasePreviewBets === "live" && this.betChoicesContainer.setEnableBetChoices("live");
 
-        AnimationHelper.setStaticTarget(this.chips, this.tweenConfigs.chipsFlyDown[direction]);
-        AnimationHelper.setStaticTarget(this.mainPlayerNode, this.tweenConfigs.fadeInOut[direction]);
+        // AnimationHelper.setStaticTarget(this.chips, this.tweenConfigs.fadeInOut[direction]);
         AnimationHelper.setStaticTarget(this.betChoicesParentContainer, this.tweenConfigs.betChoiceZoomInOut[direction]);
         AnimationHelper.setStaticTarget(this.chipContainersParent, this.tweenConfigs.chipContainerFlyDown[direction]);
     }
