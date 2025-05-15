@@ -24,7 +24,6 @@ export class DOMBackgroundVideo {
         if (!video) {
             const video = document.createElement("video");
             const size = container.getBoundingClientRect();
-            console.log("createOrLoadVideoElement size-----", size);
 
             video.id = DOMBackgroundVideo.VIDEO_ID;
             video.muted = true;
@@ -70,11 +69,8 @@ export class DOMBackgroundVideo {
 
     static getVideoDimensions(currentWidth: number) {
         const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
-        console.log("ratio-----", ratio, view.getVisibleSize()?.width);
         let width = Math.min(currentWidth, view.getVisibleSize()?.width);
         let height = width / ratio;
-
-        console.log("width--- height video----", width, height);
 
         return {
             width: Math.round(width),
@@ -90,7 +86,6 @@ export class DOMBackgroundVideo {
     private static onResize() {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const size = container.getBoundingClientRect();
-        console.log("onResize size-----", size);
         const video = DOMBackgroundVideo.createOrLoadVideoElement();
 
         DOMBackgroundVideo.applyVideoStyles(video, size);

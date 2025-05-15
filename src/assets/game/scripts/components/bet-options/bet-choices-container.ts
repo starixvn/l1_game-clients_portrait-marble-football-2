@@ -194,8 +194,13 @@ export class BetChoicesContainer extends ObserverComponent {
             return;
         }
 
-        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
-            this.handleBetState(phase.id === PhaseId.ShowIntroVideo ? "prev" : "live", phase.progress);
+        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo) {
+            this.handleBetState("prev", phase.progress);
+            return;
+        }
+
+        if (phase.id === PhaseId.ShowLiveVideo) {
+            this.handleBetState("live", phase.progress);
             return;
         }
 
@@ -230,7 +235,6 @@ export class BetChoicesContainer extends ObserverComponent {
             this.betChoicesPrev.active = this.isSwapBets;
             this.betChoicesLive.active = !this.isSwapBets;
         }
-        console.log("triggerState---", triggerState);
 
         this.setEnableChipContainer();
 
