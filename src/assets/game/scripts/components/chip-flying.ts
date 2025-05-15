@@ -257,11 +257,6 @@ export class ChipFlying extends ChipFlyingShared {
             return;
         }
 
-        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowLiveVideo) {
-            this.inActiveAllChipContainers();
-            return;
-        }
-
         if (phase.id === PhaseId.Settlement) {
             this.updateBetState(this.chipContainerFinal, this.betChoicesContainer.getBetItemsFinal());
             return;

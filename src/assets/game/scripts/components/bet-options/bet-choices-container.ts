@@ -199,8 +199,8 @@ export class BetChoicesContainer extends ObserverComponent {
             return;
         }
 
-        if (phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
-            this.handleBetState(phase.id === PhaseId.ShowPrevVideo ? "prev" : "live", phase.progress);
+        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowLiveVideo) {
+            this.handleBetState(phase.id === PhaseId.ShowIntroVideo ? "prev" : "live", phase.progress);
             return;
         }
 
