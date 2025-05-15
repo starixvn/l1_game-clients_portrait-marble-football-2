@@ -80,11 +80,6 @@ export class BetChoicesContainer extends ObserverComponent {
         [PhaseId.ShowBetChoicesPrev]: {
             prevDisabled: false,
         },
-
-        [PhaseId.AutoHidePreviewBetChoicesLive]: {
-            liveDisabled: false,
-            prevDisabled: false,
-        },
     };
 
     private readonly triggerByState = {
@@ -199,7 +194,7 @@ export class BetChoicesContainer extends ObserverComponent {
             return;
         }
 
-        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowLiveVideo) {
+        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
             this.handleBetState(phase.id === PhaseId.ShowIntroVideo ? "prev" : "live", phase.progress);
             return;
         }
@@ -255,12 +250,6 @@ export class BetChoicesContainer extends ObserverComponent {
 
     @handle(PreviewBetsHandler, (handle) => handle.triggerBoundSecondHalfChips())
     triggerBoundSecondHalfChips() {}
-
-    private setDisableBetChoices() {
-        this.betChoicesPrev.active = false;
-        this.betChoicesLive.active = false;
-        this.betChoicesFinal.active = false;
-    }
 
     private handleAfterActiveBetItemsFinal() {
         const finalBetItems = this.betChoicesFinal.getComponent(BetItemsFinal);

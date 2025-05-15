@@ -83,7 +83,7 @@ export class PlayArea extends ObserverComponent {
             { node: this.scoreBoard, config: this.tweenConfigs.fadeInOut.out },
             { node: this.chips, config: this.tweenConfigs.fadeInOut.out },
             { node: this.teamScorePlaceBet, config: this.tweenConfigs.fadeInOut.out },
-            { node: this.hiddenPlayersNode, config: this.tweenConfigs.hiddenPlayersFlyUp.in },
+            { node: this.hiddenPlayersNode, config: this.tweenConfigs.hiddenPlayersFlyUpBet.out },
         ];
 
         staticTargets.forEach(({ node, config }) => {
@@ -97,41 +97,36 @@ export class PlayArea extends ObserverComponent {
             return;
         }
 
+        if (phase.id === PhaseId.Settlement || phase.id === PhaseId.ShowWinnerAndTournament) {
+            AnimationHelper.playAnimByPhaseProgress(
+                this.hiddenPlayersNode,
+                this.tweenConfigs.hiddenPlayersFlyUpBlockBet.in,
+                phase.progress
+            );
+        }
+
         if (phase.id === PhaseId.MatchWinner) {
-            !this.isZoomOut && this.zoomPlayArea("out");
+            !this.isZoomOut && this.zoomPlayArea("out", phase.progress);
 
             return;
         }
 
         if (phase.id === PhaseId.ShowBetChoicesPrev || phase.id === PhaseId.ShowBetChoicesLive) {
             this.phaseShowBetChoices = phase.id === PhaseId.ShowBetChoicesPrev ? "prev" : "live";
+            await Promise.all([
+                this.isZoomOut && this.zoomPlayArea("in", phase.progress),
 
-            if (phase.progress === 0) {
-                this.isZoomOut && this.zoomPlayArea("in");
-                const animations: Promise<any>[] = [];
-
-                // playAreaAnim
-                animations.push(
-                    AnimationHelper.playAnimByPhaseProgress(
-                        [this.scoreBoard, this.chips, this.hiddenPlayersNode],
-                        [this.tweenConfigs.fadeInOut.in, this.tweenConfigs.fadeInOut.in, this.tweenConfigs.hiddenPlayersFlyUp.in],
-                        0
-                    )
-                );
-
-                // disappearingAnim
-                animations.push(AnimationHelper.playAnimByPhaseProgress(this.teamScorePlaceBet, this.tweenConfigs.fadeInOut.in, 0));
-
-                await Promise.all(animations);
-            } else {
-                AnimationHelper.setStaticTarget(this.teamScorePlaceBet, this.tweenConfigs.fadeInOut.in);
-                AnimationHelper.setStaticTarget(this.scoreBoard, this.tweenConfigs.fadeInOut.in);
-                AnimationHelper.setStaticTarget(this.chips, this.tweenConfigs.fadeInOut.in);
-                AnimationHelper.setStaticTarget(this.hiddenPlayersNode, this.tweenConfigs.hiddenPlayersFlyUp.in);
-                this.setStaticPlayArea("in");
-            }
-
-            return;
+                AnimationHelper.playAnimByPhaseProgress(
+                    [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScorePlaceBet],
+                    [
+                        this.tweenConfigs.fadeInOut.in,
+                        this.tweenConfigs.fadeInOut.in,
+                        this.tweenConfigs.hiddenPlayersFlyUpBet.in,
+                        this.tweenConfigs.fadeInOut.in,
+                    ],
+                    phase.progress
+                ),
+            ]);
         }
 
         if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
@@ -145,11 +140,11 @@ export class PlayArea extends ObserverComponent {
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
-                        this.tweenConfigs.hiddenPlayersFlyUp.out,
+                        this.tweenConfigs.hiddenPlayersFlyUpBlockBet.in,
                     ],
                     phase.progress
                 ),
-                !this.isZoomOut && this.zoomPlayArea("out"),
+                !this.isZoomOut && this.zoomPlayArea("out", phase.progress),
             ]);
 
             return;
@@ -190,11 +185,17 @@ export class PlayArea extends ObserverComponent {
         return this.mainPlayAreaTargets;
     }
 
-    private async zoomPlayArea(direction: "in" | "out"): Promise<void> {
+    private async zoomPlayArea(direction: "in" | "out", progress: number): Promise<void> {
         this.isZoomOut = direction === "out";
 
         const targets = this.getMainPlayAreaTargets();
-        await Promise.all(targets.map(({ target, key }) => AnimationHelper.playAnimForTarget(target, this.tweenConfigs[key][direction])));
+        if (progress === 0) {
+            await Promise.all(
+                targets.map(({ target, key }) => AnimationHelper.playAnimForTarget(target, this.tweenConfigs[key][direction]))
+            );
+        } else {
+            await this.setStaticPlayArea(direction);
+        }
     }
 
     private async setStaticPlayArea(direction: "in" | "out"): Promise<void> {

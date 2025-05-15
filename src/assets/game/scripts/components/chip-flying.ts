@@ -271,9 +271,6 @@ export class ChipFlying extends ChipFlyingShared {
             this.updateBetState(this.chipContainerLive, this.betChoicesContainer.getBetItemsLive());
             return;
         }
-        if (phase.id === PhaseId.AutoHidePreviewBetChoicesLive || phase.id === PhaseId.AutoHidePreviewBetChoicesPrev) {
-            this.inActiveAllChipContainers();
-        }
     }
 
     private updateBetState(container: any, betItems: any = []) {

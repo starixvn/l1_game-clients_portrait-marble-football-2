@@ -13,7 +13,7 @@ export interface TweenConfigs {
     out: TweenConfig;
 }
 
-export type TweenKey = "chipContainerFlyDown" | "fadeInOut" | "betChoiceZoomInOut" | "hiddenPlayersFlyUp";
+export type TweenKey = "chipContainerFlyDown" | "fadeInOut" | "betChoiceZoomInOut" | "hiddenPlayersFlyUpBet" | "hiddenPlayersFlyUpBlockBet";
 
 export const DURATION_ANIM_IN = 0.5;
 export const DURATION_ANIM_OUT = 0.7;
@@ -31,8 +31,12 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
-    hiddenPlayersFlyUp: {
-        in: { positionY: -379, time: DURATION_ANIM_IN },
-        out: { positionY: -571, time: DURATION_ANIM_OUT },
+    hiddenPlayersFlyUpBet: {
+        in: { positionY: -369, opacity: 255, time: DURATION_ANIM_IN },
+        out: { opacity: 1, time: DURATION_ANIM_OUT },
+    },
+    hiddenPlayersFlyUpBlockBet: {
+        in: { positionY: -565, opacity: 255, time: DURATION_ANIM_IN },
+        out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
 };
