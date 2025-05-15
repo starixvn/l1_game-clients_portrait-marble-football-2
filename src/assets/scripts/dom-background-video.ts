@@ -57,7 +57,7 @@ export class DOMBackgroundVideo {
         video.style.position = "absolute";
         video.style.bottom = "0px";
         video.style.left = "0px";
-        video.style.top = "0px";
+        video.style.top = "12px";
         video.style.width = `${width}px`;
         video.style.height = `${height}px`;
         video.style.zIndex = "10";
