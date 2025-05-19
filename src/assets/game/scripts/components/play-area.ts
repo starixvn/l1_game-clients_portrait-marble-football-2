@@ -8,7 +8,7 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { settings } from "../game-settings";
 import { BetChoicesContainer } from "./bet-options/bet-choices-container";
 import { AnimationHelper } from "./helpers/animation-helper";
-import { TweenConfigs, TweenKey, DEFAULT_TWEEN_CONFIGS } from "./helpers/tween-configs";
+import { TweenConfigs, TweenKey, DEFAULT_TWEEN_CONFIGS, DEFAULT_TWEEN_CONFIGS_PORTRAIT } from "./helpers/tween-configs";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
@@ -41,10 +41,13 @@ export class PlayArea extends ObserverComponent {
     @property([Node])
     private disappearingNodes: Node[] = [];
 
+    @property
+    private isPortrait = false;
+
     private isZoomOut: boolean = false;
     private mainPlayAreaTargets: Array<{ target: Node; key: TweenKey }>;
 
-    private readonly tweenConfigs: Record<TweenKey, TweenConfigs> = DEFAULT_TWEEN_CONFIGS;
+    private tweenConfigs: Record<TweenKey, TweenConfigs> = DEFAULT_TWEEN_CONFIGS;
 
     private phasePreviewBets: BetState = "prev";
     private phaseShowBetChoices: BetState = "prev";
@@ -58,6 +61,9 @@ export class PlayArea extends ObserverComponent {
         super.onLoad();
 
         this.betChoicesContainer.swapBetsButton.on(Button.EventType.CLICK, this.swapBets, this);
+        if (this.isPortrait) {
+            this.tweenConfigs = DEFAULT_TWEEN_CONFIGS_PORTRAIT;
+        }
     }
 
     private initBetChoicesContainer() {

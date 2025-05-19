@@ -19,6 +19,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>bet_options_portrait.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,0}</string>
+                <key>spriteSize</key>
+                <string>{748,446}</string>
+                <key>spriteSourceSize</key>
+                <string>{750,450}</string>
+                <key>textureRect</key>
+                <string>{{3,945},{748,446}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>border-stream.png</key>
             <dict>
                 <key>aliases</key>
@@ -45,9 +60,9 @@
                 <key>spriteSourceSize</key>
                 <string>{48,48}</string>
                 <key>textureRect</key>
-                <string>{{263,945},{42,44}}</string>
+                <string>{{943,263},{42,44}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>disable_draw.png</key>
             <dict>
@@ -60,9 +75,9 @@
                 <key>spriteSourceSize</key>
                 <string>{258,67}</string>
                 <key>textureRect</key>
-                <string>{{3,945},{258,67}}</string>
+                <string>{{943,3},{258,67}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>disable_home_away.png</key>
             <dict>
@@ -120,9 +135,9 @@
                 <key>spriteSourceSize</key>
                 <string>{264,32}</string>
                 <key>textureRect</key>
-                <string>{{307,945},{264,32}}</string>
+                <string>{{989,263},{264,32}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>title-livebet.png</key>
             <dict>
@@ -135,9 +150,9 @@
                 <key>spriteSourceSize</key>
                 <string>{264,32}</string>
                 <key>textureRect</key>
-                <string>{{307,979},{264,32}}</string>
+                <string>{{943,307},{264,32}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
         </dict>
         <key>metadata</key>
@@ -151,9 +166,9 @@
             <key>realTextureFileName</key>
             <string>backgrounds.webp</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:44a6d73ca52ab89facd626c6910b8e92:3e1bfe3b3122759ca7897d4bccf7a94f:50d396e5ee50d30c72c827b4c94d9057$</string>
+            <string>$TexturePacker:SmartUpdate:33fd573bd169434b1d87a2ebac224d3e:20d6333450218e1d587b5ded26d5dd84:50d396e5ee50d30c72c827b4c94d9057$</string>
             <key>textureFileName</key>
             <string>backgrounds.webp</string>
         </dict>
