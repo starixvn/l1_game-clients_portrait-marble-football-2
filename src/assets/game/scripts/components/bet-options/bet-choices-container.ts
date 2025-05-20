@@ -99,8 +99,8 @@ export class BetChoicesContainer extends ObserverComponent {
         this.statusBetsButton = this.previewBetsButton?.getComponent(StatusBetsButton);
         this.setEnabledPreviewBets(false);
         if (sys.isMobile) {
-            this.previewBetsButton.scale = new Vec3(1.5, 1.5, 1.5);
-            this.swapBetsButton.scale = new Vec3(1.5, 1.5, 1.5);
+            this.previewBetsButton && (this.previewBetsButton.scale = new Vec3(1.5, 1.5, 1.5));
+            this.swapBetsButton && (this.swapBetsButton.scale = new Vec3(1.5, 1.5, 1.5));
         }
 
         this.swapBetsButton.active = false;
@@ -111,7 +111,7 @@ export class BetChoicesContainer extends ObserverComponent {
     }
 
     private setupEventListeners(): void {
-        this.previewBetsButton.on(Button.EventType.CLICK, this.showHideBets, this);
+        this.previewBetsButton?.on(Button.EventType.CLICK, this.showHideBets, this);
     }
 
     onLoad(): void {

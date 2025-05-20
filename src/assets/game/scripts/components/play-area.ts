@@ -55,15 +55,16 @@ export class PlayArea extends ObserverComponent {
     protected betChoicesParentContainer: Node = null;
 
     onLoad() {
+        if (this.isPortrait) {
+            this.tweenConfigs = DEFAULT_TWEEN_CONFIGS_PORTRAIT;
+            console.log("this.tweenConfigs", this.tweenConfigs);
+        }
         this.initBetChoicesContainer();
         this.setupMainPlayAreaTargets();
         this.setupStaticTargets();
         super.onLoad();
 
         this.betChoicesContainer.swapBetsButton.on(Button.EventType.CLICK, this.swapBets, this);
-        if (this.isPortrait) {
-            this.tweenConfigs = DEFAULT_TWEEN_CONFIGS_PORTRAIT;
-        }
     }
 
     private initBetChoicesContainer() {

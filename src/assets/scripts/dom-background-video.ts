@@ -12,6 +12,8 @@ export class DOMBackgroundVideo {
     static readonly ASPECT_RATIO = 828 / 466;
     static readonly MAX_HEIGHT = 466;
 
+    static readonly VERTICAL_CENTER_VALUE = -0.1;
+
     static createOrLoadVideoElement(): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const game = document.getElementById(DOMBackgroundVideo.GAME_CANVAS_ID);
@@ -49,14 +51,37 @@ export class DOMBackgroundVideo {
         }
     }
 
+    private static calculateVerticalCenterOffset(parentHeight: number, gameHeight: number, value: number): number {
+        const deltaHeight = parentHeight - gameHeight;
+        const maxOffset = deltaHeight / 2;
+
+        let verticalOffset = 0;
+        if (parentHeight > gameHeight) {
+            if (Math.abs(value) * parentHeight >= maxOffset) {
+                const normalizedOffset = maxOffset / parentHeight;
+                verticalOffset = value < 0 ? -normalizedOffset : normalizedOffset;
+            } else {
+                verticalOffset = value;
+            }
+            // Convert normalized offset to pixels
+            verticalOffset = verticalOffset * parentHeight + (parentHeight - gameHeight) / 2;
+        }
+        // If parentHeight <= gameHeight, verticalOffset remains 0
+        return verticalOffset;
+    }
+
     private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect) {
         const { width, height } = this.getVideoDimensions(size.width);
+        const verticalOffset = this.calculateVerticalCenterOffset(size.height, height, this.VERTICAL_CENTER_VALUE);
 
+        console.log("verticalOffset: ", verticalOffset);
+
+        // --- Apply styles ---
         video.style.visibility = "visible";
         video.style.position = "absolute";
         video.style.bottom = "0px";
         video.style.left = "0px";
-        video.style.top = "12px";
+        video.style.top = `${verticalOffset}px`;
         video.style.width = `${width}px`;
         video.style.height = `${height}px`;
         video.style.zIndex = "10";
