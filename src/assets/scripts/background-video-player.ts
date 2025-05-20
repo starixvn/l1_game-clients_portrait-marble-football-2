@@ -1,11 +1,14 @@
-import { _decorator, Component } from "cc";
+import { _decorator, Component, Node, UITransform } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
 
-const { ccclass } = _decorator;
+const { ccclass, property } = _decorator;
 
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
+    @property(Node)
+    private scaleNode: Node = null;
+
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
 
@@ -132,7 +135,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private initialize() {
-        const video = DOMBackgroundVideo.createOrLoadVideoElement();
+        const video = DOMBackgroundVideo.createOrLoadVideoElement(this.scaleNode.getComponent(UITransform)?.height);
 
         if (!Hls.isSupported()) {
             this.node.emit("hlsNotSupported");

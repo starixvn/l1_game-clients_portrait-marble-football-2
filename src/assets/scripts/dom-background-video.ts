@@ -14,7 +14,7 @@ export class DOMBackgroundVideo {
 
     static readonly VERTICAL_CENTER_VALUE = -0.1;
 
-    static createOrLoadVideoElement(): HTMLVideoElement {
+    static createOrLoadVideoElement(parentHeight?: number): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const game = document.getElementById(DOMBackgroundVideo.GAME_CANVAS_ID);
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
@@ -29,8 +29,8 @@ export class DOMBackgroundVideo {
 
             video.id = DOMBackgroundVideo.VIDEO_ID;
             video.muted = true;
-
-            DOMBackgroundVideo.applyVideoStyles(video, size);
+            console.log("parentHeight: ", parentHeight);
+            DOMBackgroundVideo.applyVideoStyles(video, size, parentHeight);
 
             container.insertBefore(video, container.firstChild);
 
@@ -70,12 +70,9 @@ export class DOMBackgroundVideo {
         return verticalOffset;
     }
 
-    private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect) {
+    private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect, parentHeight?: number) {
         const { width, height } = this.getVideoDimensions(size.width);
-        const verticalOffset = this.calculateVerticalCenterOffset(size.height, height, this.VERTICAL_CENTER_VALUE);
-
-        console.log("verticalOffset: ", verticalOffset);
-
+        const verticalOffset = this.calculateVerticalCenterOffset(parentHeight, height, this.VERTICAL_CENTER_VALUE);
         // --- Apply styles ---
         video.style.visibility = "visible";
         video.style.position = "absolute";
