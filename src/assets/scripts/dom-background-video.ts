@@ -14,7 +14,7 @@ export class DOMBackgroundVideo {
 
     static readonly VERTICAL_CENTER_VALUE = -0.1;
 
-    static createOrLoadVideoElement(parentHeight?: number): HTMLVideoElement {
+    static createOrLoadVideoElement(parentHeight?: number, scaleY?: number): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const game = document.getElementById(DOMBackgroundVideo.GAME_CANVAS_ID);
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
@@ -51,34 +51,44 @@ export class DOMBackgroundVideo {
         }
     }
 
-    private static calculateVerticalCenterOffset(parentHeight: number, gameHeight: number, value: number): number {
-        const deltaHeight = parentHeight - gameHeight;
+    private static calculateVerticalCenterOffset(parentHeight: number, gameHeight: number, scaleY: number): number {
+        const currentHeight = gameHeight * scaleY;
+        const deltaHeight = parentHeight - currentHeight;
         const maxOffset = deltaHeight / 2;
 
-        let verticalOffset = 0;
-        if (parentHeight > gameHeight) {
-            if (Math.abs(value) * parentHeight >= maxOffset) {
-                const normalizedOffset = maxOffset / parentHeight;
-                verticalOffset = value < 0 ? -normalizedOffset : normalizedOffset;
-            } else {
-                verticalOffset = value;
-            }
-            // Convert normalized offset to pixels
-            verticalOffset = verticalOffset * parentHeight + (parentHeight - gameHeight) / 2;
+        console.log(
+            "calculateVerticalCenterOffset maxOffset-parentHeight-scaleY-gameHeight:  --- ",
+            maxOffset,
+            parentHeight,
+            scaleY,
+            gameHeight
+        );
+
+        if (parentHeight <= currentHeight) {
+            return 0;
         }
-        // If parentHeight <= gameHeight, verticalOffset remains 0
-        return verticalOffset;
+
+        if (Math.abs(this.VERTICAL_CENTER_VALUE) * parentHeight >= maxOffset) {
+            const normalizedOffset = maxOffset / parentHeight;
+            console.log(
+                "calculateVerticalCenterOffset normalizedOffset:--- ",
+                this.VERTICAL_CENTER_VALUE < 0 ? -normalizedOffset : normalizedOffset
+            );
+            return this.VERTICAL_CENTER_VALUE < 0 ? -normalizedOffset : normalizedOffset;
+        }
+
+        return this.VERTICAL_CENTER_VALUE;
     }
 
     private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect, parentHeight?: number) {
         const { width, height } = this.getVideoDimensions(size.width);
-        const verticalOffset = this.calculateVerticalCenterOffset(parentHeight, height, this.VERTICAL_CENTER_VALUE);
+
         // --- Apply styles ---
         video.style.visibility = "visible";
         video.style.position = "absolute";
         video.style.bottom = "0px";
         video.style.left = "0px";
-        video.style.top = `${verticalOffset}px`;
+        video.style.top = `${12}px`;
         video.style.width = `${width}px`;
         video.style.height = `${height}px`;
         video.style.zIndex = "10";
@@ -87,6 +97,16 @@ export class DOMBackgroundVideo {
         video.playsInline = true;
         video.autoplay = true;
         video.preload = "auto";
+    }
+
+    static updateVideoPosition(parentHeight: number, height: number, scaleY: number) {
+        const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
+        if (!video) {
+            return;
+        }
+
+        const verticalOffset = this.calculateVerticalCenterOffset(parentHeight, height, scaleY);
+        video.style.top = `${verticalOffset}px`;
     }
 
     static getVideoDimensions(currentWidth: number) {

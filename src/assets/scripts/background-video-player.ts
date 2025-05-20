@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, UITransform } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
+import { EDITOR } from "cc/env";
 
 const { ccclass, property } = _decorator;
 
@@ -24,6 +25,27 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     currentTime = 0;
+
+    public onEnable(): void {
+        this.scaleNode.parent.on(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
+    }
+
+    public onDisable(): void {
+        this.scaleNode.parent.off(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
+    }
+
+    public update(delta: number): void {
+        if (EDITOR) {
+            this.updateVideoPosition();
+        }
+    }
+
+    private updateVideoPosition() {
+        const scaleY = this.scaleNode?.scale?.y ?? 1;
+        const parentHeight = this.scaleNode?.parent?.getComponent(UITransform)?.height ?? 0;
+        const currentHeight = this.scaleNode?.getComponent(UITransform)?.height ?? 0;
+        DOMBackgroundVideo.updateVideoPosition(parentHeight, currentHeight, scaleY);
+    }
 
     init(liveStreamServer: string, callbackAfterPlay: (isPlay: boolean) => void) {
         this.liveStreamServer = liveStreamServer;
@@ -135,7 +157,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private initialize() {
-        const video = DOMBackgroundVideo.createOrLoadVideoElement(this.scaleNode.getComponent(UITransform)?.height);
+        const video = DOMBackgroundVideo.createOrLoadVideoElement(this.scaleNode.parent.getComponent(UITransform)?.height);
 
         if (!Hls.isSupported()) {
             this.node.emit("hlsNotSupported");
@@ -174,5 +196,8 @@ export class BackgroundVideoPlayer extends Component {
 
         this.hls = hls;
         this.native = video;
+
+        // update video position
+        this.updateVideoPosition();
     }
 }
