@@ -2,13 +2,18 @@ import { _decorator, Component, Node, UITransform } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
 import { EDITOR } from "cc/env";
+import {
+    GameAdjustWidget,
+    GameAdjustWidgetEvent,
+    TGameAdjustWidgetData,
+} from "db://direct-shared-components/shared/common-components/game-adjust-widget";
 
 const { ccclass, property } = _decorator;
 
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
-    @property(Node)
-    private scaleNode: Node = null;
+    @property(GameAdjustWidget)
+    private gameAdjustWidget: GameAdjustWidget = null;
 
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
@@ -25,26 +30,26 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     currentTime = 0;
+    adjustWidgetData: TGameAdjustWidgetData = null;
 
-    public onEnable(): void {
-        this.scaleNode.parent.on(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
-    }
+    // public onEnable(): void {
+    //     this.scaleNode.parent.on(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
+    // }
 
-    public onDisable(): void {
-        this.scaleNode.parent.off(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
-    }
+    // public onDisable(): void {
+    //     this.scaleNode.parent.off(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
+    // }
 
-    public update(delta: number): void {
-        if (EDITOR) {
-            this.updateVideoPosition();
-        }
-    }
+    // public update(delta: number): void {
+    //     if (EDITOR) {
+    //         this.updateVideoPosition();
+    //     }
+    // }
 
-    private updateVideoPosition() {
-        const scaleY = this.scaleNode?.scale?.y ?? 1;
-        const parentHeight = this.scaleNode?.parent?.getComponent(UITransform)?.height ?? 0;
-        const currentHeight = this.scaleNode?.getComponent(UITransform)?.height ?? 0;
-        DOMBackgroundVideo.updateVideoPosition(parentHeight, currentHeight, scaleY);
+    private updateVideoPosition(data: TGameAdjustWidgetData) {
+        this.adjustWidgetData = data;
+        console.log("updateVideoPosition data-----------", data);
+        DOMBackgroundVideo.updateVideoPosition(data);
     }
 
     init(liveStreamServer: string, callbackAfterPlay: (isPlay: boolean) => void) {
@@ -129,6 +134,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     onLoad() {
+        this.gameAdjustWidget.node.on(GameAdjustWidgetEvent.GAME_ADJUST_WIDGET_UPDATE, this.updateVideoPosition, this);
         this.initialize();
     }
 
@@ -157,7 +163,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private initialize() {
-        const video = DOMBackgroundVideo.createOrLoadVideoElement(this.scaleNode.parent.getComponent(UITransform)?.height);
+        const video = DOMBackgroundVideo.createOrLoadVideoElement();
 
         if (!Hls.isSupported()) {
             this.node.emit("hlsNotSupported");
@@ -197,7 +203,6 @@ export class BackgroundVideoPlayer extends Component {
         this.hls = hls;
         this.native = video;
 
-        // update video position
-        this.updateVideoPosition();
+        this.adjustWidgetData && this.updateVideoPosition(this.adjustWidgetData);
     }
 }
