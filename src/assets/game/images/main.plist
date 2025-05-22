@@ -94,6 +94,21 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
+            <key>blur.webp</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{132,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{132,80}</string>
+                <key>textureRect</key>
+                <string>{{315,960},{132,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>border-stream-bottom.png</key>
             <dict>
                 <key>aliases</key>
@@ -180,7 +195,7 @@
                 <key>spriteSourceSize</key>
                 <string>{138,138}</string>
                 <key>textureRect</key>
-                <string>{{27,819},{138,138}}</string>
+                <string>{{27,1855},{138,138}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -195,7 +210,7 @@
                 <key>spriteSourceSize</key>
                 <string>{138,138}</string>
                 <key>textureRect</key>
-                <string>{{27,959},{138,138}}</string>
+                <string>{{167,1428},{138,138}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -585,7 +600,7 @@
                 <key>spriteSourceSize</key>
                 <string>{811,81}</string>
                 <key>textureRect</key>
-                <string>{{315,960},{811,81}}</string>
+                <string>{{315,1042},{811,81}}</string>
                 <key>textureRotated</key>
                 <true/>
             </dict>
@@ -603,7 +618,7 @@
             <key>size</key>
             <string>{512,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:87f5de8619415b53fab6402b9644de12:d7c285fb807f73c72d8d28d9e7302f6b:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:d2c2f53c27dbcd3f930f65b7ff886782:1732cd8eb1dfc44c5f1c44238e710b13:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>

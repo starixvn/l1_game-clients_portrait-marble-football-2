@@ -2,12 +2,15 @@ import { _decorator, Component, Node, UITransform } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
 import { GameAdjustWidget } from "db://direct-shared-components/shared/common-components/game-adjust-widget";
+import { SYNC_TOP_OFFSET_EVENT, VideoOffSetContainer } from "../game/scripts/components/video/video-offset-container";
 
 const { ccclass, property } = _decorator;
 
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
-    @property(GameAdjustWidget)
+    @property(VideoOffSetContainer)
+    private videoOffSetContainer: VideoOffSetContainer = null;
+
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
 
@@ -106,6 +109,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     onLoad() {
+        this.videoOffSetContainer.node.on(SYNC_TOP_OFFSET_EVENT, this.updateVideoOffset, this);
         this.initialize();
     }
 
@@ -121,6 +125,10 @@ export class BackgroundVideoPlayer extends Component {
             this.hls.detachMedia();
             this.hls.destroy();
         }
+    }
+
+    private updateVideoOffset(offsetTop: number) {
+        DOMBackgroundVideo.updateVideoPosition(offsetTop);
     }
 
     private syncCurrentTime() {
@@ -173,5 +181,7 @@ export class BackgroundVideoPlayer extends Component {
 
         this.hls = hls;
         this.native = video;
+
+        DOMBackgroundVideo.updateVideoPosition();
     }
 }

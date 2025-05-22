@@ -11,7 +11,7 @@
     "6c48a": {
       "importer": "texture",
       "uuid": "0c23cab7-5e4c-4e0f-95ef-5d3bf1a1b760@6c48a",
-      "displayName": "background-blur",
+      "displayName": "soccer-field",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -35,7 +35,7 @@
     "f9941": {
       "importer": "sprite-frame",
       "uuid": "0c23cab7-5e4c-4e0f-95ef-5d3bf1a1b760@f9941",
-      "displayName": "background-blur",
+      "displayName": "soccer-field",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -46,11 +46,11 @@
         "trimX": 0,
         "trimY": 0,
         "width": 828,
-        "height": 519,
+        "height": 466,
         "rawWidth": 828,
-        "rawHeight": 519,
-        "borderTop": 470,
-        "borderBottom": 0,
+        "rawHeight": 466,
+        "borderTop": 0,
+        "borderBottom": 54,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
@@ -61,16 +61,16 @@
         "vertices": {
           "rawPosition": [
             -414,
-            -259.5,
+            -233,
             0,
             414,
-            -259.5,
+            -233,
             0,
             -414,
-            259.5,
+            233,
             0,
             414,
-            259.5,
+            233,
             0
           ],
           "indexes": [
@@ -83,9 +83,9 @@
           ],
           "uv": [
             0,
-            519,
+            466,
             828,
-            519,
+            466,
             0,
             0,
             828,
@@ -103,12 +103,12 @@
           ],
           "minPos": [
             -414,
-            -259.5,
+            -233,
             0
           ],
           "maxPos": [
             414,
-            259.5,
+            233,
             0
           ]
         },
@@ -127,7 +127,7 @@
   },
   "userData": {
     "type": "sprite-frame",
-    "hasAlpha": true,
+    "hasAlpha": false,
     "fixAlphaTransparencyArtifacts": false,
     "redirect": "0c23cab7-5e4c-4e0f-95ef-5d3bf1a1b760@6c48a"
   }
