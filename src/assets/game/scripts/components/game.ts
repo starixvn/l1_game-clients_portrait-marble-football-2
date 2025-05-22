@@ -46,9 +46,6 @@ export default class Game extends GameComponent {
     @property(Node)
     private nodeSystemIndicator: Node = null;
 
-    @property(Sprite)
-    backgroundImage: Sprite = null;
-
     @property
     private isPortrait = false;
 

@@ -8,18 +8,18 @@ declare global {
 }
 
 const defaultConfig: gc.Configs.SiteConfigs = {
-    isDev: false, // if this property is true, then you should add token=anything into the querytring to sso to the game http://localhost:7456/?token=anything
+    isDev: false,
     systemType: "SG",
     serverDomainMapper: {
         localhost: "lumigame.com",
     },
     ssl: true,
     subDomain: "l1-proxy1",
-    env: "LOCAL",
-    subGuideDomain: "l1-guide-1",
-    SGConnectSubDomain: "connectsite",
-    enableMsgpackParserAllGames: false,
+    env: "LOCAL0",
+    sentryUrl: "https://2af29bdacdbf4d9ba2db6600b450541f@sentry.lumigame.com/28",
+    subGuideDomain: "l1-guide",
     enableMsgpackParserOnNotification: false,
+    enableMsgpackParserAllGames: false,
     websocket: {
         proxyPath: "marblefootball2",
         route: "marblefootball2",
