@@ -1,20 +1,13 @@
 import { _decorator, Component, Node, UITransform } from "cc";
 import Hls from "hls.js";
 import { DOMBackgroundVideo } from "./dom-background-video";
-import { EDITOR } from "cc/env";
-import {
-    GameAdjustWidget,
-    GameAdjustWidgetEvent,
-    TGameAdjustWidgetData,
-} from "db://direct-shared-components/shared/common-components/game-adjust-widget";
+import { GameAdjustWidget } from "db://direct-shared-components/shared/common-components/game-adjust-widget";
 
 const { ccclass, property } = _decorator;
 
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
     @property(GameAdjustWidget)
-    private gameAdjustWidget: GameAdjustWidget = null;
-
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
 
@@ -30,27 +23,6 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     currentTime = 0;
-    adjustWidgetData: TGameAdjustWidgetData = null;
-
-    // public onEnable(): void {
-    //     this.scaleNode.parent.on(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
-    // }
-
-    // public onDisable(): void {
-    //     this.scaleNode.parent.off(Node.EventType.SIZE_CHANGED, this.updateVideoPosition, this);
-    // }
-
-    // public update(delta: number): void {
-    //     if (EDITOR) {
-    //         this.updateVideoPosition();
-    //     }
-    // }
-
-    private updateVideoPosition(data: TGameAdjustWidgetData) {
-        this.adjustWidgetData = data;
-        console.log("updateVideoPosition data-----------", data);
-        DOMBackgroundVideo.updateVideoPosition(data);
-    }
 
     init(liveStreamServer: string, callbackAfterPlay: (isPlay: boolean) => void) {
         this.liveStreamServer = liveStreamServer;
@@ -134,7 +106,6 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     onLoad() {
-        this.gameAdjustWidget.node.on(GameAdjustWidgetEvent.GAME_ADJUST_WIDGET_UPDATE, this.updateVideoPosition, this);
         this.initialize();
     }
 
@@ -202,7 +173,5 @@ export class BackgroundVideoPlayer extends Component {
 
         this.hls = hls;
         this.native = video;
-
-        this.adjustWidgetData && this.updateVideoPosition(this.adjustWidgetData);
     }
 }
