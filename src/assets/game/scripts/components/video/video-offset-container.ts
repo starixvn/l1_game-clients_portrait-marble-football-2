@@ -1,5 +1,6 @@
-import { _decorator, Component, UITransform, Node, Vec3, director } from "cc";
+import { _decorator, Component, Node, Vec3 } from "cc";
 import { EDITOR } from "cc/env";
+import { ComponentUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
@@ -7,37 +8,50 @@ export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
     @property(Node)
-    private targetContainer: Node = null;
+    private containerNode: Node = null;
 
     @property(Node)
-    private destinationContainer: Node = null;
+    private targetNode: Node = null;
 
-    onLoad() {}
+    private lastContainerPosition: Vec3 = new Vec3();
+
+    private onParentSizeChanged = () => {
+        this.updateDisplay();
+    };
+
+    private toggleSizeChangedListener(enable: boolean) {
+        const method = enable ? "on" : "off";
+        if (this.node.parent) {
+            this.node.parent[method](Node.EventType.SIZE_CHANGED, this.onParentSizeChanged, this);
+        }
+        if (this.node) {
+            this.node[method](Node.EventType.SIZE_CHANGED, this.onParentSizeChanged, this);
+        }
+    }
 
     public onEnable(): void {
-        this.node.parent.on(Node.EventType.SIZE_CHANGED, this.updateDisplay, this);
+        this.toggleSizeChangedListener(true);
         this.updateDisplay();
     }
 
     public onDisable(): void {
-        this.node.parent.off(Node.EventType.SIZE_CHANGED, this.updateDisplay, this);
+        this.toggleSizeChangedListener(false);
     }
 
     public update(delta: number): void {
+        if (this.containerNode && !this.containerNode.position.equals(this.lastContainerPosition)) {
+            this.updateDisplay();
+            this.lastContainerPosition.set(this.containerNode.position);
+        }
+
         if (EDITOR) {
             this.updateDisplay();
         }
     }
 
     protected updateDisplay(): void {
-        let topOffset = 12;
-        const position = this.targetContainer.parent
-            .getComponent(UITransform)
-            .convertToNodeSpaceAR(this.destinationContainer.getComponent(UITransform).convertToWorldSpaceAR(Vec3.ZERO));
-        if (position && position?.y > 0) {
-            topOffset = position.y / 2;
-        }
-
-        this.node.emit(SYNC_TOP_OFFSET_EVENT, topOffset);
+        const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
+        const topOffset = position.y ?? 0;
+        this.node.emit(SYNC_TOP_OFFSET_EVENT, +topOffset);
     }
 }

@@ -49,17 +49,25 @@ export class DOMBackgroundVideo {
     }
 
     private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect, parentHeight?: number) {
+        // Calculate video dimensions in pixels
         const { width, height } = this.getVideoDimensions(size.width);
 
-        // --- Apply styles ---
-        console.log("applyVideoStyles top:--- ", 12);
+        // Calculate viewport width for vw units
+        const viewportWidth = window.innerWidth;
+        const widthVW = (width / viewportWidth) * 100;
+        const heightVW = (height / viewportWidth) * 100;
+
+        // Apply styles
         video.style.visibility = "visible";
         video.style.position = "absolute";
         video.style.bottom = "0px";
-        video.style.left = "0px";
-        video.style.width = `${width}px`;
-        video.style.height = `${height}px`;
+        video.style.left = "50%";
+        video.style.transform = "translateX(-50%)";
+        video.style.width = `${widthVW}vw`;
+        video.style.height = `${heightVW}vw`;
         video.style.zIndex = "10";
+
+        // Set video element attributes
         video.width = width;
         video.height = height;
         video.playsInline = true;
@@ -67,15 +75,21 @@ export class DOMBackgroundVideo {
         video.preload = "auto";
     }
 
-    static updateVideoPosition(offsetTop = this.TOP_OFFSET) {
+    static updateVideoPosition(offsetTop = 0) {
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
         if (!video) {
             log("video not found----------");
             return;
         }
 
-        const top = offsetTop < 12 ? this.TOP_OFFSET : offsetTop;
-        video.style.top = `${top}px`;
+        if (offsetTop <= 0) {
+            video.style.top = `${this.TOP_OFFSET}px`;
+            return;
+        }
+
+        const width = view.getVisibleSize()?.width;
+        const topOffsetVW = (offsetTop / width) * 100;
+        video.style.top = `${topOffsetVW}vw`;
     }
 
     static getVideoDimensions(currentWidth: number) {

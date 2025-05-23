@@ -18,6 +18,7 @@ export class BackgroundVideoPlayer extends Component {
     private _videoName = "";
     private liveStreamServer = "";
     private _muted = true;
+    private _offsetTop = 0;
 
     private _onPlayStateChanged: (isPlay: boolean) => void = null;
 
@@ -128,6 +129,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private updateVideoOffset(offsetTop: number) {
+        this._offsetTop = offsetTop;
         DOMBackgroundVideo.updateVideoPosition(offsetTop);
     }
 
@@ -182,6 +184,6 @@ export class BackgroundVideoPlayer extends Component {
         this.hls = hls;
         this.native = video;
 
-        DOMBackgroundVideo.updateVideoPosition();
+        DOMBackgroundVideo.updateVideoPosition(this._offsetTop);
     }
 }
