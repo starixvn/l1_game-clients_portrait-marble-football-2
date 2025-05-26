@@ -527,7 +527,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 15,
+      "x": 13.079,
       "y": 71,
       "z": 0
     },
@@ -604,7 +604,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "10%",
+    "_string": "55%",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -1814,9 +1814,7 @@
     "decreaseOdd": {
       "__id__": 42
     },
-    "disableNode": {
-      "__id__": 57
-    },
+    "disableNode": null,
     "blockIcon": null,
     "_id": ""
   },
@@ -1929,7 +1927,6 @@
       "__id__": 0
     },
     "fileId": "ffzICt74lO+pw3moW3ZZJn",
-    "instance": null,
-    "targetOverrides": null
+    "targetOverrides": []
   }
 ]

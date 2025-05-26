@@ -655,7 +655,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -86.692,
+      "x": -87.692,
       "y": 71,
       "z": 0
     },
@@ -732,7 +732,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "50%",
+    "_string": "55%",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 18,
@@ -1942,9 +1942,7 @@
     "decreaseOdd": {
       "__id__": 51
     },
-    "disableNode": {
-      "__id__": 66
-    },
+    "disableNode": null,
     "blockIcon": null,
     "_id": ""
   },
@@ -2032,7 +2030,7 @@
       "__id__": 0
     },
     "fileId": "a095nL0w1G1JJodHcDJ9kX",
-    "targetOverrides": null,
+    "targetOverrides": [],
     "nestedPrefabInstanceRoots": [
       {
         "__id__": 3
