@@ -834,7 +834,7 @@
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "penalty on show",
+    "defaultAnimation": "<None>",
     "_premultipliedAlpha": true,
     "_timeScale": 1,
     "_preCacheMode": 0,
@@ -3191,13 +3191,13 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 605.530029296875,
-      "height": 230.41000366210938
+      "width": 603.530029296875,
+      "height": 231.67999267578125
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5045166799650519,
-      "y": 0.5993229206332388
+      "x": 0.5045316475051769,
+      "y": 0.6015193586671742
     },
     "_id": ""
   },
