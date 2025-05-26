@@ -7,18 +7,27 @@ export class BreakTime extends Component {
     @property(sp.Skeleton)
     private breakTime: sp.Skeleton = null;
 
+    private get breakTimeNode() {
+        return this.breakTime?.node;
+    }
+
+    private setBreakTimeNodeActive(active: boolean) {
+        if (this.breakTimeNode?.parent) {
+            this.breakTimeNode.parent.active = active;
+        }
+    }
+
     protected onLoad(): void {
-        this.breakTime!.node.active = false;
+        this.setBreakTimeNodeActive(false);
     }
 
     protected onDisable(): void {
-        this.breakTime!.node.active = false;
+        this.setBreakTimeNodeActive(false);
     }
 
     playAnimation(at = 0) {
         const name = "animation";
-
-        this.breakTime!.node.active = true;
+        this.setBreakTimeNodeActive(true);
 
         this.breakTime!.setAnimation(0, name, false);
 
@@ -32,7 +41,7 @@ export class BreakTime extends Component {
         }
 
         this.breakTime!.setCompleteListener(() => {
-            this.breakTime!.node.active = false;
+            this.setBreakTimeNodeActive(false);
         });
     }
 }
