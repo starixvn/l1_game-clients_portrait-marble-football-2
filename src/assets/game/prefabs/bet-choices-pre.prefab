@@ -612,7 +612,7 @@
     "instance": {
       "__id__": 26
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -724,7 +724,7 @@
     "instance": {
       "__id__": 34
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -836,7 +836,7 @@
     "instance": {
       "__id__": 42
     },
-    "targetOverrides": null
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",

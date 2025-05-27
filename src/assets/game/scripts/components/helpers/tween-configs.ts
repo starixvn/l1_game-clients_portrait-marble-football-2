@@ -21,7 +21,7 @@ export const DURATION_ANIM_OUT = 0.7;
 export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
         in: { position: v3(0, -68, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -268, 0), time: DURATION_ANIM_OUT },
+        out: { position: v3(0, -262, 0), time: DURATION_ANIM_OUT },
     },
     chipContainerFlyDown: {
         in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },

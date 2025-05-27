@@ -2187,6 +2187,12 @@
       },
       {
         "__id__": 306
+      },
+      {
+        "__id__": 308
+      },
+      {
+        "__id__": 311
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -3818,6 +3824,66 @@
     "__type__": "cc.TargetInfo",
     "localID": [
       "6azfjAnjNFro2D2AffoQMj"
+    ]
+  },
+  {
+    "__type__": "cc.TargetOverrideInfo",
+    "source": {
+      "__id__": 8
+    },
+    "sourceInfo": {
+      "__id__": 309
+    },
+    "propertyPath": [
+      "disableNode"
+    ],
+    "target": {
+      "__id__": 8
+    },
+    "targetInfo": {
+      "__id__": 310
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "19jRstToRK76sK1bvyVKTy"
+    ]
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "94O4lXdZBOIJkeHanw1yaB"
+    ]
+  },
+  {
+    "__type__": "cc.TargetOverrideInfo",
+    "source": {
+      "__id__": 28
+    },
+    "sourceInfo": {
+      "__id__": 312
+    },
+    "propertyPath": [
+      "disableNode"
+    ],
+    "target": {
+      "__id__": 28
+    },
+    "targetInfo": {
+      "__id__": 313
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "9apxgP0U1BRpQlnWqkVLMi"
+    ]
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "c0V8Bcx2BD4qPXwmE+8dfD"
     ]
   }
 ]

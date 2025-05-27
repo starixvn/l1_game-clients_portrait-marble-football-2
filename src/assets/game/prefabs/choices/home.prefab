@@ -1942,7 +1942,9 @@
     "decreaseOdd": {
       "__id__": 51
     },
-    "disableNode": null,
+    "disableNode": {
+      "__id__": 66
+    },
     "blockIcon": null,
     "_id": ""
   },
@@ -2030,6 +2032,7 @@
       "__id__": 0
     },
     "fileId": "a095nL0w1G1JJodHcDJ9kX",
+    "instance": null,
     "targetOverrides": [],
     "nestedPrefabInstanceRoots": [
       {
