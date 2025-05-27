@@ -1741,7 +1741,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 190.845,
+      "x": 177.796,
       "y": 0,
       "z": 0
     },
@@ -1782,8 +1782,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90.0546875,
-      "height": 20.16
+      "width": 101.5264375,
+      "height": 22.68
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1819,13 +1819,13 @@
       "a": 255
     },
     "_string": "Total Stake",
-    "_horizontalAlign": 0,
+    "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 16,
     "_fontSize": 16,
     "_fontFamily": "Arial",
-    "_lineHeight": 16,
-    "_overflow": 0,
+    "_lineHeight": 18,
+    "_overflow": 3,
     "_enableWrapText": true,
     "_font": {
       "__uuid__": "41a12541-a4db-4259-b803-4c477054c858",
@@ -2033,7 +2033,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 288,
+      "x": 288.091,
       "y": 0,
       "z": 0
     },
@@ -2074,8 +2074,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 73.40625,
-      "height": 20.16
+      "width": 106.2028125,
+      "height": 22.68
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2111,13 +2111,13 @@
       "a": 255
     },
     "_string": "Win Loss",
-    "_horizontalAlign": 0,
+    "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 16,
     "_fontSize": 16,
     "_fontFamily": "Arial",
-    "_lineHeight": 16,
-    "_overflow": 0,
+    "_lineHeight": 18,
+    "_overflow": 3,
     "_enableWrapText": true,
     "_font": {
       "__uuid__": "41a12541-a4db-4259-b803-4c477054c858",
@@ -2174,7 +2174,7 @@
     "_alignFlags": 34,
     "_target": null,
     "_left": 0,
-    "_right": 89.296875,
+    "_right": 72.80759375000002,
     "_top": 0,
     "_bottom": 0,
     "_horizontalCenter": 0,
