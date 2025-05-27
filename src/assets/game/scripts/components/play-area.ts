@@ -8,7 +8,7 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { settings } from "../game-settings";
 import { BetChoicesContainer } from "./bet-options/bet-choices-container";
 import { AnimationHelper } from "./helpers/animation-helper";
-import { TweenConfigs, TweenKey, DEFAULT_TWEEN_CONFIGS, DEFAULT_TWEEN_CONFIGS_PORTRAIT } from "./helpers/tween-configs";
+import { DEFAULT_TWEEN_CONFIGS, DEFAULT_TWEEN_CONFIGS_PORTRAIT, TweenConfigs, TweenKey } from "./helpers/tween-configs";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
@@ -137,7 +137,7 @@ export class PlayArea extends ObserverComponent {
         }
 
         if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
-            this.phasePreviewBets = "prev";
+            this.phasePreviewBets = phase.id === PhaseId.ShowLiveVideo ? "live" : "prev";
 
             await Promise.all([
                 AnimationHelper.playAnimByPhaseProgress(
