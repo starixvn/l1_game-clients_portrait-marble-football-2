@@ -13,31 +13,46 @@ export interface TweenConfigs {
     out: TweenConfig;
 }
 
-export type TweenKey = "chipContainerFlyDown" | "fadeInOut" | "betChoiceZoomInOut" | "hiddenPlayersFlyUpBet" | "hiddenPlayersFlyUpBlockBet";
+export type TweenKey =
+    | "chipContainerFlyDown"
+    | "fadeInOut"
+    | "betChoiceZoomInOut"
+    | "hiddenPlayersFlyUpBet"
+    | "hiddenPlayersWhenLive"
+    | "swapButtonWhenBet"
+    | "swapButtonWhenLive";
 
 export const DURATION_ANIM_IN = 0.5;
 export const DURATION_ANIM_OUT = 0.7;
 
 export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { position: v3(0, -68, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -262, 0), time: DURATION_ANIM_OUT },
+        in: { position: v3(0, 22, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -272, 0), time: DURATION_ANIM_OUT },
     },
     chipContainerFlyDown: {
         in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -200, 0), time: DURATION_ANIM_OUT },
+        out: { position: v3(0, -250, 0), time: DURATION_ANIM_OUT },
     },
     fadeInOut: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersFlyUpBet: {
-        in: { positionY: -369, opacity: 255, time: DURATION_ANIM_IN },
+        in: { positionY: -281, opacity: 255, time: 0 },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
-    hiddenPlayersFlyUpBlockBet: {
-        in: { positionY: -565, opacity: 255, time: DURATION_ANIM_IN },
+    hiddenPlayersWhenLive: {
+        in: { positionY: -13, opacity: 255, time: 0 },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
+    },
+    swapButtonWhenBet: {
+        in: { positionY: -294, opacity: 255, time: 0 },
+        out: { opacity: 1, time: DURATION_ANIM_IN },
+    },
+    swapButtonWhenLive: {
+        in: { positionY: 260, opacity: 255, time: 0 },
+        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
 };
 
@@ -58,8 +73,16 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
-    hiddenPlayersFlyUpBlockBet: {
+    hiddenPlayersWhenLive: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
+    },
+    swapButtonWhenBet: {
+        in: { positionY: -294, opacity: 255, time: DURATION_ANIM_IN },
+        out: { opacity: 1, time: DURATION_ANIM_IN },
+    },
+    swapButtonWhenLive: {
+        in: { positionY: -34, opacity: 255, time: DURATION_ANIM_IN },
+        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
 };

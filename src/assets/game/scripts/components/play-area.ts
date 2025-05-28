@@ -105,11 +105,7 @@ export class PlayArea extends ObserverComponent {
         }
 
         if (phase.id === PhaseId.Settlement || phase.id === PhaseId.ShowWinnerAndTournament) {
-            AnimationHelper.playAnimByPhaseProgress(
-                this.hiddenPlayersNode,
-                this.tweenConfigs.hiddenPlayersFlyUpBlockBet.in,
-                phase.progress
-            );
+            AnimationHelper.playAnimByPhaseProgress(this.hiddenPlayersNode, this.tweenConfigs.hiddenPlayersWhenLive.in, phase.progress);
         }
 
         if (phase.id === PhaseId.MatchWinner) {
@@ -124,12 +120,13 @@ export class PlayArea extends ObserverComponent {
                 this.isZoomOut && this.zoomPlayArea("in", phase.progress),
 
                 AnimationHelper.playAnimByPhaseProgress(
-                    [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScorePlaceBet],
+                    [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScorePlaceBet, this.betChoicesContainer.swapBetsButton],
                     [
                         this.tweenConfigs.fadeInOut.in,
                         this.tweenConfigs.fadeInOut.in,
                         this.tweenConfigs.hiddenPlayersFlyUpBet.in,
                         this.tweenConfigs.fadeInOut.in,
+                        this.tweenConfigs.swapButtonWhenBet.in,
                     ],
                     phase.progress
                 ),
@@ -141,13 +138,21 @@ export class PlayArea extends ObserverComponent {
 
             await Promise.all([
                 AnimationHelper.playAnimByPhaseProgress(
-                    [this.teamScore, this.scoreBoard, this.teamScorePlaceBet, this.chips, this.hiddenPlayersNode],
+                    [
+                        this.teamScore,
+                        this.scoreBoard,
+                        this.teamScorePlaceBet,
+                        this.chips,
+                        this.hiddenPlayersNode,
+                        this.betChoicesContainer.swapBetsButton,
+                    ],
                     [
                         this.tweenConfigs.fadeInOut.in,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
-                        this.tweenConfigs.hiddenPlayersFlyUpBlockBet.in,
+                        this.tweenConfigs.hiddenPlayersWhenLive.out,
+                        this.tweenConfigs.swapButtonWhenLive.in,
                     ],
                     phase.progress
                 ),

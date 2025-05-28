@@ -1,4 +1,4 @@
-import { _decorator, Component, EditBox, log, sys, view } from "cc";
+import { log, view } from "cc";
 export class DOMBackgroundVideo {
     static readonly GAME_CONTAINER_ID = "Cocos3dGameContainer";
     static readonly GAME_CANVAS_ID = "GameCanvas";
@@ -10,7 +10,7 @@ export class DOMBackgroundVideo {
     });
 
     static readonly MAX_HEIGHT = 466;
-    static readonly TOP_OFFSET = 12;
+    static readonly TOP_OFFSET = 82;
 
     static createOrLoadVideoElement(parentHeight?: number, scaleY?: number): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
