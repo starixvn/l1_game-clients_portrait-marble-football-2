@@ -110,6 +110,7 @@ export class PlayArea extends ObserverComponent {
 
         if (phase.id === PhaseId.MatchWinner) {
             !this.isZoomOut && this.zoomPlayArea("out", phase.progress);
+            AnimationHelper.playAnimByPhaseProgress([this.hiddenPlayersNode], [this.tweenConfigs.fadeInOut.out], phase.progress);
 
             return;
         }
