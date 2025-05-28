@@ -106,6 +106,13 @@ export class PlayArea extends ObserverComponent {
 
         if (phase.id === PhaseId.Settlement || phase.id === PhaseId.ShowWinnerAndTournament) {
             AnimationHelper.playAnimByPhaseProgress(this.hiddenPlayersNode, this.tweenConfigs.hiddenPlayersWhenLive.in, phase.progress);
+            if (phase.progress === 0) {
+                AnimationHelper.playAnimByPhaseProgress(
+                    [this.betChoicesParentContainer, this.chipContainersParent],
+                    [this.tweenConfigs.betChoiceSettlement.in, this.tweenConfigs.chipContainerSettlement.in],
+                    0
+                );
+            }
         }
 
         if (phase.id === PhaseId.MatchWinner) {
@@ -186,11 +193,9 @@ export class PlayArea extends ObserverComponent {
             await AnimationUtils.delayTime(settings.durations.outro);
             AnimationHelper.playAnimByPhaseProgress(
                 [this.teamScore, this.betChoicesParentContainer, this.chipContainersParent],
-                [this.tweenConfigs.fadeInOut.out, this.tweenConfigs.betChoiceZoomInOut.out, this.tweenConfigs.chipContainerFlyDown.out],
+                [this.tweenConfigs.fadeInOut.out, this.tweenConfigs.betChoiceSettlement.in, this.tweenConfigs.chipContainerSettlement.in],
                 0
             );
-
-            AnimationHelper.playAnimForTarget(this.teamScore, this.tweenConfigs.fadeInOut.out);
         } catch (e) {}
     }
 
