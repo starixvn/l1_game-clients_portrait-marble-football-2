@@ -1,4 +1,5 @@
 import { log, view } from "cc";
+import { TOP_OFFSET_DEFAULT } from "../game/scripts/components/video/video-offset-container";
 export class DOMBackgroundVideo {
     static readonly GAME_CONTAINER_ID = "Cocos3dGameContainer";
     static readonly GAME_CANVAS_ID = "GameCanvas";
@@ -10,7 +11,6 @@ export class DOMBackgroundVideo {
     });
 
     static readonly MAX_HEIGHT = 466;
-    static readonly TOP_OFFSET = 82;
 
     static createOrLoadVideoElement(parentHeight?: number, scaleY?: number): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
@@ -82,8 +82,9 @@ export class DOMBackgroundVideo {
             return;
         }
 
-        if (offsetTop <= 0) {
-            video.style.top = `${this.TOP_OFFSET}px`;
+        if (offsetTop <= TOP_OFFSET_DEFAULT) {
+            video.style.top = `${TOP_OFFSET_DEFAULT}px`;
+
             return;
         }
 

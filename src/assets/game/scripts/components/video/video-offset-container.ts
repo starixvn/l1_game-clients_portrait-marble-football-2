@@ -4,7 +4,7 @@ import { ComponentUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
-
+export const TOP_OFFSET_DEFAULT = 82;
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
     @property(Node)
@@ -13,7 +13,14 @@ export class VideoOffSetContainer extends Component {
     @property(Node)
     private targetNode: Node = null;
 
+    @property
+    private topOffset = 82;
+
     private lastContainerPosition: Vec3 = new Vec3();
+
+    onLoad() {
+        this.topOffset = TOP_OFFSET_DEFAULT;
+    }
 
     private onParentSizeChanged = () => {
         this.updateDisplay();
@@ -51,7 +58,9 @@ export class VideoOffSetContainer extends Component {
 
     protected updateDisplay(): void {
         const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
+        console.log("position---------", position.x, position.y);
         const topOffset = position.y ?? 0;
-        this.node.emit(SYNC_TOP_OFFSET_EVENT, +topOffset);
+        const topOffsetAbs = Math.abs(topOffset);
+        this.node.emit(SYNC_TOP_OFFSET_EVENT, Math.round(topOffsetAbs > this.topOffset ? topOffsetAbs : this.topOffset));
     }
 }
