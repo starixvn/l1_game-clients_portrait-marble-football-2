@@ -1875,7 +1875,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -33,
+      "y": -35,
       "z": 0
     },
     "_lrot": {
@@ -3005,7 +3005,7 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": {
       "__id__": 143
     },
@@ -3098,6 +3098,7 @@
       "__id__": 0
     },
     "fileId": "5fo0qwJu5HHq7MJzbnyMor",
+    "instance": null,
     "targetOverrides": [
       {
         "__id__": 149
