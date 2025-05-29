@@ -61,6 +61,6 @@ export class VideoOffSetContainer extends Component {
         console.log("position---------", position.x, position.y);
         const topOffset = position.y ?? 0;
         const topOffsetAbs = Math.abs(topOffset);
-        this.node.emit(SYNC_TOP_OFFSET_EVENT, Math.round(topOffsetAbs > this.topOffset ? topOffsetAbs : this.topOffset));
+        this.node.emit(SYNC_TOP_OFFSET_EVENT, topOffsetAbs);
     }
 }
