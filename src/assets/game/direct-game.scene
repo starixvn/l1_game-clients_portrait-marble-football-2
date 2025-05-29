@@ -944,7 +944,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 828,
     "_originalHeight": 0,
-    "_alignMode": 1,
+    "_alignMode": 2,
     "_lockFlags": 0,
     "_id": "15XDdT0vpOa5bsRnOvI4hh"
   },
@@ -1449,7 +1449,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 1280,
     "_originalHeight": 1035,
-    "_alignMode": 1,
+    "_alignMode": 2,
     "_lockFlags": 0,
     "_id": "b2fcW2gC1NYIfxRQ7NjfeS"
   },
@@ -1531,7 +1531,7 @@
     "node": {
       "__id__": 45
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": null,
     "_alignFlags": 41,
     "_target": null,
@@ -1549,7 +1549,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 0,
     "_originalHeight": 0,
-    "_alignMode": 1,
+    "_alignMode": 2,
     "_lockFlags": 0,
     "_id": "81IY88TWNBnIj3eEz1slhi"
   },
@@ -6686,7 +6686,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 0,
     "_originalHeight": 100,
-    "_alignMode": 1,
+    "_alignMode": 2,
     "_lockFlags": 0,
     "_id": "83sjqylfRNDInz4ufDG0ES"
   },
