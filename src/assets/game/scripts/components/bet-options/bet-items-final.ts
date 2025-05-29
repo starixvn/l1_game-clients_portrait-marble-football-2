@@ -2,13 +2,24 @@ import gc from "@sg/game-client-base";
 import { _decorator } from "cc";
 import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
 import { BetItemsPolygon as BetItemsPolygonBase } from "db://shared-components/game/bets/scripts/components/bet-items-polygon";
+import { AnimationUtils } from "db://shared-components/shared/utils";
 import Observer from "observer";
-const { ccclass } = _decorator;
+import { GamePhase, PhaseId } from "../../features/game-phase/game-phase-definitions";
+import { GamePhaseStore } from "../../features/game-phase/game-phase-store";
+import { Teams } from "../teams";
+const { ccclass, property } = _decorator;
 const { render } = Observer;
 const { Rounds } = gc;
 
 @ccclass("BetItemsFinal")
 export class BetItemsFinal extends BetItemsPolygonBase {
+    team: Teams = null;
+
+    onLoad() {
+        super.onLoad();
+        this.team = this.node?.getComponent(Teams);
+    }
+
     @render(Rounds.RoundStore, (store) => store.ownBets, { fireImmediately: false })
     renderOwnBets(ownBets: gc.GameServiceMessage.OwnBets) {}
 
@@ -70,5 +81,66 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         return this.betItemComponents.filter(
             (item: BetItem) => this.settlementResult?.[item.betChoice] || this.settlementResult?.[`${item.betChoice}Live`]
         );
+    }
+
+    @render(GamePhaseStore, (store) => store.beforeEnterPhase)
+    async beforeEnterPhase(phase: GamePhase) {
+        if (!phase) {
+            return;
+        }
+        if (phase.id === PhaseId.Settlement) {
+            this.handleShowFlag(true);
+        }
+    }
+
+    @render(GamePhaseStore, (store) => store.enterPhase)
+    async renderEnterPhase(phase: GamePhase) {
+        if (!phase) {
+            return;
+        }
+
+        if (phase.id === PhaseId.ShowWinnerAndTournament || phase.id === PhaseId.MatchWinner) {
+            console.log("phase.progress", phase.progress, phase.id);
+            if (phase.progress === 0) {
+                await AnimationUtils.delayTime(1);
+            }
+
+            this.clearHighlights();
+            this.clearTotalBet();
+            this.clearOwnBet();
+            this.clearPercentBet();
+            this.handleShowFlag(false);
+        }
+    }
+
+    private clearHighlights() {
+        this.betItemComponents?.forEach((betItem) => {
+            betItem?.handleHighlightStatic(false);
+        });
+    }
+
+    private clearTotalBet() {
+        this.betItemComponents?.forEach((betItem) => {
+            betItem?.renderTotalBet("");
+        });
+    }
+
+    private clearOwnBet() {
+        this.betItemComponents?.forEach((betItem) => {
+            betItem?.renderOwnBet("");
+        });
+    }
+
+    private clearPercentBet() {
+        this.betItemComponents?.forEach((betItem) => {
+            betItem?.renderUserBetPercentage(0);
+        });
+    }
+
+    private handleShowFlag(isShow: boolean) {
+        if (this?.team) {
+            this.team?.home && AnimationUtils.setOpacityNode(this.team.home.node, isShow ? 255 : 1);
+            this.team?.away && AnimationUtils.setOpacityNode(this.team.away.node, isShow ? 255 : 1);
+        }
     }
 }

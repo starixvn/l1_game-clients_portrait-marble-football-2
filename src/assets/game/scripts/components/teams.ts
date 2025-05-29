@@ -12,10 +12,10 @@ const { render } = Observer;
 @ccclass("Teams")
 export class Teams extends ObserverComponent {
     @property(Flag)
-    private home: Flag = null;
+    home: Flag = null;
 
     @property(Flag)
-    private away: Flag = null;
+    away: Flag = null;
 
     @property(TeamName)
     private homeName: TeamName = null;
