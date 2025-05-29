@@ -49,7 +49,7 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersFlyUpBet: {
-        in: { positionY: -281, opacity: 255, time: 0 },
+        in: { positionY: -270, opacity: 255, time: 0 },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersWhenLive: {

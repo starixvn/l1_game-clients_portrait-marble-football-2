@@ -13,14 +13,7 @@ export class VideoOffSetContainer extends Component {
     @property(Node)
     private targetNode: Node = null;
 
-    @property
-    private topOffset = 82;
-
     private lastContainerPosition: Vec3 = new Vec3();
-
-    onLoad() {
-        this.topOffset = TOP_OFFSET_DEFAULT;
-    }
 
     private onParentSizeChanged = () => {
         this.updateDisplay();
