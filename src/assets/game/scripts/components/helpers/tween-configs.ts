@@ -14,7 +14,6 @@ export interface TweenConfigs {
 }
 
 export type TweenKey =
-    | "chipContainerFlyDown"
     | "fadeInOut"
     | "betChoiceZoomInOut"
     | "hiddenPlayersFlyUpBet"
@@ -31,10 +30,6 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
         in: { position: v3(0, 22, 0), time: DURATION_ANIM_IN },
         out: { position: v3(0, -272, 0), time: DURATION_ANIM_OUT },
-    },
-    chipContainerFlyDown: {
-        in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -250, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
         in: { position: v3(0, -237, 0), time: 0 },
@@ -70,10 +65,6 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
         in: { position: v3(0, -123, 0), time: DURATION_ANIM_IN },
         out: { position: v3(0, -123, 0), time: DURATION_ANIM_OUT },
-    },
-    chipContainerFlyDown: {
-        in: { position: v3(0, 0, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, 0, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
         in: { position: v3(0, -237, 0), time: DURATION_ANIM_IN },

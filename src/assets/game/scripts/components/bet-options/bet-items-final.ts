@@ -11,6 +11,8 @@ const { ccclass, property } = _decorator;
 const { render } = Observer;
 const { Rounds } = gc;
 
+const SHOW_WINNER_DELAY_SECONDS = 1;
+
 @ccclass("BetItemsFinal")
 export class BetItemsFinal extends BetItemsPolygonBase {
     team: Teams = null;
@@ -102,7 +104,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         if (phase.id === PhaseId.ShowWinnerAndTournament || phase.id === PhaseId.MatchWinner) {
             console.log("phase.progress", phase.progress, phase.id);
             if (phase.progress === 0) {
-                await AnimationUtils.delayTime(1);
+                await AnimationUtils.delayTime(SHOW_WINNER_DELAY_SECONDS);
             }
 
             this.clearHighlights();
