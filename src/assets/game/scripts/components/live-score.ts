@@ -1,7 +1,10 @@
-import { _decorator, Label } from "cc";
+import { _decorator, Label, Node } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
+import { AnimationUtils } from "db://shared-components/shared/utils";
 import Observer from "observer";
 import { LocalizedLabel } from "../../../../extensions/i18n/assets/LocalizedLabel";
+import { GamePhase, PhaseId } from "../features/game-phase/game-phase-definitions";
+import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { VideoStreamStore } from "../features/video-stream/video-stream-store";
 import { settings } from "../game-settings";
 import { Flag } from "./flag";
@@ -25,6 +28,12 @@ export class LiveScore extends ObserverComponent {
 
     @property(Label)
     private half: Label = null;
+
+    @property(Node)
+    private containerScore: Node = null;
+
+    @property(Node)
+    private containerTime: Node = null;
 
     seconds = 0;
     minutes = 0;
@@ -100,5 +109,24 @@ export class LiveScore extends ObserverComponent {
         }
 
         this.secondsLabel.string = this.seconds.toString().padStart(2, "0");
+    }
+    @render(GamePhaseStore, (store) => store.enterPhase)
+    async renderEnterPhase(phase: GamePhase) {
+        if (phase.id === PhaseId.ShowBetChoicesLive || phase.id === PhaseId.ShowBetChoicesPrev) {
+            AnimationUtils.setOpacityNode(this.containerTime, 1);
+        }
+
+        if (phase.id === PhaseId.ShowBetChoicesPrev) {
+            AnimationUtils.setOpacityNode(this.containerScore, 1);
+        }
+
+        if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
+            AnimationUtils.setOpacityNode(this.containerTime, 255);
+            AnimationUtils.setOpacityNode(this.containerScore, 255);
+        }
+
+        if (phase.id === PhaseId.ShowBetChoicesLive) {
+            AnimationUtils.setOpacityNode(this.containerScore, 255);
+        }
     }
 }

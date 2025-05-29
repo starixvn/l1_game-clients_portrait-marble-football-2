@@ -33,9 +33,6 @@ export class PlayArea extends ObserverComponent {
     private teamScore: Node = null;
 
     @property(Node)
-    private teamScorePlaceBet: Node = null;
-
-    @property(Node)
     private hiddenPlayersNode: Node = null;
 
     @property([Node])
@@ -89,7 +86,6 @@ export class PlayArea extends ObserverComponent {
             { node: this.teamScore, config: this.tweenConfigs.fadeInOut.out },
             { node: this.scoreBoard, config: this.tweenConfigs.fadeInOut.out },
             { node: this.chips, config: this.tweenConfigs.fadeInOut.out },
-            { node: this.teamScorePlaceBet, config: this.tweenConfigs.fadeInOut.out },
             { node: this.hiddenPlayersNode, config: this.tweenConfigs.hiddenPlayersFlyUpBet.out },
         ];
 
@@ -128,7 +124,7 @@ export class PlayArea extends ObserverComponent {
                 this.isZoomOut && this.zoomPlayArea("in", phase.progress),
 
                 AnimationHelper.playAnimByPhaseProgress(
-                    [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScorePlaceBet, this.betChoicesContainer.swapBetsButton],
+                    [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScore, this.betChoicesContainer.swapBetsButton],
                     [
                         this.tweenConfigs.fadeInOut.in,
                         this.tweenConfigs.fadeInOut.in,
@@ -146,17 +142,9 @@ export class PlayArea extends ObserverComponent {
 
             await Promise.all([
                 AnimationHelper.playAnimByPhaseProgress(
-                    [
-                        this.teamScore,
-                        this.scoreBoard,
-                        this.teamScorePlaceBet,
-                        this.chips,
-                        this.hiddenPlayersNode,
-                        this.betChoicesContainer.swapBetsButton,
-                    ],
+                    [this.teamScore, this.scoreBoard, this.chips, this.hiddenPlayersNode, this.betChoicesContainer.swapBetsButton],
                     [
                         this.tweenConfigs.fadeInOut.in,
-                        this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.hiddenPlayersWhenLive.out,

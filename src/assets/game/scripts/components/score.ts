@@ -1,4 +1,4 @@
-import { _decorator, Label } from "cc";
+import { _decorator, Label, Node } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import Observer from "observer";
 import { VideoStreamStore } from "../features/video-stream/video-stream-store";
@@ -13,6 +13,9 @@ export class Score extends ObserverComponent {
 
     @property(Label)
     protected away: Label = null;
+
+    @property(Node)
+    protected containerScore: Node = null;
 
     onLoad() {
         this.setHome(0);
