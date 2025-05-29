@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Button, Node, Vec3, _decorator, sys } from "cc";
+import { Button, Node, _decorator } from "cc";
 import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import { AnimationUtils } from "db://shared-components/shared/utils";
@@ -98,10 +98,6 @@ export class BetChoicesContainer extends ObserverComponent {
     private setupStatusButtons(): void {
         this.statusBetsButton = this.previewBetsButton?.getComponent(StatusBetsButton);
         this.setEnabledPreviewBets(false);
-        if (sys.isMobile) {
-            this.previewBetsButton && (this.previewBetsButton.scale = new Vec3(1.5, 1.5, 1.5));
-            this.swapBetsButton && (this.swapBetsButton.scale = new Vec3(1.5, 1.5, 1.5));
-        }
 
         this.swapBetsButton.active = false;
     }
