@@ -89,7 +89,6 @@ export class DOMBackgroundVideo {
         }
 
         const width = view.getVisibleSize()?.width;
-        console.log("width cocos--------innerWidth", width, window.innerWidth);
         const topOffsetVW = Number(((offsetTop / width) * 100).toFixed(2));
         video.style.top = `${topOffsetVW}vw`;
     }

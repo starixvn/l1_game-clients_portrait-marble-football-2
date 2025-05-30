@@ -1548,7 +1548,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 0,
     "_originalHeight": 0,
-    "_alignMode": 2,
+    "_alignMode": 0,
     "_lockFlags": 0,
     "_id": "81IY88TWNBnIj3eEz1slhi"
   },
@@ -6725,7 +6725,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 0,
     "_originalHeight": 100,
-    "_alignMode": 2,
+    "_alignMode": 0,
     "_lockFlags": 0,
     "_id": "83sjqylfRNDInz4ufDG0ES"
   },

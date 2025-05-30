@@ -50,7 +50,6 @@ export class PlayArea extends ObserverComponent {
     onLoad() {
         if (this.isPortrait) {
             this.tweenConfigs = DEFAULT_TWEEN_CONFIGS_PORTRAIT;
-            console.log("this.tweenConfigs", this.tweenConfigs);
         }
         this.initBetChoicesContainer();
         this.setupStaticTargets();

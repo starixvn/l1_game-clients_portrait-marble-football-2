@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, screen, Vec3 } from "cc";
 import { EDITOR } from "cc/env";
-import { ComponentUtils } from "db://shared-components/shared/utils";
+import { ComponentUtils, FunctionUtils, isIOS } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
@@ -29,7 +29,7 @@ export class VideoOffSetContainer extends Component {
         }
     }
 
-    public onEnable(): void {
+    public async onEnable() {
         this.toggleSizeChangedListener(true);
         this.updateDisplay();
     }
@@ -38,7 +38,7 @@ export class VideoOffSetContainer extends Component {
         this.toggleSizeChangedListener(false);
     }
 
-    public update(delta: number): void {
+    public async update(delta: number) {
         if (this.containerNode && !this.containerNode.position.equals(this.lastContainerPosition)) {
             this.updateDisplay();
             this.lastContainerPosition.set(this.containerNode.position);
@@ -58,10 +58,13 @@ export class VideoOffSetContainer extends Component {
         return frameSize.width < frameSize.height;
     }
 
-    protected updateDisplay(): void {
+    protected async updateDisplay() {
+        if (isIOS()) {
+            await FunctionUtils.delay(500);
+        }
+
         if (this.isPortraitMode()) {
             const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
-            console.log("position---------", position.x, position.y);
             const topOffset = position.y ?? 0;
             const topOffsetAbs = Math.abs(topOffset);
             this.node.emit(SYNC_TOP_OFFSET_EVENT, topOffsetAbs);
