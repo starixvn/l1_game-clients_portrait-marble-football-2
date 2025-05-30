@@ -7,7 +7,7 @@ import Observer from "observer";
 import { GamePhase, PhaseId } from "../../features/game-phase/game-phase-definitions";
 import { GamePhaseStore } from "../../features/game-phase/game-phase-store";
 import { Teams } from "../teams";
-const { ccclass, property } = _decorator;
+const { ccclass } = _decorator;
 const { render } = Observer;
 const { Rounds } = gc;
 
@@ -85,16 +85,6 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         );
     }
 
-    @render(GamePhaseStore, (store) => store.beforeEnterPhase)
-    async beforeEnterPhase(phase: GamePhase) {
-        if (!phase) {
-            return;
-        }
-        if (phase.id === PhaseId.Settlement) {
-            this.handleShowFlag(true);
-        }
-    }
-
     @render(GamePhaseStore, (store) => store.enterPhase)
     async renderEnterPhase(phase: GamePhase) {
         if (!phase) {
@@ -139,7 +129,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         });
     }
 
-    private handleShowFlag(isShow: boolean) {
+    public handleShowFlag(isShow: boolean) {
         if (this?.team) {
             this.team?.home && AnimationUtils.setOpacityNode(this.team.home.node, isShow ? 255 : 1);
             this.team?.away && AnimationUtils.setOpacityNode(this.team.away.node, isShow ? 255 : 1);

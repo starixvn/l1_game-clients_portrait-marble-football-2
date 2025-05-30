@@ -204,6 +204,12 @@ export class BetChoicesContainer extends ObserverComponent {
             this.handleBetChoicesPhase(phase);
             return;
         }
+
+        if (phase.id === PhaseId.Tournament) {
+            this.betChoicesFinal.active = false;
+
+            return;
+        }
     }
 
     private setDisabledBetChoices(type: "prev" | "live", isDisabled: boolean) {
@@ -253,6 +259,7 @@ export class BetChoicesContainer extends ObserverComponent {
 
     private handleAfterActiveBetItemsFinal() {
         const finalBetItems = this.betChoicesFinal.getComponent(BetItemsFinal);
+        finalBetItems.handleShowFlag(true);
         finalBetItems.bindTotalBets(this._totalBets);
         finalBetItems.bindOwnBets(this._ownBets);
         finalBetItems.bindUserBetPercentage(this._userPercentage);

@@ -1,9 +1,9 @@
+import { _decorator } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
+import Observer from "observer";
 import { GamePhaseConfig, PhaseId, TimePointShowMatchWinner, TimePointTournament } from "../../features/game-phase/game-phase-definitions";
 import { GamePhaseHandler } from "../../features/game-phase/game-phase-handler";
 import { settings } from "../../game-settings";
-import Observer from "observer";
-import { _decorator } from "cc";
 const { ccclass } = _decorator;
 
 const { handle } = Observer;

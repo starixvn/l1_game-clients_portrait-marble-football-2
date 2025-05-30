@@ -10,7 +10,7 @@ export interface TweenConfig {
 
 export interface TweenConfigs {
     in: TweenConfig;
-    out: TweenConfig;
+    out?: TweenConfig;
 }
 
 export type TweenKey =
@@ -20,8 +20,7 @@ export type TweenKey =
     | "hiddenPlayersWhenLive"
     | "swapButtonWhenBet"
     | "swapButtonWhenLive"
-    | "betChoiceSettlement"
-    | "chipContainerSettlement";
+    | "betChoiceSettlement";
 
 export const DURATION_ANIM_IN = 0.5;
 export const DURATION_ANIM_OUT = 0.7;
@@ -32,12 +31,7 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
         out: { position: v3(0, -272, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
-        in: { position: v3(0, -237, 0), time: 0 },
-        out: { time: DURATION_ANIM_OUT },
-    },
-    chipContainerSettlement: {
-        in: { position: v3(0, -215, 0), time: DURATION_ANIM_IN },
-        out: { time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -237, 0), time: DURATION_ANIM_IN },
     },
     fadeInOut: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
@@ -68,10 +62,6 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     },
     betChoiceSettlement: {
         in: { position: v3(0, -237, 0), time: DURATION_ANIM_IN },
-        out: { time: DURATION_ANIM_OUT },
-    },
-    chipContainerSettlement: {
-        in: { position: v3(0, 215, 0), time: DURATION_ANIM_IN },
         out: { time: DURATION_ANIM_OUT },
     },
     fadeInOut: {
