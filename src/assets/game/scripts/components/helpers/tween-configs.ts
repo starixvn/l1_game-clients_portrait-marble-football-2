@@ -39,19 +39,15 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     },
     hiddenPlayersFlyUpBet: {
         in: { positionY: -270, opacity: 255, time: 0 },
-        out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersWhenLive: {
         in: { positionY: 22, opacity: 255, time: 0 },
-        out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     swapButtonWhenBet: {
         in: { positionY: -294, opacity: 255, time: 0 },
-        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
     swapButtonWhenLive: {
         in: { positionY: 260, opacity: 255, time: 0 },
-        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
 };
 
@@ -70,18 +66,14 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     },
     hiddenPlayersFlyUpBet: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
-        out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersWhenLive: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
-        out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     swapButtonWhenBet: {
         in: { positionY: -294, opacity: 255, time: DURATION_ANIM_IN },
-        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
     swapButtonWhenLive: {
         in: { positionY: -34, opacity: 255, time: DURATION_ANIM_IN },
-        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
 };

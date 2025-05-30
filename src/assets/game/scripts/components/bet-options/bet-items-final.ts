@@ -92,7 +92,6 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         }
 
         if (phase.id === PhaseId.ShowWinnerAndTournament || phase.id === PhaseId.MatchWinner) {
-            console.log("phase.progress", phase.progress, phase.id);
             if (phase.progress === 0) {
                 await AnimationUtils.delayTime(SHOW_WINNER_DELAY_SECONDS);
             }

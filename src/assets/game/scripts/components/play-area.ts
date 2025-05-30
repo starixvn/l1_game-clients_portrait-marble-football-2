@@ -68,7 +68,7 @@ export class PlayArea extends ObserverComponent {
             { node: this.teamScore, config: this.tweenConfigs.fadeInOut.out },
             { node: this.scoreBoard, config: this.tweenConfigs.fadeInOut.out },
             { node: this.chips, config: this.tweenConfigs.fadeInOut.out },
-            { node: this.hiddenPlayersNode, config: this.tweenConfigs.hiddenPlayersFlyUpBet.out },
+            { node: this.hiddenPlayersNode, config: this.tweenConfigs.fadeInOut.out },
         ];
 
         staticTargets.forEach(({ node, config }) => {
@@ -125,7 +125,7 @@ export class PlayArea extends ObserverComponent {
                         this.tweenConfigs.fadeInOut.in,
                         this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.fadeInOut.out,
-                        this.tweenConfigs.hiddenPlayersWhenLive.out,
+                        this.tweenConfigs.fadeInOut.out,
                         this.tweenConfigs.swapButtonWhenLive.in,
                     ],
                     phase.progress
