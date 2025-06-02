@@ -30,9 +30,6 @@ export class LiveScore extends ObserverComponent {
     private half: Label = null;
 
     @property(Node)
-    private containerScore: Node = null;
-
-    @property(Node)
     private containerTime: Node = null;
 
     seconds = 0;
@@ -116,17 +113,8 @@ export class LiveScore extends ObserverComponent {
             AnimationUtils.setOpacityNode(this.containerTime, 1);
         }
 
-        if (phase.id === PhaseId.ShowBetChoicesPrev) {
-            AnimationUtils.setOpacityNode(this.containerScore, 1);
-        }
-
         if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
             AnimationUtils.setOpacityNode(this.containerTime, 255);
-            AnimationUtils.setOpacityNode(this.containerScore, 255);
-        }
-
-        if (phase.id === PhaseId.ShowBetChoicesLive) {
-            AnimationUtils.setOpacityNode(this.containerScore, 255);
         }
     }
 }
