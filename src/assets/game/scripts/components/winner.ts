@@ -23,11 +23,11 @@ export class Winner extends Component {
     }
 
     protected onLoad(): void {
-        this.spine!.node.active = false;
+        this.spine && (this.spine.node.active = false);
     }
 
     protected onDisable(): void {
-        this.spine!.node.active = false;
+        this.spine && (this.spine.node.active = false);
     }
 
     private playAnimation(spine: sp.Skeleton, name: string, at = 0) {

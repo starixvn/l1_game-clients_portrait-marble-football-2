@@ -38,7 +38,7 @@ export class PlayArea extends ObserverComponent {
     @property
     private isPortrait = false;
 
-    private isZoomOut: boolean = false;
+    private isBetOptionsZoomedOut = false;
 
     private tweenConfigs: Record<TweenKey, TweenConfigs> = DEFAULT_TWEEN_CONFIGS;
 
@@ -89,7 +89,7 @@ export class PlayArea extends ObserverComponent {
         }
 
         if (phase.id === PhaseId.MatchWinner) {
-            !this.isZoomOut && this.zoomBetChoices("out", phase.progress);
+            !this.isBetOptionsZoomedOut && this.zoomBetChoices("out", phase.progress);
             AnimationHelper.playAnimByPhaseProgress([this.hiddenPlayersNode], [this.tweenConfigs.fadeInOut.out], phase.progress);
 
             return;
@@ -98,7 +98,7 @@ export class PlayArea extends ObserverComponent {
         if (phase.id === PhaseId.ShowBetChoicesPrev || phase.id === PhaseId.ShowBetChoicesLive) {
             this.phaseShowBetChoices = phase.id === PhaseId.ShowBetChoicesPrev ? "prev" : "live";
             await Promise.all([
-                this.isZoomOut && this.zoomBetChoices("in", phase.progress),
+                this.isBetOptionsZoomedOut && this.zoomBetChoices("in", phase.progress),
 
                 AnimationHelper.playAnimByPhaseProgress(
                     [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScore, this.betChoicesContainer.swapBetsButton],
@@ -129,10 +129,8 @@ export class PlayArea extends ObserverComponent {
                     ],
                     phase.progress
                 ),
-                !this.isZoomOut && this.zoomBetChoices("out", phase.progress),
+                !this.isBetOptionsZoomedOut && this.zoomBetChoices("out", phase.progress),
             ]);
-
-            return;
         }
     }
 
@@ -165,7 +163,7 @@ export class PlayArea extends ObserverComponent {
     }
 
     private async zoomBetChoices(direction: "in" | "out", progress: number): Promise<void> {
-        this.isZoomOut = direction === "out";
+        this.isBetOptionsZoomedOut = direction === "out";
 
         const target = { target: this.betChoicesParentContainer, key: "betChoiceZoomInOut" as TweenKey };
         if (progress === 0) {
@@ -176,10 +174,10 @@ export class PlayArea extends ObserverComponent {
     }
 
     private async setStaticBetChoices(direction: "in" | "out"): Promise<void> {
-        this.isZoomOut = direction === "out";
+        this.isBetOptionsZoomedOut = direction === "out";
 
         const target = { target: this.betChoicesParentContainer, key: "betChoiceZoomInOut" as TweenKey };
-        await AnimationHelper.setStaticTarget(target.target, this.tweenConfigs[target.key][direction]);
+        AnimationHelper.setStaticTarget(target.target, this.tweenConfigs[target.key][direction]);
     }
 
     @handle(gc.Audios.AudioHandler, (handle) => handle.playSFX(gc.Audios.AudioIds.CLICK))

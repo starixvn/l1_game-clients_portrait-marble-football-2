@@ -207,8 +207,6 @@ export class BetChoicesContainer extends ObserverComponent {
 
         if (phase.id === PhaseId.Tournament) {
             this.betChoicesFinal.active = false;
-
-            return;
         }
     }
 

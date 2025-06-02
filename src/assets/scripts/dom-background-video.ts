@@ -95,8 +95,8 @@ export class DOMBackgroundVideo {
 
     static getVideoDimensions(currentWidth: number) {
         const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
-        let width = Math.min(currentWidth, view.getVisibleSize()?.width);
-        let height = width / ratio;
+        const width = Math.min(currentWidth, view.getVisibleSize()?.width);
+        const height = width / ratio;
 
         return {
             width: Math.round(width),

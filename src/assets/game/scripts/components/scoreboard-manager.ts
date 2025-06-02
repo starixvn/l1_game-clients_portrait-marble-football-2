@@ -1,7 +1,7 @@
-import { _decorator, Component, Node } from "cc";
 import gc from "@sg/game-client-base";
-import Observer from "observer";
+import { _decorator, Component, Node } from "cc";
 import { FunctionUtils } from "db://shared-components/shared/utils";
+import Observer from "observer";
 
 const { ccclass, property } = _decorator;
 const { handle, useObserver } = Observer;
@@ -11,7 +11,7 @@ export class ScoreboardManager extends Component {
     @property([Node])
     private boards: Node[] = [];
 
-    private boardIndex: number = 0;
+    private boardIndex = 0;
 
     private dispose: Function;
 

@@ -13,9 +13,9 @@ export class VideoOffSetContainer extends Component {
     @property(Node)
     private targetNode: Node = null;
 
-    private lastContainerPosition: Vec3 = new Vec3();
+    private readonly lastContainerPosition = new Vec3();
 
-    private onParentSizeChanged = () => {
+    private readonly onParentSizeChanged = () => {
         this.updateDisplay();
     };
 

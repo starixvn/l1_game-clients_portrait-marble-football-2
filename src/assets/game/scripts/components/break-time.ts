@@ -28,20 +28,19 @@ export class BreakTime extends Component {
     playAnimation(at = 0) {
         const name = "animation";
         this.setBreakTimeNodeActive(true);
+        if (this.breakTime) {
+            this.breakTime.setAnimation(0, name, false);
+            const animation = this.breakTime.findAnimation(name);
+            const entry = this.breakTime.getCurrent(0);
+            if (at > animation.duration) {
+                entry.trackTime = animation.duration;
+            } else {
+                entry.trackTime = at;
+            }
 
-        this.breakTime!.setAnimation(0, name, false);
-
-        const animation = this.breakTime!.findAnimation(name);
-        const entry = this.breakTime!.getCurrent(0);
-
-        if (at > animation.duration) {
-            entry.trackTime = animation.duration;
-        } else {
-            entry.trackTime = at;
+            this.breakTime.setCompleteListener(() => {
+                this.setBreakTimeNodeActive(false);
+            });
         }
-
-        this.breakTime!.setCompleteListener(() => {
-            this.setBreakTimeNodeActive(false);
-        });
     }
 }

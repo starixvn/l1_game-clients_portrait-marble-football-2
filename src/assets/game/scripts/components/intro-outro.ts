@@ -1,4 +1,4 @@
-import { _decorator, Component, UIOpacity, tween, Tween } from "cc";
+import { _decorator, Component, tween, UIOpacity } from "cc";
 
 const { ccclass, property } = _decorator;
 
@@ -13,7 +13,7 @@ export class IntroOutro extends Component {
     @property(UIOpacity)
     private backgroundBlur: UIOpacity = null;
 
-    private maxOpacity = 255;
+    private readonly maxOpacity = 255;
 
     set showGameBackground(value: boolean) {
         this.gameBackground.node.active = value;

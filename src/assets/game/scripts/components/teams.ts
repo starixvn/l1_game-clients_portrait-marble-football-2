@@ -36,8 +36,8 @@ export class Teams extends ObserverComponent {
             this.away?.setIcon(currentMatch.away);
             this.homeName?.setName(currentMatch.home);
             this.awayName?.setName(currentMatch.away);
-            this.homeCode && (this.homeCode!.string = currentMatch.home);
-            this.awayCode && (this.awayCode!.string = currentMatch.away);
+            this.homeCode && (this.homeCode.string = currentMatch.home);
+            this.awayCode && (this.awayCode.string = currentMatch.away);
         }
     }
 }

@@ -69,11 +69,26 @@ export class MiniGame extends Component {
     }
 
     setWinLoseLabel(isHomeWin: boolean) {
-        this.home!.node.getChildByPath("result/win")!.active = isHomeWin;
-        this.away!.node.getChildByPath("result/lose")!.active = isHomeWin;
+        const homeWin = this.home?.node?.getChildByPath("result/win");
+        const homeLose = this.home?.node?.getChildByPath("result/lose");
+        const awayWin = this.away?.node?.getChildByPath("result/win");
+        const awayLose = this.away?.node?.getChildByPath("result/lose");
 
-        this.home!.node.getChildByPath("result/lose")!.active = !isHomeWin;
-        this.away!.node.getChildByPath("result/win")!.active = !isHomeWin;
+        if (homeWin) {
+            homeWin.active = isHomeWin;
+        }
+
+        if (awayLose) {
+            awayLose.active = isHomeWin;
+        }
+
+        if (homeLose) {
+            homeLose.active = !isHomeWin;
+        }
+
+        if (awayWin) {
+            awayWin.active = !isHomeWin;
+        }
     }
 
     private playAnimation(

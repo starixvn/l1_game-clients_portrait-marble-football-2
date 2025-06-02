@@ -1,8 +1,7 @@
-import { _decorator, Component, Node, UITransform } from "cc";
+import { _decorator, Component } from "cc";
 import Hls from "hls.js";
-import { DOMBackgroundVideo } from "./dom-background-video";
-import { GameAdjustWidget } from "db://direct-shared-components/shared/common-components/game-adjust-widget";
 import { SYNC_TOP_OFFSET_EVENT, VideoOffSetContainer } from "../game/scripts/components/video/video-offset-container";
+import { DOMBackgroundVideo } from "./dom-background-video";
 
 const { ccclass, property } = _decorator;
 
