@@ -202,12 +202,17 @@ export class BetChoicesContainer extends ObserverComponent {
 
         if (phase.id === PhaseId.ShowBetChoicesPrev || phase.id === PhaseId.ShowBetChoicesLive) {
             this.handleBetChoicesPhase(phase);
+            phase.id === PhaseId.ShowBetChoicesPrev && this.resetSwapBets();
             return;
         }
 
         if (phase.id === PhaseId.Tournament) {
             this.betChoicesFinal.active = false;
         }
+    }
+
+    private resetSwapBets() {
+        this.isSwapBets = false;
     }
 
     private setDisabledBetChoices(type: "prev" | "live", isDisabled: boolean) {

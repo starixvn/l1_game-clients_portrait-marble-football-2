@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, screen, Vec3 } from "cc";
 import { EDITOR } from "cc/env";
-import { ComponentUtils, FunctionUtils, isIOS } from "db://shared-components/shared/utils";
+import { ComponentUtils, FunctionUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
@@ -59,9 +59,7 @@ export class VideoOffSetContainer extends Component {
     }
 
     protected async updateDisplay() {
-        if (isIOS()) {
-            await FunctionUtils.delay(500);
-        }
+        await FunctionUtils.delay(300);
 
         if (this.isPortraitMode()) {
             const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
