@@ -27,7 +27,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     websocketOptions: {
         timeout: 3000,
     },
-    mainObserverNamespace: "MarbleFootball2",
     tolgeeUrl: "",
     storagePrefixKey: "portrait_marbleFootball2",
 };
