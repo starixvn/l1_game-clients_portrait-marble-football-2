@@ -98,7 +98,6 @@ export class PlayArea extends ObserverComponent {
 
         if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
             await this.handleShowVideoPhase(phase);
-            return;
         }
     }
 
