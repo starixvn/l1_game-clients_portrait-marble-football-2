@@ -91,11 +91,7 @@ export class MiniGame extends Component {
         }
     }
 
-    private playAnimation(
-        main: { spine: sp.Skeleton; animation: string },
-        side: { spine: sp.Skeleton; animation: string }[],
-        at: number = 0
-    ) {
+    private playAnimation(main: { spine: sp.Skeleton; animation: string }, side: { spine: sp.Skeleton; animation: string }[], at = 0) {
         main.spine.node.active = true;
 
         const mainAnimation = main.spine.findAnimation(main.animation);
@@ -142,9 +138,9 @@ export class MiniGame extends Component {
     }
 
     private disableAllSkeletonNodes() {
-        this.home!.node.active = false;
-        this.away!.node.active = false;
-        this.statistic!.node.active = false;
-        this.game!.node.active = false;
+        this.home && (this.home.node.active = false);
+        this.away && (this.away.node.active = false);
+        this.statistic && (this.statistic.node.active = false);
+        this.game && (this.game.node.active = false);
     }
 }
