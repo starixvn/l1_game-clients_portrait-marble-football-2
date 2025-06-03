@@ -24,9 +24,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "marblefootball2",
         route: "marblefootball2",
     },
-    websocketOptions: {
-        timeout: 3000,
-    },
     tolgeeUrl: "",
     storagePrefixKey: "portrait_marbleFootball2",
 };
