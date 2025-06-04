@@ -27,27 +27,27 @@ export const DURATION_ANIM_OUT = 0.7;
 
 export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { position: v3(0, 22, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -272, 0), time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -70, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -364, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
-        in: { position: v3(0, -237, 0), time: DURATION_ANIM_IN },
+        in: { position: v3(0, -333, 0), time: DURATION_ANIM_IN },
     },
     fadeInOut: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
     hiddenPlayersFlyUpBet: {
-        in: { positionY: -270, opacity: 255, time: 0 },
+        in: { positionY: -362, opacity: 255, time: 0 },
     },
     hiddenPlayersWhenLive: {
-        in: { positionY: 22, opacity: 255, time: 0 },
+        in: { positionY: -82, opacity: 255, time: 0 },
     },
     swapButtonWhenBet: {
         in: { positionY: -294, opacity: 255, time: 0 },
     },
     swapButtonWhenLive: {
-        in: { positionY: 260, opacity: 255, time: 0 },
+        in: { positionY: 257, opacity: 255, time: 0 },
     },
 };
 
