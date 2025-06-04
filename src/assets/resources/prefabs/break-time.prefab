@@ -45,8 +45,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -4.736011347040858,
-      "y": -18.742787699934865,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -98,8 +98,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 4.736011347040858,
-      "y": 18.742787699934865,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -284,7 +284,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 166.597,
+      "y": 248.923,
       "z": 0
     },
     "_lrot": {
@@ -1475,8 +1475,8 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.4942801795325593,
-      "y": 0.48306884579951687
+      "x": 0.5,
+      "y": 0.5
     },
     "_id": ""
   },
@@ -1578,7 +1578,6 @@
       "__id__": 0
     },
     "fileId": "2aMy+pV+lIVrFMpnSAp7y0",
-    "instance": null,
     "targetOverrides": [
       {
         "__id__": 89
@@ -1598,9 +1597,7 @@
   },
   {
     "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 82
-    },
+    "source": null,
     "sourceInfo": null,
     "propertyPath": [
       "home"
@@ -1620,9 +1617,7 @@
   },
   {
     "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 82
-    },
+    "source": null,
     "sourceInfo": null,
     "propertyPath": [
       "away"
