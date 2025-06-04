@@ -6492,7 +6492,7 @@
     "_id": "07dhETZm5BXbg4LvegkF/Q"
   },
   {
-    "__type__": "2e31bmR60xEGL1LKo1p8bLT",
+    "__type__": "80b22hzKrBNc7CiPn0+Az0W",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -6501,9 +6501,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "value": -0.1,
-    "offsetTopPercent": 0.1,
-    "_id": "87Qp+vg5NFkrRA5eJ+PVDP"
+    "value": 0.1,
+    "_id": "61QSufDhVC8JneWubVdSak"
   },
   {
     "__type__": "cc.Widget",
