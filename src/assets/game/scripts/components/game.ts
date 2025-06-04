@@ -128,7 +128,7 @@ export default class Game extends GameComponent {
     initBackgroundImage() {
         const { origin, pathname } = window.location;
         const name = this.isPortrait ? "background-portrait.webp" : "background.webp";
-        const imagePath = `${origin}${pathname}splash-resources/${name}?v=4`;
+        const imagePath = `${origin}${pathname}splash-resources/${name}?v=5`;
         assetManager.loadRemote<ImageAsset>(imagePath, (err, imageAsset) => {
             if (err) {
                 sentryLogger?.logError(`Failed to load image asset ${imagePath} with error ${err}`);
