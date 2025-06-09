@@ -11,13 +11,17 @@ export class IntroOutro extends Component {
     private field: UIOpacity = null;
 
     @property(UIOpacity)
-    private backgroundBlur: UIOpacity = null;
+    private fieldBlur: UIOpacity = null;
+
+    @property(UIOpacity)
+    private containerGameBackground: UIOpacity = null;
 
     private readonly maxOpacity = 255;
 
     set showGameBackground(value: boolean) {
         this.gameBackground.node.active = value;
-        this.backgroundBlur.node.active = value;
+        this.containerGameBackground.node.active = value;
+        this.fieldBlur.node.active = value;
     }
 
     set showField(value: boolean) {
@@ -28,8 +32,13 @@ export class IntroOutro extends Component {
         if (this.gameBackground) {
             this.gameBackground.opacity = value;
         }
-        if (this.backgroundBlur) {
-            this.backgroundBlur.opacity = value;
+
+        if (this.fieldBlur) {
+            this.fieldBlur.opacity = value;
+        }
+
+        if (this.containerGameBackground) {
+            this.containerGameBackground.opacity = value;
         }
     }
 
@@ -38,9 +47,13 @@ export class IntroOutro extends Component {
         if (this.gameBackground) {
             processTween.push(tween(this.gameBackground).to(duration, { opacity: targetOpacity }));
         }
-        if (this.backgroundBlur) {
-            processTween.push(tween(this.backgroundBlur).to(duration, { opacity: targetOpacity }));
+        if (this.fieldBlur) {
+            processTween.push(tween(this.fieldBlur).to(duration, { opacity: targetOpacity }));
         }
+        if (this.containerGameBackground) {
+            processTween.push(tween(this.containerGameBackground).to(duration, { opacity: targetOpacity }));
+        }
+
         if (processTween.length > 0) {
             tween()
                 .parallel(...processTween)
@@ -70,6 +83,7 @@ export class IntroOutro extends Component {
 
     setMaxBackgroundOpacity() {
         this.gameBackground.opacity = this.maxOpacity;
-        this.backgroundBlur.opacity = this.maxOpacity;
+        this.containerGameBackground.opacity = this.maxOpacity;
+        this.fieldBlur.opacity = this.maxOpacity;
     }
 }
