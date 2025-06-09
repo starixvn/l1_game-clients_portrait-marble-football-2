@@ -1,6 +1,10 @@
 import { _decorator, Component } from "cc";
 import Hls from "hls.js";
-import { SYNC_TOP_OFFSET_EVENT, VideoOffSetContainer } from "../game/scripts/components/video/video-offset-container";
+import {
+    SYNC_TOP_OFFSET_EVENT,
+    SYNC_WIDTH_OFFSET_EVENT,
+    VideoOffSetContainer,
+} from "../game/scripts/components/video/video-offset-container";
 import { DOMBackgroundVideo } from "./dom-background-video";
 
 const { ccclass, property } = _decorator;
@@ -18,6 +22,7 @@ export class BackgroundVideoPlayer extends Component {
     private liveStreamServer = "";
     private _muted = true;
     private _offsetTop = 0;
+    private _videoWidth = 0;
 
     private _onPlayStateChanged: (isPlay: boolean) => void = null;
 
@@ -110,6 +115,7 @@ export class BackgroundVideoPlayer extends Component {
 
     onLoad() {
         this.videoOffSetContainer.node.on(SYNC_TOP_OFFSET_EVENT, this.updateVideoOffset, this);
+        this.videoOffSetContainer.node.on(SYNC_WIDTH_OFFSET_EVENT, this.updateVideoWidth, this);
         this.initialize();
     }
 
@@ -130,6 +136,11 @@ export class BackgroundVideoPlayer extends Component {
     private updateVideoOffset(offsetTop: number) {
         this._offsetTop = offsetTop;
         DOMBackgroundVideo.updateVideoPosition(offsetTop);
+    }
+
+    private updateVideoWidth(width: number) {
+        this._videoWidth = width;
+        width > 0 && DOMBackgroundVideo.updateWidthVideo(width);
     }
 
     private syncCurrentTime() {
@@ -184,5 +195,6 @@ export class BackgroundVideoPlayer extends Component {
         this.native = video;
 
         DOMBackgroundVideo.updateVideoPosition(this._offsetTop);
+        this._videoWidth > 0 && DOMBackgroundVideo.updateWidthVideo(this._videoWidth);
     }
 }

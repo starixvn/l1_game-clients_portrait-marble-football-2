@@ -1,9 +1,10 @@
-import { _decorator, Component, Node, Vec3 } from "cc";
+import { _decorator, Component, Node, screen, UITransform, Vec3, view } from "cc";
 import { EDITOR } from "cc/env";
 import { ComponentUtils, FunctionUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
+export const SYNC_WIDTH_OFFSET_EVENT = "syncWidthOffset";
 export const TOP_OFFSET_DEFAULT = 41;
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
@@ -57,5 +58,12 @@ export class VideoOffSetContainer extends Component {
         const topOffset = position.y ?? 0;
         const topOffsetAbs = Math.abs(topOffset) * scaleX;
         this.node.emit(SYNC_TOP_OFFSET_EVENT, topOffsetAbs);
+
+        // Only update width when component AutoScaleWidget update display
+        if (scaleX < 1) {
+            const width = this.node?.getComponent(UITransform)?.getBoundingBoxToWorld()?.width || 0;
+            const scaleXCanvas = screen.windowSize?.width / view.getVisibleSize()?.width;
+            this.node.emit(SYNC_WIDTH_OFFSET_EVENT, width * scaleXCanvas);
+        }
     }
 }

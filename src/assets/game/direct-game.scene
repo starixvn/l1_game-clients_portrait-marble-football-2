@@ -346,6 +346,9 @@
     "targetNode": {
       "__id__": 5
     },
+    "fieldNode": {
+      "__id__": 22
+    },
     "_id": "daa3n5PwRMOrERx6velx2x"
   },
   {
@@ -593,8 +596,8 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": -365.5,
-      "y": 385.5,
+      "x": -351.5,
+      "y": 381.5,
       "z": 0
     }
   },
@@ -628,7 +631,7 @@
     "propertyPath": [
       "_left"
     ],
-    "value": 15
+    "value": 29
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -638,7 +641,7 @@
     "propertyPath": [
       "_top"
     ],
-    "value": 11
+    "value": 15
   },
   {
     "__type__": "cc.TargetInfo",
@@ -884,7 +887,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -51.5,
+      "y": 11,
       "z": 0
     },
     "_lrot": {
@@ -923,7 +926,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 828,
-      "height": 757
+      "height": 632
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -989,7 +992,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 103,
-    "_bottom": 0,
+    "_bottom": 125,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,

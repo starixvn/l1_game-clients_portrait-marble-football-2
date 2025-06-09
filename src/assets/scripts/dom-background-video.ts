@@ -12,7 +12,7 @@ export class DOMBackgroundVideo {
 
     static readonly MAX_HEIGHT = 466;
 
-    static createOrLoadVideoElement(parentHeight?: number, scaleY?: number): HTMLVideoElement {
+    static createOrLoadVideoElement(): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
         const game = document.getElementById(DOMBackgroundVideo.GAME_CANVAS_ID);
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
@@ -27,7 +27,7 @@ export class DOMBackgroundVideo {
 
             video.id = DOMBackgroundVideo.VIDEO_ID;
             video.muted = true;
-            DOMBackgroundVideo.applyVideoStyles(video, size, parentHeight);
+            DOMBackgroundVideo.applyVideoStyles(video, size);
 
             container.insertBefore(video, container.firstChild);
 
@@ -48,14 +48,14 @@ export class DOMBackgroundVideo {
         }
     }
 
-    private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect, parentHeight?: number) {
+    private static applyVideoStyles(video: HTMLVideoElement, size: DOMRect) {
         // Calculate video dimensions in pixels
         const { width, height } = this.getVideoDimensions(size.width);
 
         // Calculate viewport width for vw units
-        const viewportWidth = window.innerWidth;
-        const widthVW = (width / viewportWidth) * 100;
-        const heightVW = (height / viewportWidth) * 100;
+        // const viewportWidth = window.innerWidth;
+        // const widthVW = (width / viewportWidth) * 100;
+        // const heightVW = (height / viewportWidth) * 100;
 
         // Apply styles
         video.style.visibility = "visible";
@@ -63,8 +63,8 @@ export class DOMBackgroundVideo {
         video.style.bottom = "0px";
         video.style.left = "50%";
         video.style.transform = "translateX(-50%)";
-        video.style.width = `${widthVW}vw`;
-        video.style.height = `${heightVW}vw`;
+        video.style.width = `${width}px`;
+        video.style.height = `${height}px`;
         video.style.zIndex = "10";
 
         // Set video element attributes
@@ -91,6 +91,20 @@ export class DOMBackgroundVideo {
         const width = view.getVisibleSize()?.width;
         const topOffsetVW = Number(((offsetTop / width) * 100).toFixed(2));
         video.style.top = `${topOffsetVW}vw`;
+    }
+
+    static updateWidthVideo(width: number) {
+        const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
+        if (!video) {
+            log("video not found----------");
+            return;
+        }
+
+        const { width: widthVideo, height: heightVideo } = this.getVideoDimensions(width);
+        video.style.width = `${widthVideo}px`;
+        video.style.height = `${heightVideo}px`;
+        video.width = widthVideo;
+        video.height = heightVideo;
     }
 
     static getVideoDimensions(currentWidth: number) {
