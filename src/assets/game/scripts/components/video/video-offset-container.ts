@@ -4,7 +4,7 @@ import { ComponentUtils, FunctionUtils } from "db://shared-components/shared/uti
 const { ccclass, property } = _decorator;
 
 export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
-export const TOP_OFFSET_DEFAULT = 82;
+export const TOP_OFFSET_DEFAULT = 54;
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
     @property(Node)
