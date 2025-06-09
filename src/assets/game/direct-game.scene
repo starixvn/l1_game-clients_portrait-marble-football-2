@@ -726,7 +726,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 348,
+      "y": 327,
       "z": 0
     },
     "_lrot": {
@@ -840,7 +840,7 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 82,
+    "_top": 103,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -985,7 +985,7 @@
     "node": {
       "__id__": 27
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": null,
     "_alignFlags": 45,
     "_target": null,
@@ -1231,7 +1231,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 348,
+      "y": 327,
       "z": 0
     },
     "_lrot": {
@@ -1345,7 +1345,7 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 82,
+    "_top": 103,
     "_bottom": 13.25,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -1383,7 +1383,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 348,
+      "y": 327,
       "z": 0
     },
     "_lrot": {
@@ -1445,7 +1445,7 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 82,
+    "_top": 103,
     "_bottom": 635.25,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -1666,7 +1666,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 365,
+      "y": 343,
       "z": 0
     },
     "_lrot": {
@@ -1762,13 +1762,13 @@
     "node": {
       "__id__": 61
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": null,
     "_alignFlags": 1,
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 32,
+    "_top": 54,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -1930,7 +1930,7 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 15.559000000000026,
+    "_top": 3.559000000000026,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -1973,7 +1973,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 327.728,
-      "y": 384.941,
+      "y": 396.941,
       "z": 0
     }
   },
@@ -2035,7 +2035,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -54.5,
+      "y": -88,
       "z": 0
     }
   },
@@ -2169,7 +2169,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 246.803,
+      "y": 233.803,
       "z": 0
     }
   },
