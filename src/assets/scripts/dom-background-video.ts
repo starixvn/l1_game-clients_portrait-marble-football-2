@@ -93,24 +93,29 @@ export class DOMBackgroundVideo {
         video.style.top = `${topOffsetVW}vw`;
     }
 
-    static updateWidthVideo(width: number) {
+    static updateVideoDimension(value: { width: number; height: number; top: number }) {
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
         if (!video) {
             log("video not found----------");
             return;
         }
 
-        const { width: widthVideo, height: heightVideo } = this.getVideoDimensions(width);
+        const { width: widthVideo, height: heightVideo } = this.getVideoDimensions(value?.width, value?.height);
+
         video.style.width = `${widthVideo}px`;
         video.style.height = `${heightVideo}px`;
         video.width = widthVideo;
         video.height = heightVideo;
+
+        this.updateVideoPosition(value?.top);
     }
 
-    static getVideoDimensions(currentWidth: number) {
+    static getVideoDimensions(currentWidth: number, currentHeight?: number) {
         const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
         const width = Math.min(currentWidth, view.getVisibleSize()?.width);
-        const height = width / ratio;
+
+        console.log("getVideoDimensions--------------", currentWidth, view.getVisibleSize()?.width);
+        const height = currentHeight ? currentHeight : width / ratio;
 
         return {
             width: Math.round(width),
