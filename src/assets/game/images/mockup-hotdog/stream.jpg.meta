@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "03d5adc4-8124-4b6a-b427-f94a9948bc25",
+  "uuid": "15b23873-3a53-46c0-bbf6-942d5bef9f57",
   "files": [
     ".jpg",
     ".json"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "03d5adc4-8124-4b6a-b427-f94a9948bc25@6c48a",
-      "displayName": "5-Livebet",
+      "uuid": "15b23873-3a53-46c0-bbf6-942d5bef9f57@6c48a",
+      "displayName": "stream",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "03d5adc4-8124-4b6a-b427-f94a9948bc25",
+        "imageUuidOrDatabaseUri": "15b23873-3a53-46c0-bbf6-942d5bef9f57",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,8 +34,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "03d5adc4-8124-4b6a-b427-f94a9948bc25@f9941",
-      "displayName": "5-Livebet",
+      "uuid": "15b23873-3a53-46c0-bbf6-942d5bef9f57@f9941",
+      "displayName": "stream",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "03d5adc4-8124-4b6a-b427-f94a9948bc25@6c48a",
+        "imageUuidOrDatabaseUri": "15b23873-3a53-46c0-bbf6-942d5bef9f57@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": false,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "03d5adc4-8124-4b6a-b427-f94a9948bc25@6c48a"
+    "redirect": "15b23873-3a53-46c0-bbf6-942d5bef9f57@6c48a"
   }
 }
