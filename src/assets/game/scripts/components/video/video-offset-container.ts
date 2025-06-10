@@ -14,7 +14,7 @@ interface Dimensions {
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
     @property(Node)
-    private containerNode: Node = null;
+    containerNode: Node = null;
 
     @property(Node)
     private targetNode: Node = null;

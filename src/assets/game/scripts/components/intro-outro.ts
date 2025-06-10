@@ -14,7 +14,7 @@ export class IntroOutro extends Component {
     private fieldBlur: UIOpacity = null;
 
     @property(UIOpacity)
-    private containerGameBackground: UIOpacity = null;
+    containerGameBackground: UIOpacity = null;
 
     private readonly maxOpacity = 255;
 
