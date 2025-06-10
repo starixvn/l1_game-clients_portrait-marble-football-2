@@ -24,13 +24,13 @@
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,0}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{748,446}</string>
+                <string>{747,440}</string>
                 <key>spriteSourceSize</key>
-                <string>{750,450}</string>
+                <string>{747,444}</string>
                 <key>textureRect</key>
-                <string>{{3,945},{748,446}}</string>
+                <string>{{3,945},{747,440}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -168,7 +168,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2512eea8bdc0ad88e3a79ab9b756d2c2:5542d8ed8ae875aac2c0190fad54e763:50d396e5ee50d30c72c827b4c94d9057$</string>
+            <string>$TexturePacker:SmartUpdate:6ac2c4f47b5de6699e2896d9ef260cc9:d728f37181d1354eb495cf4509aea2a6:50d396e5ee50d30c72c827b4c94d9057$</string>
             <key>textureFileName</key>
             <string>backgrounds.webp</string>
         </dict>
