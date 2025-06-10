@@ -3,9 +3,14 @@ import { EDITOR } from "cc/env";
 import { ComponentUtils, FunctionUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
-export const SYNC_TOP_OFFSET_EVENT = "syncTopOffset";
 export const SYNC_VIDEO_DIMENSION_EVENT = "syncWidthOffset";
 export const TOP_OFFSET_DEFAULT = 41;
+
+interface Dimensions {
+    width: number;
+    height: number;
+}
+
 @ccclass("VideoOffSetContainer")
 export class VideoOffSetContainer extends Component {
     @property(Node)
@@ -55,33 +60,45 @@ export class VideoOffSetContainer extends Component {
 
     protected async updateDisplay() {
         await FunctionUtils.delay(300);
-        const scaleX = this.node?.scale?.x || 1;
-        console.log("scaleX", scaleX);
-
-        const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
-        const topOffset = position.y ?? 0;
-        const topOffsetAbs = Math.abs(topOffset) * scaleX;
-        // this.node.emit(SYNC_TOP_OFFSET_EVENT, topOffsetAbs);
-
-        const dpr = screen.devicePixelRatio;
-        const fieldWidth = this.fieldNode?.getComponent(UITransform)?.getBoundingBoxToWorld()?.width || 0;
-        const fieldHeight = this.fieldNode?.getComponent(UITransform)?.getBoundingBoxToWorld()?.height || 0;
-
-        const currentScreenWidth = screen.windowSize?.width;
-        const designScreenWidth = view.getDesignResolutionSize().width;
-        const scaleXCanvas = currentScreenWidth / designScreenWidth;
-        console.log("screenWidth", currentScreenWidth);
-        console.log("viewWidth", designScreenWidth);
-        console.log("scaleXCanvas", scaleXCanvas);
-
-        const widthFinal = (fieldWidth * scaleXCanvas) / dpr;
-        const heightFinal = (fieldHeight * scaleXCanvas) / dpr;
-        console.log("widthFinal - heightFinal", widthFinal, heightFinal);
+        const scaleX = this.getNodeScaleX();
+        const topOffsetAbs = this.calculateTopOffsetAbs(scaleX);
+        const { width: fieldWidth, height: fieldHeight } = this.getFieldNodeWorldSize();
+        const { width: widthFinal, height: heightFinal } = this.calculateFinalDimensions(fieldWidth, fieldHeight);
 
         this.node.emit(SYNC_VIDEO_DIMENSION_EVENT, {
             width: widthFinal,
             height: heightFinal,
             top: topOffsetAbs,
         });
+    }
+
+    private getNodeScaleX(): number {
+        return this.node?.scale?.x || 1;
+    }
+
+    private calculateTopOffsetAbs(scaleX: number): number {
+        const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
+        const topOffset = position.y ?? 0;
+        return Math.abs(topOffset) * scaleX;
+    }
+
+    private getFieldNodeWorldSize(): Dimensions {
+        const uiTransform = this.fieldNode?.getComponent(UITransform);
+        const boundingBox = uiTransform?.getBoundingBoxToWorld();
+        return {
+            width: boundingBox?.width || 0,
+            height: boundingBox?.height || 0,
+        };
+    }
+
+    private calculateFinalDimensions(fieldWidth: number, fieldHeight: number): Dimensions {
+        const dpr = screen.devicePixelRatio;
+        const currentScreenWidth = screen.windowSize?.width;
+        const designScreenWidth = view.getDesignResolutionSize().width;
+        const scaleXCanvas = currentScreenWidth / designScreenWidth;
+        return {
+            width: (fieldWidth * scaleXCanvas) / dpr,
+            height: (fieldHeight * scaleXCanvas) / dpr,
+        };
     }
 }

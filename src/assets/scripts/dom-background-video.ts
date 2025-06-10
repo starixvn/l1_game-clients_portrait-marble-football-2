@@ -52,11 +52,6 @@ export class DOMBackgroundVideo {
         // Calculate video dimensions in pixels
         const { width, height } = this.getVideoDimensions(size.width);
 
-        // Calculate viewport width for vw units
-        // const viewportWidth = window.innerWidth;
-        // const widthVW = (width / viewportWidth) * 100;
-        // const heightVW = (height / viewportWidth) * 100;
-
         // Apply styles
         video.style.visibility = "visible";
         video.style.position = "absolute";
@@ -113,8 +108,6 @@ export class DOMBackgroundVideo {
     static getVideoDimensions(currentWidth: number, currentHeight?: number) {
         const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
         const width = Math.min(currentWidth, view.getVisibleSize()?.width);
-
-        console.log("getVideoDimensions--------------", currentWidth, view.getVisibleSize()?.width);
         const height = currentHeight ? currentHeight : width / ratio;
 
         return {

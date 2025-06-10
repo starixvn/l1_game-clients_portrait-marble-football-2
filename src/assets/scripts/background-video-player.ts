@@ -17,7 +17,6 @@ export class BackgroundVideoPlayer extends Component {
     private _videoName = "";
     private liveStreamServer = "";
     private _muted = true;
-    private _offsetTop = 0;
     private _videoDimension = {
         width: 0,
         height: 0,
@@ -114,7 +113,6 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     onLoad() {
-        // this.videoOffSetContainer.node.on(SYNC_TOP_OFFSET_EVENT, this.updateVideoOffset, this);
         this.videoOffSetContainer.node.on(SYNC_VIDEO_DIMENSION_EVENT, this.updateVideoDimension, this);
         this.initialize();
     }
@@ -132,11 +130,6 @@ export class BackgroundVideoPlayer extends Component {
             this.hls.destroy();
         }
     }
-
-    // private updateVideoOffset(offsetTop: number) {
-    //     this._offsetTop = offsetTop;
-    //     DOMBackgroundVideo.updateVideoPosition(offsetTop);
-    // }
 
     private updateVideoDimension(value: { width: number; height: number; top: number }) {
         this._videoDimension = value;
