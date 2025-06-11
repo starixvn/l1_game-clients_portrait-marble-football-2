@@ -9,15 +9,15 @@ declare global {
 
 const defaultConfig: gc.Configs.SiteConfigs = {
     isDev: false,
-    systemType: "SG",
+    systemType: "HD",
     serverDomainMapper: {
         localhost: "lumigame.com",
     },
     ssl: true,
-    subDomain: "l1-proxy1",
+    subDomain: "hd-proxy",
     env: "LOCAL0",
     sentryUrl: "https://2af29bdacdbf4d9ba2db6600b450541f@sentry.lumigame.com/28",
-    subGuideDomain: "l1-guide",
+    subGuideDomain: "hd-guide",
     enableMsgpackParserOnNotification: false,
     enableMsgpackParserAllGames: false,
     websocket: {

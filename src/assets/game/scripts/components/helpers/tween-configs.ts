@@ -20,7 +20,8 @@ export type TweenKey =
     | "hiddenPlayersWhenLive"
     | "swapButtonWhenBet"
     | "swapButtonWhenLive"
-    | "betChoiceSettlement";
+    | "betChoiceSettlement"
+    | "scoreBoardInOut";
 
 export const DURATION_ANIM_IN = 0.5;
 export const DURATION_ANIM_OUT = 0.7;
@@ -49,26 +50,25 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
     swapButtonWhenLive: {
         in: { positionY: 257, opacity: 255, time: 0 },
     },
+    scoreBoardInOut: { in: { time: 0 }, out: { time: 0 } },
 };
 
 export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { position: v3(0, -123, 0), time: DURATION_ANIM_IN },
-        out: { position: v3(0, -123, 0), time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -106, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -106, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
-        in: { position: v3(0, -237, 0), time: DURATION_ANIM_IN },
+        in: { position: v3(0, -96, 0), time: DURATION_ANIM_IN },
         out: { time: DURATION_ANIM_OUT },
     },
     fadeInOut: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
         out: { opacity: 1, time: DURATION_ANIM_OUT },
     },
-    hiddenPlayersFlyUpBet: {
-        in: { opacity: 255, time: DURATION_ANIM_IN },
-    },
     hiddenPlayersWhenLive: {
         in: { opacity: 255, time: DURATION_ANIM_IN },
+        out: { opacity: 1, time: DURATION_ANIM_IN },
     },
     swapButtonWhenBet: {
         in: { positionY: -294, opacity: 255, time: DURATION_ANIM_IN },
@@ -76,4 +76,8 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     swapButtonWhenLive: {
         in: { positionY: -34, opacity: 255, time: DURATION_ANIM_IN },
     },
+    hiddenPlayersFlyUpBet: {
+        in: { time: 0, opacity: 255 },
+    },
+    scoreBoardInOut: { in: { positionY: -518, time: 0 }, out: { positionY: -407, time: 0 } },
 };

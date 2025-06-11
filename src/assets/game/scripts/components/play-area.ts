@@ -8,49 +8,43 @@ import { GamePhaseStore } from "../features/game-phase/game-phase-store";
 import { settings } from "../game-settings";
 import { BetChoicesContainer } from "./bet-options/bet-choices-container";
 import { AnimationHelper } from "./helpers/animation-helper";
-import { DEFAULT_TWEEN_CONFIGS, DEFAULT_TWEEN_CONFIGS_PORTRAIT, TweenConfigs, TweenKey } from "./helpers/tween-configs";
+import { DEFAULT_TWEEN_CONFIGS, TweenConfigs, TweenKey } from "./helpers/tween-configs";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
 
-type BetState = "prev" | "live" | "final";
+export type BetState = "prev" | "live" | "final";
 
 @ccclass("PlayArea")
 export class PlayArea extends ObserverComponent {
     @property(Node)
-    private chipContainersParent: Node = null;
+    chipContainersParent: Node = null;
 
     @property(BetChoicesContainer)
-    private betChoicesContainer: BetChoicesContainer = null;
+    betChoicesContainer: BetChoicesContainer = null;
 
     @property(Node)
-    private scoreBoard: Node = null;
+    scoreBoard: Node = null;
 
     @property(Node)
-    private chips: Node = null;
+    chips: Node = null;
 
     @property(Node)
-    private teamScore: Node = null;
+    teamScore: Node = null;
 
     @property(Node)
-    private hiddenPlayersNode: Node = null;
+    hiddenPlayersNode: Node = null;
 
-    @property
-    private isPortrait = false;
+    protected isBetOptionsZoomedOut = false;
 
-    private isBetOptionsZoomedOut = false;
+    protected tweenConfigs: Record<TweenKey, TweenConfigs> = DEFAULT_TWEEN_CONFIGS;
 
-    private tweenConfigs: Record<TweenKey, TweenConfigs> = DEFAULT_TWEEN_CONFIGS;
-
-    private phasePreviewBets: BetState = "prev";
-    private phaseShowBetChoices: BetState = "prev";
+    protected phasePreviewBets: BetState = "prev";
+    protected phaseShowBetChoices: BetState = "prev";
 
     protected betChoicesParentContainer: Node = null;
 
     onLoad() {
-        if (this.isPortrait) {
-            this.tweenConfigs = DEFAULT_TWEEN_CONFIGS_PORTRAIT;
-        }
         this.initBetChoicesContainer();
         this.setupStaticTargets();
         super.onLoad();
@@ -62,7 +56,7 @@ export class PlayArea extends ObserverComponent {
         this.betChoicesParentContainer = this.betChoicesContainer?.betChoicesPrev?.parent;
     }
 
-    private setupStaticTargets() {
+    protected setupStaticTargets() {
         const staticTargets = [
             { node: this.teamScore, config: this.tweenConfigs.fadeInOut.out },
             { node: this.scoreBoard, config: this.tweenConfigs.fadeInOut.out },
@@ -101,21 +95,21 @@ export class PlayArea extends ObserverComponent {
         }
     }
 
-    private handleSettlementOrShowWinnerPhase(phase: GamePhase) {
+    protected handleSettlementOrShowWinnerPhase(phase: GamePhase) {
         AnimationHelper.playAnimByPhaseProgress(this.hiddenPlayersNode, this.tweenConfigs.hiddenPlayersWhenLive.in, phase.progress);
         if (phase.progress === 0) {
             AnimationHelper.playAnimByPhaseProgress([this.betChoicesParentContainer], [this.tweenConfigs.betChoiceSettlement.in], 0);
         }
     }
 
-    private handleMatchWinnerPhase(phase: GamePhase) {
+    protected handleMatchWinnerPhase(phase: GamePhase) {
         if (!this.isBetOptionsZoomedOut) {
             this.zoomBetChoices("out", phase.progress);
         }
         AnimationHelper.playAnimByPhaseProgress([this.hiddenPlayersNode], [this.tweenConfigs.fadeInOut.out], phase.progress);
     }
 
-    private async handleShowBetChoicesPhase(phase: GamePhase) {
+    protected async handleShowBetChoicesPhase(phase: GamePhase) {
         this.phaseShowBetChoices = phase.id === PhaseId.ShowBetChoicesPrev ? "prev" : "live";
         const zoomPromise = this.isBetOptionsZoomedOut ? this.zoomBetChoices("in", phase.progress) : undefined;
         const animPromise = AnimationHelper.playAnimByPhaseProgress(
@@ -132,7 +126,7 @@ export class PlayArea extends ObserverComponent {
         await Promise.all([zoomPromise, animPromise]);
     }
 
-    private async handleShowVideoPhase(phase: GamePhase) {
+    protected async handleShowVideoPhase(phase: GamePhase) {
         this.phasePreviewBets = phase.id === PhaseId.ShowLiveVideo ? "live" : "prev";
         const animPromise = AnimationHelper.playAnimByPhaseProgress(
             [this.teamScore, this.scoreBoard, this.chips, this.hiddenPlayersNode, this.betChoicesContainer.swapBetsButton],
@@ -177,7 +171,7 @@ export class PlayArea extends ObserverComponent {
         } catch (e) {}
     }
 
-    private async zoomBetChoices(direction: "in" | "out", progress: number): Promise<void> {
+    protected async zoomBetChoices(direction: "in" | "out", progress: number): Promise<void> {
         this.isBetOptionsZoomedOut = direction === "out";
 
         const target = { target: this.betChoicesParentContainer, key: "betChoiceZoomInOut" as TweenKey };
