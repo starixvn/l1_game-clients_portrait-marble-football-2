@@ -5,10 +5,15 @@ import { DOMBackgroundVideo } from "./dom-background-video";
 
 const { ccclass, property } = _decorator;
 
+const MAX_HEIGHT_PORTRAIT = 424;
+const MAX_HEIGHT_DIRECT = 466;
+
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
     @property(VideoOffSetContainer)
     private videoOffSetContainer: VideoOffSetContainer = null;
+    @property
+    isPortrait = false;
 
     private hls: Hls = null;
     private native: HTMLVideoElement = null;
@@ -114,6 +119,7 @@ export class BackgroundVideoPlayer extends Component {
 
     onLoad() {
         this.videoOffSetContainer.node.on(SYNC_VIDEO_DIMENSION_EVENT, this.updateVideoDimension, this);
+
         this.initialize();
     }
 
@@ -147,6 +153,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private initialize() {
+        DOMBackgroundVideo.setMaxHeight(this.isPortrait ? MAX_HEIGHT_PORTRAIT : MAX_HEIGHT_DIRECT);
         const video = DOMBackgroundVideo.createOrLoadVideoElement();
 
         if (!Hls.isSupported()) {

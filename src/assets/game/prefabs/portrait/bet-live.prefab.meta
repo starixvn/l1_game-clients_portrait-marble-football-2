@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "f1e98759-4a06-469d-9635-cf31e984a73d",
+  "uuid": "7e178a76-663f-474c-9e7d-56a5d03c8561",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "bet-choices-live"
+    "syncNodeName": "bet-live"
   }
 }
