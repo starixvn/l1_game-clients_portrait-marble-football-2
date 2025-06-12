@@ -109,36 +109,44 @@ export class PlayArea extends ObserverComponent {
         AnimationHelper.playAnimByPhaseProgress([this.hiddenPlayersNode], [this.tweenConfigs.fadeInOut.out], phase.progress);
     }
 
-    protected async handleShowBetChoicesPhase(phase: GamePhase) {
-        this.phaseShowBetChoices = phase.id === PhaseId.ShowBetChoicesPrev ? "prev" : "live";
-        const zoomPromise = this.isBetOptionsZoomedOut ? this.zoomBetChoices("in", phase.progress) : undefined;
-        const animPromise = AnimationHelper.playAnimByPhaseProgress(
-            [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScore, this.betChoicesContainer.swapBetsButton],
-            [
+    protected getShowBetChoicesAnimConfig(): { nodes: Node[]; configs: any[] } {
+        return {
+            nodes: [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScore, this.betChoicesContainer.swapBetsButton],
+            configs: [
                 this.tweenConfigs.fadeInOut.in,
                 this.tweenConfigs.fadeInOut.in,
                 this.tweenConfigs.hiddenPlayersFlyUpBet.in,
                 this.tweenConfigs.fadeInOut.in,
                 this.tweenConfigs.swapButtonWhenBet.in,
             ],
-            phase.progress
-        );
+        };
+    }
+
+    protected async handleShowBetChoicesPhase(phase: GamePhase) {
+        this.phaseShowBetChoices = phase.id === PhaseId.ShowBetChoicesPrev ? "prev" : "live";
+        const zoomPromise = this.isBetOptionsZoomedOut ? this.zoomBetChoices("in", phase.progress) : undefined;
+        const { nodes, configs } = this.getShowBetChoicesAnimConfig();
+        const animPromise = AnimationHelper.playAnimByPhaseProgress(nodes, configs, phase.progress);
         await Promise.all([zoomPromise, animPromise]);
     }
 
-    protected async handleShowVideoPhase(phase: GamePhase) {
-        this.phasePreviewBets = phase.id === PhaseId.ShowLiveVideo ? "live" : "prev";
-        const animPromise = AnimationHelper.playAnimByPhaseProgress(
-            [this.teamScore, this.scoreBoard, this.chips, this.hiddenPlayersNode, this.betChoicesContainer.swapBetsButton],
-            [
+    protected getShowVideoAnimConfig(): { nodes: Node[]; configs: any[] } {
+        return {
+            nodes: [this.teamScore, this.scoreBoard, this.chips, this.hiddenPlayersNode, this.betChoicesContainer.swapBetsButton],
+            configs: [
                 this.tweenConfigs.fadeInOut.in,
                 this.tweenConfigs.fadeInOut.out,
                 this.tweenConfigs.fadeInOut.out,
                 this.tweenConfigs.fadeInOut.out,
                 this.tweenConfigs.swapButtonWhenLive.in,
             ],
-            phase.progress
-        );
+        };
+    }
+
+    protected async handleShowVideoPhase(phase: GamePhase) {
+        this.phasePreviewBets = phase.id === PhaseId.ShowLiveVideo ? "live" : "prev";
+        const { nodes, configs } = this.getShowVideoAnimConfig();
+        const animPromise = AnimationHelper.playAnimByPhaseProgress(nodes, configs, phase.progress);
         const zoomPromise = !this.isBetOptionsZoomedOut ? this.zoomBetChoices("out", phase.progress) : undefined;
         await Promise.all([animPromise, zoomPromise]);
     }
@@ -163,12 +171,16 @@ export class PlayArea extends ObserverComponent {
         }
         try {
             await AnimationUtils.delayTime(settings.durations.outro);
-            AnimationHelper.playAnimByPhaseProgress(
-                [this.teamScore, this.betChoicesParentContainer],
-                [this.tweenConfigs.fadeInOut.out, this.tweenConfigs.betChoiceSettlement.in],
-                0
-            );
+            this.playOutroAnim();
         } catch (e) {}
+    }
+
+    protected playOutroAnim(): void {
+        AnimationHelper.playAnimByPhaseProgress(
+            [this.teamScore, this.betChoicesParentContainer],
+            [this.tweenConfigs.fadeInOut.out, this.tweenConfigs.betChoiceSettlement.in],
+            0
+        );
     }
 
     protected async zoomBetChoices(direction: "in" | "out", progress: number): Promise<void> {

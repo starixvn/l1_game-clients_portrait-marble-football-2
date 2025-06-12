@@ -10,7 +10,11 @@ export class DOMBackgroundVideo {
         DOMBackgroundVideo.onResize();
     });
 
-    static readonly MAX_HEIGHT = 466;
+    static maxHeight = 466;
+
+    static setMaxHeight(height: number) {
+        this.maxHeight = height;
+    }
 
     static createOrLoadVideoElement(): HTMLVideoElement {
         const container = document.getElementById(DOMBackgroundVideo.GAME_CONTAINER_ID);
@@ -106,8 +110,10 @@ export class DOMBackgroundVideo {
     }
 
     static getVideoDimensions(currentWidth: number, currentHeight?: number) {
-        const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.MAX_HEIGHT;
-        const width = Math.min(currentWidth, view.getVisibleSize()?.width);
+        const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.maxHeight;
+        const width = Math.min(currentWidth, view.getDesignResolutionSize()?.width);
+
+        console.log("width", width, ratio);
         const height = currentHeight ? currentHeight : width / ratio;
 
         return {
