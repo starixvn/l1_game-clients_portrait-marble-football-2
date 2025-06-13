@@ -239,10 +239,7 @@
     "root": {
       "__id__": 7
     },
-    "asset": {
-      "__uuid__": "ac004008-7db9-4c3f-8a3b-944e99752cc5",
-      "__expectedType__": "cc.Prefab"
-    },
+    "asset": null,
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
     "instance": {
       "__id__": 9
@@ -408,10 +405,7 @@
     "root": {
       "__id__": 21
     },
-    "asset": {
-      "__uuid__": "7e178a76-663f-474c-9e7d-56a5d03c8561",
-      "__expectedType__": "cc.Prefab"
-    },
+    "asset": null,
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
     "instance": {
       "__id__": 23
@@ -577,10 +571,7 @@
     "root": {
       "__id__": 35
     },
-    "asset": {
-      "__uuid__": "e6300683-0380-4423-8df6-003dd4c14a26",
-      "__expectedType__": "cc.Prefab"
-    },
+    "asset": null,
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
     "instance": {
       "__id__": 37
