@@ -15577,7 +15577,7 @@
       "__id__": 715
     },
     "asset": {
-      "__uuid__": "a9ba5c5b-ab69-4313-a67e-6ced8691f5f2",
+      "__uuid__": "013a2657-e2d9-4ec7-9e58-9fe897cdd877",
       "__expectedType__": "cc.Prefab"
     },
     "fileId": "40sl0yvg5J1rrmdKhV3PSE",
@@ -15601,7 +15601,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "121APoUplE/4+f0gh2b9gO",
+    "fileId": "8c1xJ4X3VCBIaD73U70vPN",
     "prefabRootNode": {
       "__id__": 1
     },
@@ -30914,7 +30914,7 @@
       "__id__": 1423
     },
     "asset": {
-      "__uuid__": "a845d8f4-233c-491c-89b9-ff010fd8a684",
+      "__uuid__": "eff32d2b-aa3f-4f7f-b452-a16f5ed5b62f",
       "__expectedType__": "cc.Prefab"
     },
     "fileId": "40sl0yvg5J1rrmdKhV3PSE",
@@ -30941,7 +30941,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "13u7frJ/xDo5tg5MtDcLgq",
+    "fileId": "fclGIzubVKQqVndridnGDU",
     "prefabRootNode": {
       "__id__": 1
     },
@@ -47105,7 +47105,6 @@
     "swapBetsButton": {
       "__id__": 2134
     },
-    "isPortrait": false,
     "_id": ""
   },
   {
