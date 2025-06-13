@@ -1,6 +1,6 @@
 import { _decorator, Label, Node } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
-import { AnimationUtils } from "db://shared-components/shared/utils";
+import { ComponentUtils } from "db://shared-components/shared/utils";
 import Observer from "observer";
 import { LocalizedLabel } from "../../../../extensions/i18n/assets/LocalizedLabel";
 import { GamePhase, PhaseId } from "../features/game-phase/game-phase-definitions";
@@ -110,11 +110,11 @@ export class LiveScore extends ObserverComponent {
     @render(GamePhaseStore, (store) => store.enterPhase)
     async renderEnterPhase(phase: GamePhase) {
         if (phase.id === PhaseId.ShowBetChoicesLive || phase.id === PhaseId.ShowBetChoicesPrev) {
-            AnimationUtils.setOpacityNode(this.containerTime, 1);
+            ComponentUtils.setOpacityNode(this.containerTime, 1);
         }
 
         if (phase.id === PhaseId.ShowIntroVideo || phase.id === PhaseId.ShowPrevVideo || phase.id === PhaseId.ShowLiveVideo) {
-            AnimationUtils.setOpacityNode(this.containerTime, 255);
+            ComponentUtils.setOpacityNode(this.containerTime, 255);
         }
     }
 }

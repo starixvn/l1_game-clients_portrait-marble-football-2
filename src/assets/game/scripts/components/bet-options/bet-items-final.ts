@@ -2,7 +2,7 @@ import gc from "@sg/game-client-base";
 import { _decorator } from "cc";
 import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
 import { BetItemsPolygon as BetItemsPolygonBase } from "db://shared-components/game/bets/scripts/components/bet-items-polygon";
-import { AnimationUtils } from "db://shared-components/shared/utils";
+import { AnimationUtils, ComponentUtils } from "db://shared-components/shared/utils";
 import Observer from "observer";
 import { GamePhase, PhaseId } from "../../features/game-phase/game-phase-definitions";
 import { GamePhaseStore } from "../../features/game-phase/game-phase-store";
@@ -27,7 +27,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
 
     bindOwnBets(ownBets: gc.GameServiceMessage.OwnBets) {
         this.betItemComponents.forEach((betItem) => {
-            const choice = betItem.betChoice;
+            const choice = betItem?.betChoice;
             const sum = (ownBets[choice] || 0) + (ownBets[`${choice}Live`] || 0);
             betItem.renderOwnBet(sum !== 0 ? gc.FormatUtils.numberWithCommas(sum) : "");
         });
@@ -37,7 +37,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
 
     bindTotalBets(totalBets: gc.GameServiceMessage.TotalBets) {
         this.betItemComponents.forEach((betItem) => {
-            const choice = betItem.betChoice;
+            const choice = betItem?.betChoice;
             const sum = (totalBets[choice] || 0) + (totalBets[`${choice}Live`] || 0);
             betItem.renderTotalBet(sum !== 0 ? gc.FormatUtils.numberWithCommas(sum) : "");
         });
@@ -50,7 +50,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
     bindUserBetPercentage(userBetPercentage: gc.GameServiceMessage.UserBetPercentage) {
         this.init();
         this.betItemComponents.forEach((betItem) => {
-            const choice = `${betItem.node.name}Final`;
+            const choice = `${betItem?.node?.name}Final`;
             betItem.renderUserBetPercentage(userBetPercentage?.[choice] ?? 0);
         });
     }
@@ -59,8 +59,8 @@ export class BetItemsFinal extends BetItemsPolygonBase {
     handleHighlightAnim(highLightInfo: gc.Rounds.THighlightAnim) {
         const { settlementResult, isAnim } = highLightInfo;
         if (highLightInfo?.settlementResult) {
-            this.betItemComponents.forEach((betItem) => {
-                const choice = betItem.node.name;
+            this.betItemComponents?.forEach((betItem) => {
+                const choice = betItem?.node?.name;
                 const winPre = this.isWinning(+settlementResult?.[choice]);
                 const winLive = this.isWinning(+settlementResult?.[`${choice}Live`]);
                 const win = winPre || winLive;
@@ -74,13 +74,13 @@ export class BetItemsFinal extends BetItemsPolygonBase {
     renderOdds(roundOdds: gc.Rounds.RoundOdds): void {}
 
     get lostBetItems(): BetItem[] {
-        return this.betItemComponents.filter(
+        return this.betItemComponents?.filter(
             (item: BetItem) => !this.settlementResult?.[item.betChoice] && !this.settlementResult?.[`${item.betChoice}Live`]
         );
     }
 
     get winBetItems(): BetItem[] {
-        return this.betItemComponents.filter(
+        return this.betItemComponents?.filter(
             (item: BetItem) => this.settlementResult?.[item.betChoice] || this.settlementResult?.[`${item.betChoice}Live`]
         );
     }
@@ -129,9 +129,9 @@ export class BetItemsFinal extends BetItemsPolygonBase {
     }
 
     public handleShowFlag(isShow: boolean) {
-        if (this?.team) {
-            this.team?.home && AnimationUtils.setOpacityNode(this.team.home.node, isShow ? 255 : 1);
-            this.team?.away && AnimationUtils.setOpacityNode(this.team.away.node, isShow ? 255 : 1);
+        if (this?.team?.home?.node && this?.team?.away?.node) {
+            ComponentUtils.setOpacityNode(this.team?.home?.node, isShow ? 255 : 1);
+            ComponentUtils.setOpacityNode(this.team?.away?.node, isShow ? 255 : 1);
         }
     }
 }
