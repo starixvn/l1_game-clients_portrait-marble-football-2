@@ -47,9 +47,6 @@ export class BetChoicesContainer extends ObserverComponent {
     @property(Node)
     swapBetsButton: Node = null;
 
-    @property
-    isPortrait = false;
-
     statusBetsButton: StatusBetsButton = null;
 
     protected betItemsPrev: BetItems = null;

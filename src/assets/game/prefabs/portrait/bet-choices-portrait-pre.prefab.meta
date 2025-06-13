@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "75a83a3e-5ef9-4aac-b762-0e8d0dbe6331",
+  "uuid": "59ecc824-5204-414c-97d2-a9b6d67bc3c5",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "odd"
+    "syncNodeName": "bet-choices-portrait-pre"
   }
 }
