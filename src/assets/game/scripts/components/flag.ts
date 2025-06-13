@@ -8,7 +8,7 @@ export class Flag extends Component {
     private icon: Sprite = null;
 
     setIcon(icon: string) {
-        const atlas = this.icon.spriteAtlas;
+        const atlas = this.icon?.spriteAtlas;
         if (!atlas) {
             return;
         }

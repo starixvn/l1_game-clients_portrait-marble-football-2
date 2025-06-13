@@ -328,6 +328,7 @@
     "videoOffSetContainer": {
       "__id__": 7
     },
+    "isPortrait": false,
     "_id": "619hOWJnFLLYxfjMx+tvNW"
   },
   {
@@ -5304,7 +5305,6 @@
     "hiddenPlayersNode": {
       "__id__": 260
     },
-    "isPortrait": false,
     "_id": "derU37talFY7yuU2q0ELXh"
   },
   {

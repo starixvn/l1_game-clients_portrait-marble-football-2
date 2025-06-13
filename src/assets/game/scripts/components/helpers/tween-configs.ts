@@ -55,11 +55,11 @@ export const DEFAULT_TWEEN_CONFIGS: Record<TweenKey, TweenConfigs> = {
 
 export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     betChoiceZoomInOut: {
-        in: { positionY: -204, time: DURATION_ANIM_IN },
-        out: { positionY: -204, time: DURATION_ANIM_OUT },
+        in: { position: v3(0, -200, 0), time: DURATION_ANIM_IN },
+        out: { position: v3(0, -200, 0), time: DURATION_ANIM_OUT },
     },
     betChoiceSettlement: {
-        in: { position: v3(0, -96, 0), time: DURATION_ANIM_IN },
+        in: { position: v3(0, -191, 0), time: DURATION_ANIM_IN },
         out: { time: DURATION_ANIM_OUT },
     },
     fadeInOut: {
@@ -79,5 +79,8 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     hiddenPlayersFlyUpBet: {
         in: { time: 0, opacity: 255 },
     },
-    scoreBoardInOut: { in: { positionY: -518, time: DURATION_ANIM_IN }, out: { positionY: -407, time: DURATION_ANIM_IN } },
+    scoreBoardInOut: {
+        in: { positionY: -640, time: DURATION_ANIM_IN },
+        out: { positionY: -531, time: DURATION_ANIM_IN },
+    },
 };
