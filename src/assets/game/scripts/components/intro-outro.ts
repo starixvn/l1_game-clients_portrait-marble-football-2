@@ -5,13 +5,13 @@ const { ccclass, property } = _decorator;
 @ccclass("IntroOutro")
 export class IntroOutro extends Component {
     @property(UIOpacity)
-    private gameBackground: UIOpacity = null;
+    gameBackground: UIOpacity = null;
 
     @property(UIOpacity)
-    private field: UIOpacity = null;
+    field: UIOpacity = null;
 
     @property(UIOpacity)
-    private fieldBlur: UIOpacity = null;
+    fieldBlur: UIOpacity = null;
 
     @property(UIOpacity)
     containerGameBackground: UIOpacity = null;

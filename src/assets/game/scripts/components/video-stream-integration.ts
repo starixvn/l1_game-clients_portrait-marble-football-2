@@ -23,22 +23,22 @@ const INTRO_SFX = "intro_video";
 @ccclass
 export default class VideoStreamIntegration extends ObserverComponent {
     @property(BackgroundVideoPlayer)
-    private backgroundVideoPlayer: BackgroundVideoPlayer = null;
+    backgroundVideoPlayer: BackgroundVideoPlayer = null;
 
     @property(Node)
-    private nodeBreakTime: Node = null;
+    nodeBreakTime: Node = null;
 
     @property(Node)
-    private nodeSystemIndicator: Node = null;
+    nodeSystemIndicator: Node = null;
 
     @property(IntroOutro)
-    private introOutro: IntroOutro = null;
+    introOutro: IntroOutro = null;
 
     @property(Prefab)
-    private warnPrefab: Prefab = null;
+    warnPrefab: Prefab = null;
 
     @property(Node)
-    private warnContainer: Node = null;
+    warnContainer: Node = null;
 
     private isLiveVideo = false;
 

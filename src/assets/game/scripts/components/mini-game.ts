@@ -5,16 +5,16 @@ const { ccclass, property } = _decorator;
 @ccclass("MiniGame")
 export class MiniGame extends Component {
     @property(sp.Skeleton)
-    private home: sp.Skeleton = null;
+    home: sp.Skeleton = null;
 
     @property(sp.Skeleton)
-    private away: sp.Skeleton = null;
+    away: sp.Skeleton = null;
 
     @property(sp.Skeleton)
-    private statistic: sp.Skeleton = null;
+    statistic: sp.Skeleton = null;
 
     @property(sp.Skeleton)
-    private game: sp.Skeleton = null;
+    game: sp.Skeleton = null;
 
     protected onLoad(): void {
         this.disableAllSkeletonNodes();

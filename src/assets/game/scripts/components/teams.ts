@@ -18,16 +18,16 @@ export class Teams extends ObserverComponent {
     away: Flag = null;
 
     @property(TeamName)
-    private homeName: TeamName = null;
+    homeName: TeamName = null;
 
     @property(TeamName)
-    private awayName: TeamName = null;
+    awayName: TeamName = null;
 
     @property(Label)
-    private homeCode: Label = null;
+    homeCode: Label = null;
 
     @property(Label)
-    private awayCode: Label = null;
+    awayCode: Label = null;
 
     @render(TournamentStore, (store) => store.currentMatch)
     setTeams(currentMatch: MarbleFootballServiceMessages.MatchType) {
