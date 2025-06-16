@@ -7,7 +7,7 @@ const { ccclass, property } = _decorator;
 @ccclass("Winner")
 export class Winner extends Component {
     @property(sp.Skeleton)
-    private spine: sp.Skeleton = null;
+    spine: sp.Skeleton = null;
 
     showWinner(at = 0, winnerName: string, isHomeWin: boolean, isFinal: boolean) {
         const animationType = isFinal ? "champion" : "winner";

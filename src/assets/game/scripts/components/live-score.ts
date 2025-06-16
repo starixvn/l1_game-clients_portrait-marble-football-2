@@ -15,22 +15,22 @@ const { render } = Observer;
 @ccclass("LiveScore")
 export class LiveScore extends ObserverComponent {
     @property(Flag)
-    private home: Flag = null;
+    home: Flag = null;
 
     @property(Flag)
-    private away: Flag = null;
+    away: Flag = null;
 
     @property(Label)
-    private minutesLabel: Label = null;
+    minutesLabel: Label = null;
 
     @property(Label)
-    private secondsLabel: Label = null;
+    secondsLabel: Label = null;
 
     @property(Label)
-    private half: Label = null;
+    half: Label = null;
 
     @property(Node)
-    private containerTime: Node = null;
+    containerTime: Node = null;
 
     seconds = 0;
     minutes = 0;

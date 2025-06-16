@@ -11,7 +11,8 @@ const MAX_HEIGHT_DIRECT = 466;
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
     @property(VideoOffSetContainer)
-    private videoOffSetContainer: VideoOffSetContainer = null;
+    videoOffSetContainer: VideoOffSetContainer = null;
+
     @property
     isPortrait = false;
 

@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 @ccclass("BreakTime")
 export class BreakTime extends Component {
     @property(sp.Skeleton)
-    private breakTime: sp.Skeleton = null;
+    breakTime: sp.Skeleton = null;
 
     private get breakTimeNode() {
         return this.breakTime?.node;

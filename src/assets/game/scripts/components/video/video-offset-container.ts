@@ -17,10 +17,10 @@ export class VideoOffSetContainer extends Component {
     containerNode: Node = null;
 
     @property(Node)
-    private targetNode: Node = null;
+    targetNode: Node = null;
 
     @property(Node)
-    private fieldNode: Node = null;
+    fieldNode: Node = null;
 
     private readonly lastContainerPosition = new Vec3();
 
