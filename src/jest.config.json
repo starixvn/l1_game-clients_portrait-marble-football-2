@@ -11,6 +11,7 @@
     "testResultsProcessor": "jest-sonar-reporter",
     "coverageReporters": ["cobertura", "text-summary", "text", "lcov"],
     "setupFiles": ["<rootDir>/tests/cocos-testing/reflect-metadata.ts", "<rootDir>/tests/cocos-testing/mobx.ts"],
+    "setupFilesAfterEnv": ["<rootDir>/tests/cocos-testing/observer-component.ts"],
     "reporters": [
         "default",
         [

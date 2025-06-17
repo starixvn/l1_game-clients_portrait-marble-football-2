@@ -19,10 +19,6 @@ alwaysApply: true
 ---
 
 ### 1. 📝 General Setup
-
--   **`reflect-metadata`**: Ensure `import "reflect-metadata";` is the very first import in your test file.
-    // should be the first import
-    import "reflect-metadata";
     // rest of the imports
     import { Container } from "inversify";
     // ... other imports
@@ -172,6 +168,11 @@ alwaysApply: true
         // ... perform action
         expect(methodSpy).toHaveBeenCalled();
         ```
+    -  Ignore some mock functions:
+        + mobx
+        + observer
+        + observer-component
+        + reflect-metadata
 
 ---
 
