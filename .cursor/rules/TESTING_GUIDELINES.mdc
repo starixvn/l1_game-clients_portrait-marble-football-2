@@ -205,6 +205,20 @@ alwaysApply: true
     -   Check state changes in stores or the SUT: `expect(mockStore.property).toBe(...)`, `expect(slotBoardStore.slotState).toBe(SlotState.BET);`.
     -   Check return values: `expect(result).toEqual(...)`, `expect(result).toBe(false);`.
 
+    Example test:
+         it("should create a node, add to parent, and call tween chain (isIncrease=true)", () => {
+            // Arrange
+            const parent = new Node();
+            const effectNode = new Node();
+
+            // Act
+            parent.addChild(effectNode);
+            
+            //Assert
+            expect(parent.children.length).toBe(1);
+        });
+
+
 ---
 
 ### 6. ⏳ Timers
