@@ -109,6 +109,9 @@ export class LiveScore extends ObserverComponent {
     }
     @render(GamePhaseStore, (store) => store.enterPhase)
     async renderEnterPhase(phase: GamePhase) {
+        if (!phase?.id) {
+            return;
+        }
         if (phase.id === PhaseId.ShowBetChoicesLive || phase.id === PhaseId.ShowBetChoicesPrev) {
             ComponentUtils.setOpacityNode(this.containerTime, 1);
         }
