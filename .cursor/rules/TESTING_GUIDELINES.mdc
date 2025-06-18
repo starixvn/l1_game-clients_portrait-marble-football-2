@@ -160,19 +160,21 @@ alwaysApply: true
             4.  Ensure proper binding of `this` context for all methods.
             5.  Inject/assign mocked dependencies (like stores) to this partially mocked instance, often by adding them as `null` properties in the mock and setting them in `beforeEach`.
 
--   **`jest.spyOn`**:
-    -   Use `jest.spyOn(object, "methodName")` to spy on method calls on an _actual instance_ (or a mock instance whose methods are actual functions or `jest.fn()`).
-    -   Commonly used on the instance under test or its mocked dependencies retrieved from the container.
-        ```typescript
-        const methodSpy = jest.spyOn(myClassInstance, "methodToWatch");
-        // ... perform action
-        expect(methodSpy).toHaveBeenCalled();
-        ```
+    -   **`jest.spyOn`**:
+        -   Use `jest.spyOn(object, "methodName")` to spy on method calls on an _actual instance_ (or a mock instance whose methods are actual functions or `jest.fn()`).
+        -   Commonly used on the instance under test or its mocked dependencies retrieved from the container.
+            ```typescript
+            const methodSpy = jest.spyOn(myClassInstance, "methodToWatch");
+            // ... perform action
+            expect(methodSpy).toHaveBeenCalled();
+            ```
+
     -  Ignore some mock functions:
         + mobx
         + observer
         + observer-component
         + reflect-metadata
+        + cc
 
 ---
 
