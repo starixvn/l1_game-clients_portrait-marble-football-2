@@ -12710,7 +12710,9 @@
     "disableNode": {
       "__id__": 567
     },
-    "blockIcon": null,
+    "blockIcon": {
+      "__id__": 535
+    },
     "_id": ""
   },
   {
@@ -14880,7 +14882,9 @@
     "disableNode": {
       "__id__": 668
     },
-    "blockIcon": null,
+    "blockIcon": {
+      "__id__": 636
+    },
     "_id": ""
   },
   {
