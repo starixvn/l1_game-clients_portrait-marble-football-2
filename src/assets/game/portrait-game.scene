@@ -2025,8 +2025,8 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": -336.619,
-      "y": 506,
+      "x": -315.5,
+      "y": 500,
       "z": 0
     }
   },
@@ -2060,7 +2060,7 @@
     "propertyPath": [
       "_left"
     ],
-    "value": 7.880999999999972
+    "value": 29
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -2070,7 +2070,7 @@
     "propertyPath": [
       "_top"
     ],
-    "value": 9
+    "value": 15
   },
   {
     "__type__": "cc.TargetInfo",
@@ -2232,7 +2232,7 @@
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 2,
+    "_sizeMode": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
