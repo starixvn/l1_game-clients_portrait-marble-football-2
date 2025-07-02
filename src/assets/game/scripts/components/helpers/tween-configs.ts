@@ -81,6 +81,6 @@ export const DEFAULT_TWEEN_CONFIGS_PORTRAIT: Record<TweenKey, TweenConfigs> = {
     },
     scoreBoardInOut: {
         in: { positionY: -640, time: DURATION_ANIM_IN },
-        out: { positionY: -531, time: DURATION_ANIM_IN },
+        out: { time: DURATION_ANIM_IN },
     },
 };

@@ -16,7 +16,6 @@ export class PlayAreaPortrait extends PlayArea {
         const staticTargets = [
             { node: this.teamScore, config: this.tweenConfigs.fadeInOut.out },
             { node: this.hiddenPlayersNode, config: this.tweenConfigs.fadeInOut.out },
-            { node: this.chips, config: this.tweenConfigs.fadeInOut.out },
         ];
 
         staticTargets.forEach(({ node, config }) => {
@@ -26,25 +25,15 @@ export class PlayAreaPortrait extends PlayArea {
 
     protected override getShowBetChoicesAnimConfig(): { nodes: Node[]; configs: any[] } {
         return {
-            nodes: [this.scoreBoard, this.chips, this.hiddenPlayersNode, this.teamScore],
-            configs: [
-                this.tweenConfigs.scoreBoardInOut.in,
-                this.tweenConfigs.fadeInOut.in,
-                this.tweenConfigs.fadeInOut.in,
-                this.tweenConfigs.fadeInOut.in,
-            ],
+            nodes: [this.scoreBoard, this.hiddenPlayersNode, this.teamScore],
+            configs: [this.tweenConfigs.scoreBoardInOut.in, this.tweenConfigs.fadeInOut.in, this.tweenConfigs.fadeInOut.in],
         };
     }
 
     protected override getShowVideoAnimConfig(): { nodes: Node[]; configs: any[] } {
         return {
-            nodes: [this.teamScore, this.scoreBoard, this.chips, this.hiddenPlayersNode],
-            configs: [
-                this.tweenConfigs.fadeInOut.in,
-                this.tweenConfigs.scoreBoardInOut.out,
-                this.tweenConfigs.fadeInOut.out,
-                this.tweenConfigs.fadeInOut.out,
-            ],
+            nodes: [this.teamScore, this.hiddenPlayersNode],
+            configs: [this.tweenConfigs.fadeInOut.in, this.tweenConfigs.fadeInOut.out],
         };
     }
 }
