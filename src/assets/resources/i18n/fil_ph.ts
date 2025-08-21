@@ -236,7 +236,7 @@ export const languages = {
         "player": "Player"
     },
     "MarbleFootball": {
-        "first_half": "\nFirst Half",
+        "first_half": "First Half",
         "second_half": "Second Half",
         "match_starts": "MAGSIMULA NA ANG MATCH!",
         "tournament": "\nTournament\n",
