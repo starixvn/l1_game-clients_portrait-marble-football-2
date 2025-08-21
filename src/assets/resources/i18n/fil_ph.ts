@@ -10,7 +10,7 @@ export const languages = {
         "stake": "Stake",
         "win": "Win",
         "total_stake": "Total Stake",
-        "message_stop_bet": "Hindi na tumatanggap ng mga taya.",
+        "message_stop_bet": "Sarado na ang Taya",
         "message_insufficient_fund": "Walang sapat na pondo ang iyong account. (%{errorCode})",
         "message_round_maxbet": "Max total stake on this round is %{maxBet}",
         "message_option_maxbet": "Max bet for this option is %{maxBet}",
