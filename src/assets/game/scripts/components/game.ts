@@ -4,7 +4,7 @@ import Observer from "observer";
 
 import gc from "@sg/game-client-base";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
-import { AnimationUtils, FunctionUtils } from "db://shared-components/shared/utils";
+import { AnimationUtils } from "db://shared-components/shared/utils";
 import "../../../resources/i18n";
 import { BackgroundVideoPlayer } from "../../../scripts/background-video-player";
 import { siteConfigs } from "../../../scripts/site-configs";
@@ -149,7 +149,7 @@ export default class Game extends GameComponent {
         try {
             let matchResult = this.betResultNode.getComponentInChildren(MatchResult);
             while (!matchResult) {
-                await FunctionUtils.delay(100);
+                await AnimationUtils.delayTime(100/1000);
                 matchResult = this.betResultNode.getComponentInChildren(MatchResult);
             }
             if (hasAnimation) {
@@ -195,7 +195,7 @@ export default class Game extends GameComponent {
             const { result, settlementResult } = lastRound;
             if (firstJoinGameHistory.animationHighlight) {
                 if (roundTime === 0) {
-                    await FunctionUtils.delay(1000);
+                    await AnimationUtils.delayTime(1);
                     if (this.currentFinish) {
                         return;
                     }

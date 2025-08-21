@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, screen, UITransform, Vec3, view } from "cc";
 import { EDITOR } from "cc/env";
-import { ComponentUtils, FunctionUtils } from "db://shared-components/shared/utils";
+import { ComponentUtils, AnimationUtils } from "db://shared-components/shared/utils";
 const { ccclass, property } = _decorator;
 
 export const SYNC_VIDEO_DIMENSION_EVENT = "syncWidthOffset";
@@ -59,7 +59,7 @@ export class VideoOffSetContainer extends Component {
     }
 
     protected async updateDisplay() {
-        await FunctionUtils.delay(300);
+        await AnimationUtils.delayTime(300/1000);
         const scaleX = this.getNodeScaleX();
         const topOffsetAbs = this.calculateTopOffsetAbs(scaleX);
         const { width: fieldWidth, height: fieldHeight } = this.getFieldNodeWorldSize();
