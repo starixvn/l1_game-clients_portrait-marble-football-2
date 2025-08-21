@@ -231,7 +231,9 @@ export const languages = {
         "sabaplay_tagline": "趣遊無限",
         "message_loading": "載入中",
         "pf_header_server_seed_sha256_single": "服務器種子 SHA256",
-        "pf_ header_merge_client_seed_single": "合併客戶種子"
+        "pf_ header_merge_client_seed_single": "合併客戶種子",
+        "message_error_claim_expired": "獎金已過期，不再有效。 (%{errorCode})",
+        "player": "閒家"
     },
     "MarbleFootball": {
         "1st_half": "上半場",

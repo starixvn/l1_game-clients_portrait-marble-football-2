@@ -231,7 +231,9 @@ export const languages = {
         "sabaplay_tagline": "趣游无限",
         "message_loading": "Loading",
         "pf_header_server_seed_sha256_single": "服务器种子 SHA256",
-        "pf_ header_merge_client_seed_single": "合并客户种子"
+        "pf_ header_merge_client_seed_single": "合并客户种子",
+        "message_error_claim_expired": "奖金已过期，不再有效。 (%{errorCode})",
+        "player": "玩家"
     },
     "MarbleFootball": {
         "1st_half": "上半场",

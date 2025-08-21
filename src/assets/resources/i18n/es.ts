@@ -33,7 +33,7 @@ export const languages = {
         "create_nick_name": "Crea tu Apodo",
         "details": "Detalles",
         "enter_your_name": "Ingresa tu apodo.",
-        "even_win": "Ganancias a la Par",
+        "even_win": "Par Gana",
         "from": "desde",
         "game_category_new_releases": "Novedades",
         "game_category_ph_1": "Todos",
@@ -212,8 +212,8 @@ export const languages = {
         "stake": "Apuesta",
         "submit": "ENVIAR",
         "terms_and_conditions_content": "- Todos los jugadores nuevos y existentes son elegibles para participar en las promociones y optar por premios mayores.\n- El monto ganador se abonará según las reglas y pagos de la promoción.\n- La Promoción estará vigente por un período determinado establecido por la Compañía. Al finalizar la promoción, las cuotas de apuestas se restablecerán a sus valores previos.\n- La Compañía se reserva el derecho de modificar cualquiera de los términos de participación aplicables a esta promoción, así como de modificar, finalizar, suspender o reprogramar esta promoción en cualquier momento.\n- Cualquier controversia que surja de o en relación con esta promoción será resuelta por la Compañía.",
-        "text_big_wins": "Big Wins!",
-        "text_small_win": "¡Pequeños Premios!",
+        "text_big_wins": "Gana la Grande!",
+        "text_small_win": "Gana la Pequeño!",
         "time": "Tiempo",
         "to": "para",
         "total": "Total",
@@ -231,7 +231,9 @@ export const languages = {
         "invalid_jackpot": "invalid_jackpot",
         "opened_jackpot": "opened_jackpot",
         "pf_header_server_seed_sha256_single": "SHA256 de la semilla del servidor",
-        "pf_ header_merge_client_seed_single": "Combinar la semilla del cliente"
+        "pf_ header_merge_client_seed_single": "Combinar la semilla del cliente",
+        "message_error_claim_expired": "La Bonificación ha expirado. Ya no está disponible. (%{errorCode})",
+        "player": "Jugador"
     },
     "MarbleFootball": {
         "1st_half": "Primer Tiempo",

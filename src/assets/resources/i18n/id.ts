@@ -231,7 +231,9 @@ export const languages = {
         "sabaplay_tagline": "BUKAN SEKADAR PERMAINAN",
         "message_loading": "Loading",
         "pf_header_server_seed_sha256_single": "Server Seed SHA256 ",
-        "pf_ header_merge_client_seed_single": "Gabungkan Seed Klien"
+        "pf_ header_merge_client_seed_single": "Gabungkan Seed Klien",
+        "message_error_claim_expired": "Bonus berakhir. Tidak lagi tersedia. (%{errorCode})",
+        "player": "Player"
     },
     "MarbleFootball": {
         "1st_half": "Paruh Pertama",

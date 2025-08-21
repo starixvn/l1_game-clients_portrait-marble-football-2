@@ -231,7 +231,9 @@ export const languages = {
         "sabaplay_tagline": "มากกว่าแค่เกม",
         "message_loading": "Loading",
         "pf_header_server_seed_sha256_single": "Server Seed SHA256 ",
-        "pf_ header_merge_client_seed_single": "ผสาน Client Seed"
+        "pf_ header_merge_client_seed_single": "ผสาน Client Seed",
+        "message_error_claim_expired": "โบนัสหมดอายุ ไม่สามารถใช้งานได้อีกต่อไป (%{errorCode})",
+        "player": "ผู้เล่น"
     },
     "MarbleFootball": {
         "1st_half": "ครึ่งแรก",

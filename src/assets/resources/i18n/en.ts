@@ -231,7 +231,9 @@ export const languages = {
         "sabaplay_tagline": "Beyond the Game",
         "message_loading": "Loading",
         "pf_header_server_seed_sha256_single": "Server Seed SHA256",
-        "pf_ header_merge_client_seed_single": "Merge Client Seed"
+        "pf_ header_merge_client_seed_single": "Merge Client Seed",
+        "message_error_claim_expired": "The Bonus is expired. No longer available. (%{errorCode}) ",
+        "player": "Player"
     },
     "MarbleFootball": {
         "1st_half": "1st Half",
