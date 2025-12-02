@@ -14,7 +14,7 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         localhost: "lumigame.com",
     },
     ssl: true,
-    subDomain: "l2-proxy",
+    subDomain: "hd-proxy",
     env: "LOCAL0",
     subGuideDomain: "hd-guide",
     enableMsgpackParserOnNotification: false,
@@ -31,6 +31,7 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         urlHash: "sha384-SAsRvjfAFRX3iwi3MG6ToeZNJVpHcRXKcITfFVLQipWK3uQ8SakuVmHDoSR3YNmJ",
         ignoreErrors: [],
     },
+    decimalPlaces: 4,
 };
 
 let configDev = {
