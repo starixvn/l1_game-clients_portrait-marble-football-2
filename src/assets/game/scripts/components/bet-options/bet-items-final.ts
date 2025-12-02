@@ -2,7 +2,7 @@ import gc from "@sg/game-client-base";
 import { _decorator } from "cc";
 import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
 import { BetItemsPolygon as BetItemsPolygonBase } from "db://shared-components/game/bets/scripts/components/bet-items-polygon";
-import { AnimationUtils, ComponentUtils } from "db://shared-components/shared/utils";
+import { AnimationUtils, ComponentUtils, formatCurrencyWithConfig } from "db://shared-components/shared/utils";
 import Observer from "observer";
 import { GamePhase, PhaseId } from "../../features/game-phase/game-phase-definitions";
 import { GamePhaseStore } from "../../features/game-phase/game-phase-store";
@@ -29,7 +29,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         this.betItemComponents.forEach((betItem) => {
             const choice = betItem?.betChoice;
             const sum = (ownBets[choice] || 0) + (ownBets[`${choice}Live`] || 0);
-            betItem.renderOwnBet(sum !== 0 ? gc.FormatUtils.numberWithCommas(sum) : "");
+            betItem.renderOwnBet(sum !== 0 ? formatCurrencyWithConfig(sum) : "");
         });
     }
 
@@ -39,7 +39,7 @@ export class BetItemsFinal extends BetItemsPolygonBase {
         this.betItemComponents.forEach((betItem) => {
             const choice = betItem?.betChoice;
             const sum = (totalBets[choice] || 0) + (totalBets[`${choice}Live`] || 0);
-            betItem.renderTotalBet(sum !== 0 ? gc.FormatUtils.numberWithCommas(sum) : "");
+            betItem.renderTotalBet(sum !== 0 ? formatCurrencyWithConfig(sum) : "");
         });
     }
 
